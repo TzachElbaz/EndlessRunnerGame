@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
     private bool isGrounded;
     private bool isDoubleJumping = false;
     private bool rollOnLand = false;
+    private bool isHoldingDown = false;
 
     [HideInInspector]
     public Vector2 velocity;
@@ -84,7 +85,8 @@ public class Player : MonoBehaviour
 
     private void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && CanPlayerJump())
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            && CanPlayerJump())
         {
             if (isRolling)
             {
@@ -95,7 +97,7 @@ public class Player : MonoBehaviour
             Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             if (isGrounded)
             {
