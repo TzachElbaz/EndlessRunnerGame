@@ -707,10 +707,12 @@ MonoBehaviour:
   _pregenLength: 20
   _minLength: 30
   _addLength: 12
+  pursegen: 
   _jumpChaineLength: 11
   _dropChaineLength: 16
   _obstecalChainChance: 3
   _obsteclBrakeChance: 1
+  _coinChens: 3
   _obstaclePause: 0
   _generateAlt: 1
 --- !u!114 &84267935

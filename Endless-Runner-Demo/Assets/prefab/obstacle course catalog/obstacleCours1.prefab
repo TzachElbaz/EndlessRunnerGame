@@ -332,6 +332,10 @@ MonoBehaviour:
   _GenerateDistance: 100
   depth: 1
   _passPoint: 0
+  _purseList:
+  - {fileID: 8764814594800341858}
+  - {fileID: 8764814594800341858}
+  - {fileID: 8764814594800341858}
 --- !u!1 &4499763898859638056
 GameObject:
   m_ObjectHideFlags: 0

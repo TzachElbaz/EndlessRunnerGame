@@ -7,6 +7,7 @@ public class Obstacle : MonoBehaviour
     Player player;
     [SerializeField] private float depth = 1;
     public PASS_POINT _passPoint;
+    public GameObject[] _purseList;
 
     public enum PASS_POINT
     {
@@ -64,6 +65,11 @@ public class Obstacle : MonoBehaviour
         if (transform.position.x > 66) return;
         Destroy(gameObject);
         
+    }
+
+    public void ActivatePurse(int purseNum)
+    {
+        _purseList[purseNum].SetActive(true);
     }
 
     private void OnDrawGizmos()
