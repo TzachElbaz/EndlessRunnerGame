@@ -692,12 +692,12 @@ MonoBehaviour:
   _forestObsteclCurse:
   - {fileID: 3711225835351693844, guid: 5bdd7177e7b7373428560161951ae254, type: 3}
   _desertObstecl:
-  - {fileID: 5607722697183440384, guid: fa0305e2f7c7d0b4f8ab1e8094b2bcb3, type: 3}
-  - {fileID: 518647977935069568, guid: 38c98a351acdbaa4394c5ce0b217f163, type: 3}
-  - {fileID: 7673543996426664008, guid: 961aaf57712442841815e5cddbf043b7, type: 3}
-  - {fileID: 6649315052734820357, guid: 2c9f1bc7959005a44b26f824c60a9bfd, type: 3}
-  - {fileID: 1146827080047758200, guid: 8f1ef2f3e1febb342a5c74b82dc80d7f, type: 3}
-  - {fileID: 4555445112417170446, guid: 4afb6d158f3394b408a33ba4277b0565, type: 3}
+  - {fileID: 5607722697183440384, guid: e4fe4083e7a70cf42a6b59c68350dfee, type: 3}
+  - {fileID: 7673543996426664008, guid: e79e9ac88b3e74a4096ebe526be827f4, type: 3}
+  - {fileID: 6649315052734820357, guid: 62151012c58657542806a99eab8e333e, type: 3}
+  - {fileID: 1146827080047758200, guid: 7b80c7ead5a532d489a3f8ac61e04a21, type: 3}
+  - {fileID: 4555445112417170446, guid: 23d7ba776979a6d45ae1c7b82212a6c6, type: 3}
+  - {fileID: 518647977935069568, guid: e6c0902745b632f439dcd0f0c9cfb373, type: 3}
   _desertObsteclCurse: []
   _Xspon: 120
   _Yspon: 2

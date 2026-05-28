@@ -9,6 +9,7 @@ public class Obstacle : MonoBehaviour
     public PASS_POINT _passPoint;
     public GameObject[] _purseList;
 
+
     public enum PASS_POINT
     {
         UP,
