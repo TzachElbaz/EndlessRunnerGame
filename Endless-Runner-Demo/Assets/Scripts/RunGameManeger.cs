@@ -1,7 +1,5 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem.Controls;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
@@ -60,16 +58,20 @@ public class RunGameManeger : MonoBehaviour
     [SerializeField] private int _obstecalChainChance;
     [SerializeField] private int _obsteclBrakeChance;
 
-    [Header("coin generation")]
-    [SerializeField] private int _coinChens;
-
-
     public bool _obstaclePause;
     public bool _generateAlt;
 
     private bool isGameOver = false;
     private int pursePlace;
+
+
+    [Header("coin generation")]
+    [SerializeField] private int _coinChens;
+    [SerializeField] private GameObject[] _coinList;
+    [SerializeField] private Vector2Int _coinGenerationRange;
     
+
+
 
     private void Awake()
     {
@@ -182,6 +184,8 @@ public class RunGameManeger : MonoBehaviour
         int rund;
         int repetCount = 0;
         float length = _minLength;
+        int coinRange= Random.Range(_coinGenerationRange.x,_coinGenerationRange.y);
+        int coinRangeCount=0;
         Obstacle now;
         Obstacle prev = _curentObstecl[pregen[pregen.Length - 1]].GetComponent<Obstacle>();
         GameObject Ob;
@@ -210,8 +214,16 @@ public class RunGameManeger : MonoBehaviour
                 prev = _curentObstecl[pregen[i - 1]].GetComponent<Obstacle>();
             }
 
-            pursePlace = Random.Range(0, 3);
-            if (randomObstacleEvent <= _obstecalChainChance)
+            pursePlace = 2;
+            if (coinRangeCount == coinRange && _coinList[0] != null )
+            {
+                length = _minLength * 2;
+                coinRangeCount = 0;
+                Ob = _coinList[Random.Range(0, _coinList.Length)];
+                
+
+            }
+            else if (randomObstacleEvent <= _obstecalChainChance)
             {
                 length = TwoOBDistantCheck(prev, now);
             }
@@ -225,7 +237,8 @@ public class RunGameManeger : MonoBehaviour
 
             }
             genLength[i] = length;
-            pursegen[i] =pursePlace;
+            pursegen[i] = pursePlace;
+            coinRangeCount++;
         }
         _pregenEmpty = false;
 
