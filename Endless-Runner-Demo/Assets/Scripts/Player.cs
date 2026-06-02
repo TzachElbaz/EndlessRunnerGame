@@ -40,9 +40,8 @@ public class Player : MonoBehaviour
     private bool isGrounded;
     private bool isDoubleJumping = false;
     private bool rollOnLand = false;
-    private bool isHoldingDown = false;
 
-    [HideInInspector]
+    //[HideInInspector]
     public Vector2 velocity;
     [HideInInspector]
     public float distance = 0f;
@@ -57,6 +56,7 @@ public class Player : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _animation = GetComponentInChildren<Animator>();
         _boxCollider = GetComponent<BoxCollider2D>();
+        velocity.x = 15f;
     }
 
     private void Start()

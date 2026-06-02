@@ -2184,8 +2184,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   firstJumpForce: 45
   doubleJumpForce: 40
-  acceleration: 25
-  maxXVelocity: 25
+  acceleration: 2
+  maxXVelocity: 40
   _groundCheckDistance: 0.06
   _groundCheckSize: {x: 2.68, y: 0.18}
   _groundLayers:
