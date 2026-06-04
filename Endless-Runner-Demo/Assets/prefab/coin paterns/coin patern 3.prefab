@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
   _type: 2
   _GenerateDistance: 50
+  destroy: -60
   depth: 1
   _passPoint: 5
   _purseList:

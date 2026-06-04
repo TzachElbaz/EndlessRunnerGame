@@ -32,6 +32,8 @@ public class Player : MonoBehaviour
     private Vector2 rollingOffset;
     private Vector2 jumpingOffset = new Vector2(-0.02f, 0.57f);
     private Vector2 jumpingSize = new Vector2(0.61f, 0.74f);
+    private float _groundCheckSizeOnGround;
+    private float _groundCheckSizeinEir= -1.07f;
 
     [Header("Rolling")]
     [SerializeField] private float rollDuration = .6f;
@@ -61,6 +63,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        _groundCheckSizeOnGround = _groundCheckDistance;
         SetColliders();
     }
 
@@ -123,6 +126,7 @@ public class Player : MonoBehaviour
         _rigidbody.AddForce(Vector2.up * jumpingForce, ForceMode2D.Impulse);
         _boxCollider.offset = jumpingOffset;
         _boxCollider.size = jumpingSize;
+        _groundCheckDistance = _groundCheckSizeinEir;
     }
 
 
@@ -194,6 +198,7 @@ public class Player : MonoBehaviour
             isGrounded = true;
             isDoubleJumping = false;
             jumpRemaining = 2;
+            _groundCheckDistance = _groundCheckSizeOnGround;
             if (!isRolling)
             {
                 _boxCollider.offset = standingOffset;

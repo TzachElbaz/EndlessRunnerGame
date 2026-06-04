@@ -4,6 +4,7 @@ public class Obstacle : MonoBehaviour
 {
     public OB_TYPE _type = OB_TYPE.OBSTECLE;
     [SerializeField] public float _GenerateDistance;
+    [SerializeField] private float destroy = -30;
     Player player;
     [SerializeField] private float depth = 1;
     public PASS_POINT _passPoint;
@@ -47,31 +48,16 @@ public class Obstacle : MonoBehaviour
 
         position.x -= realVelocity * Time.fixedDeltaTime;
 
-        switch (_type)
+
+
+        if (position.x < destroy)
         {
-            case OB_TYPE.OBSTECLE:
-                if (position.x < -30)
-                {
-                    Destroy(gameObject);
-                    
-                }
-                break;
-            case OB_TYPE.COURSE:
-                if (position.x < -60)
-                {
-                    Destroy(gameObject);
+            Destroy(gameObject);
 
-                }
-                break;
-            case OB_TYPE.COIN:
-                if (position.x < -60)
-                {
-                    Destroy(gameObject);
-
-                }
-                break;
         }
-            
+
+
+
 
         transform.position = position;
     }

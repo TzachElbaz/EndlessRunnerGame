@@ -65,6 +65,7 @@ public class RunGameManeger : MonoBehaviour
     private bool _pregenEmpty;
     [SerializeField] private float _jumpChaineLength;
     [SerializeField] private float _dropChaineLength;
+    
     [SerializeField] private int _obstecalChainChance;
     [SerializeField] private int _obsteclBrakeChance;
 
@@ -74,11 +75,15 @@ public class RunGameManeger : MonoBehaviour
     private bool isGameOver = false;
     private int pursePlace;
 
+    [Header("obstacle distant change")]
+    [SerializeField] private float _velocityLengthAdd = 0f;
+    [SerializeField] private float _velocityLengthAddThreshhold = 0f;
 
     [Header("coin generation")]
     [SerializeField] private int _coinChens;
     [SerializeField] private GameObject[] _coinList;
     [SerializeField] private Vector2Int _coinGenerationRange;
+
     
 
 
@@ -149,6 +154,7 @@ public class RunGameManeger : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+        AddVelocityObsteclDistant();
         TimeKiper();
     }
 
@@ -332,7 +338,7 @@ public class RunGameManeger : MonoBehaviour
         {
             float distans = _LastObject.transform.position.x;
             float genDistans = genLength[listCount];
-            return (_spawnPoint.x - distans >= genDistans);
+            return (_spawnPoint.x - distans >= genDistans+_velocityLengthAdd);
         }
 
         return true;
@@ -734,6 +740,14 @@ public class RunGameManeger : MonoBehaviour
             _transitioning = false;
             _obstaclePause = false;
             _transitionClock = 0;
+        }
+    }
+
+    private void AddVelocityObsteclDistant()
+    {
+        if (_Player.velocity.x > _velocityLengthAddThreshhold)
+        {
+            _velocityLengthAdd = (_Player.velocity.x)/10;
         }
     }
 }
