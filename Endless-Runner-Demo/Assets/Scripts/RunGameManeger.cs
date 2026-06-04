@@ -246,7 +246,7 @@ public class RunGameManeger : MonoBehaviour
                         now = Ob.GetComponent<Obstacle>();
                         
 
-                        Debug.Log("coin");
+                        
                     }
                     else if (randomObstacleEvent <= _obstecalChainChance)
                     {
@@ -749,5 +749,13 @@ public class RunGameManeger : MonoBehaviour
         {
             _velocityLengthAdd = (_Player.velocity.x)/10;
         }
+    }
+    public void InvokeClearOnScreenObstacles()
+    {
+        ClearOnScreenObstacles?.Invoke();
+    }
+    public void InvokeClearOffScreenObstacles()
+    {
+        ClearOffScreenObstacles?.Invoke();
     }
 }

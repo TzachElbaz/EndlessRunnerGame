@@ -52,6 +52,9 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public int health = 3;
 
+    [Header("debug")]
+    public bool _HpOn;
+
 
     private void Awake()
     {
@@ -173,8 +176,11 @@ public class Player : MonoBehaviour
     private void EndRolling()
     {
         isRolling = false;
-        _boxCollider.size = standingSize;
-        _boxCollider.offset = standingOffset;
+        if (isGrounded)
+        {
+            _boxCollider.size = standingSize;
+            _boxCollider.offset = standingOffset;
+        }
 
     }
 
@@ -217,8 +223,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("obstacle"))
         {
             Debug.Log(collision.gameObject.GetComponentInParent<Obstacle>()._passPoint);
-            Destroy(collision.gameObject);
-            if (health >= 1)
+            RunGameManeger.Instance.InvokeClearOnScreenObstacles();
+            if (health >= 1 && _HpOn)
             {
                 health -= 1;
                 OnPlayerHit?.Invoke(health);
