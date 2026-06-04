@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     private bool isDoubleJumping = false;
     private bool rollOnLand = false;
 
-    [HideInInspector]
+    //[HideInInspector]
     public Vector2 velocity;
     [HideInInspector]
     public float distance = 0f;
@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _animation = GetComponentInChildren<Animator>();
         _boxCollider = GetComponent<BoxCollider2D>();
+        velocity.x = 15f;
     }
 
     private void Start()
@@ -84,7 +85,8 @@ public class Player : MonoBehaviour
 
     private void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && CanPlayerJump())
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            && CanPlayerJump())
         {
             if (isRolling)
             {
@@ -95,7 +97,7 @@ public class Player : MonoBehaviour
             Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             if (isGrounded)
             {
