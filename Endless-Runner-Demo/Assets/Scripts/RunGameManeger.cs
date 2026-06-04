@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
+using static Obstacle;
 using Random = UnityEngine.Random;
 
 public class RunGameManeger : MonoBehaviour
@@ -16,6 +18,8 @@ public class RunGameManeger : MonoBehaviour
 
     [SerializeField] private Player _Player;
     [SerializeField] private GameObject _PlayerObject;
+
+    [Header("Transition")]
     [SerializeField] private GameObject _forestBackground;
     [SerializeField] private GameObject[] _forestTransitionList;
     [SerializeField] private GameObject _desertBackground;
@@ -24,13 +28,18 @@ public class RunGameManeger : MonoBehaviour
     [SerializeField] private float _transitionSwitch;
     private float _transitionClock;
     private bool _transitioning;
+    [Header("Obstacles")]
     [SerializeField] private GameObject[] _forestObstecl;
     [SerializeField] private GameObject[] _forestObsteclCurse;
+    [SerializeField] private GameObject[] _forestPlatforms;
     [SerializeField] private GameObject[] _desertObstecl;
     [SerializeField] private GameObject[] _desertObsteclCurse;
+    [SerializeField] private GameObject[] _desertPlatforms;
     [SerializeField] private float _Xspon;
     [SerializeField] private float _Yspon;
+    [SerializeField] private int _platformChance;
     [SerializeField] private int _obstacleCurseCount;
+
 
     public SCREEN_ENUM _curentScreen = SCREEN_ENUM.FOREST;
     public SCREEN_ENUM _nextScreen;
@@ -48,7 +57,8 @@ public class RunGameManeger : MonoBehaviour
     
     GameObject[] _curentObstecl;
     GameObject[] _curentObsteclCours;
-    private int[] pregen;
+    GameObject[] _curentPlatforms;
+    private GameObject[] pregen;
     private float[] genLength;
     [SerializeField, HideInInspector] public int[] pursegen;
     private int listCount;
@@ -110,12 +120,13 @@ public class RunGameManeger : MonoBehaviour
         SetObstacleToErea();
         _spawnPoint.y = _Yspon;
         _spawnPoint.x = _Xspon;
-        pregen = new int[_pregenLength];
+        pregen = new GameObject[_pregenLength];
         genLength = new float[_pregenLength];
         pursegen = new int[_pregenLength];
         listCount = 0;
         _pregenEmpty = true;
-        
+        pregen[pregen.Length - 1] = _curentObstecl[0];
+
 
     }
 
@@ -184,58 +195,93 @@ public class RunGameManeger : MonoBehaviour
         int rund;
         int repetCount = 0;
         float length = _minLength;
-        int coinRange= Random.Range(_coinGenerationRange.x,_coinGenerationRange.y);
+        int coinRange= Random.Range(_coinGenerationRange.x,_coinGenerationRange.y+1);
         int coinRangeCount=0;
         Obstacle now;
-        Obstacle prev = _curentObstecl[pregen[pregen.Length - 1]].GetComponent<Obstacle>();
+        Obstacle prev = pregen[pregen.Length - 1].GetComponent<Obstacle>();
         GameObject Ob;
         for (int i = 0; i < pregen.Length; i++)
         {
             rund = Random.Range(0, _curentObstecl.Length);
-            if (i > 0 && rund == pregen[i - 1])
+            if (i > 0 && _curentObstecl[rund] == pregen[i - 1])
             {
                 if (repetCount < 1) repetCount++;
                 else
                 {
                     repetCount = 0;
-                    while (rund == pregen[i - 1])
+                    while (_curentObstecl[rund] == pregen[i - 1])
                     {
                         rund = Random.Range(0, _curentObstecl.Length);
                     }
                 }
 
             }
-            pregen[i] = rund;
+            
             int randomObstacleEvent = Random.Range(0, 10);
             Ob = _curentObstecl[rund];
+            pregen[i] = Ob;
             now = Ob.GetComponent<Obstacle>();
             if (i != 0)
             {
-                prev = _curentObstecl[pregen[i - 1]].GetComponent<Obstacle>();
+                prev = pregen[i - 1].GetComponent<Obstacle>();
             }
-
             pursePlace = 2;
-            if (coinRangeCount == coinRange && _coinList[0] != null )
+            switch (prev._type)
             {
-                length = _minLength * 2;
-                coinRangeCount = 0;
-                Ob = _coinList[Random.Range(0, _coinList.Length)];
-                
+                case OB_TYPE.OBSTECLE:
+
+                    
+                    if (coinRangeCount == coinRange && _coinList[0] != null)
+                    {
+                        length = _minLength;
+                        coinRangeCount = 0;
+                        Ob = _coinList[Random.Range(0, _coinList.Length)];
+                        pregen[i] = Ob;
+                        now = Ob.GetComponent<Obstacle>();
+                        
+
+                        Debug.Log("coin");
+                    }
+                    else if (randomObstacleEvent <= _obstecalChainChance)
+                    {
+                        length = TwoOBDistantCheck(prev, now);
+                    }
+                    else if (randomObstacleEvent <= _obstecalChainChance + _obsteclBrakeChance)
+                    {
+                        length = _minLength * Random.Range(2, 5);
+                    }
+                    else if (randomObstacleEvent <= _obstecalChainChance + _obsteclBrakeChance+ _platformChance)
+                    {
+                        length = _minLength;
+                        coinRangeCount = 0;
+                        Ob = _curentPlatforms[Random.Range(0, _curentPlatforms.Length)];
+                        pregen[i] = Ob;
+                        now = Ob.GetComponent<Obstacle>();
+                        
+                    }
+                    else
+                    {
+                        length = prev._GenerateDistance;
+
+                    }
+                    break;
+                case OB_TYPE.COURSE:
+
+                    length = prev._GenerateDistance;
+                    break;
+                case OB_TYPE.COIN:
+
+                    length = prev._GenerateDistance;
+                    break;
+                case OB_TYPE.PLATFORM:
+                    length = TwoOBDistantCheck(prev, now)+ prev._GenerateDistance;
+                    break;
+
+
 
             }
-            else if (randomObstacleEvent <= _obstecalChainChance)
-            {
-                length = TwoOBDistantCheck(prev, now);
-            }
-            else if (randomObstacleEvent <= _obstecalChainChance + _obsteclBrakeChance)
-            {
-                length = _minLength * Random.Range(2, 5);
-            }
-            else
-            {
-                length = now._GenerateDistance;
 
-            }
+            
             genLength[i] = length;
             pursegen[i] = pursePlace;
             coinRangeCount++;
@@ -296,9 +342,9 @@ public class RunGameManeger : MonoBehaviour
     private void SpawnOB()
     {
         GameObject Ob;
-        Ob = Instantiate(_curentObstecl[pregen[listCount]]);
+        Ob = Instantiate(pregen[listCount]);
         Ob.transform.position = new Vector2(_spawnPoint.x, _spawnPoint.y);
-        if (_coinChens <= Random.Range(1, 11))
+        if (_coinChens <= Random.Range(1, 11) && Ob.GetComponent<Obstacle>() != null)
         {
             Ob.GetComponent<Obstacle>().ActivatePurse(pursegen[listCount]);
         }
@@ -573,11 +619,13 @@ public class RunGameManeger : MonoBehaviour
             case SCREEN_ENUM.FOREST:
                 _curentObstecl = _forestObstecl;
                 _curentObsteclCours = _forestObsteclCurse;
+                _curentPlatforms =_forestPlatforms;
                 break;
 
             case SCREEN_ENUM.DESERT:
                 _curentObstecl = _desertObstecl;
                 _curentObsteclCours = _desertObsteclCurse;
+                _curentPlatforms = _desertPlatforms;
                 break;
         }
     }

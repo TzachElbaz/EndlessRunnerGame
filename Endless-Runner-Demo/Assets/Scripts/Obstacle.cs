@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField] public bool _IsObsteclCourse;
+    public OB_TYPE _type = OB_TYPE.OBSTECLE;
     [SerializeField] public float _GenerateDistance;
     Player player;
     [SerializeField] private float depth = 1;
@@ -19,6 +19,13 @@ public class Obstacle : MonoBehaviour
         UP_DOWN,
         MIDDLE_DOWN,
 
+    }
+    public enum OB_TYPE
+    {
+        OBSTECLE,
+        COURSE,
+        COIN,
+        PLATFORM,
     }
     private void Awake()
     {
@@ -40,12 +47,30 @@ public class Obstacle : MonoBehaviour
 
         position.x -= realVelocity * Time.fixedDeltaTime;
 
-        if (position.x < -30 && !_IsObsteclCourse)
+        switch (_type)
         {
-            
-            if (!_IsObsteclCourse) Destroy(gameObject);
-            else if(position.x < -60) Destroy(gameObject);
-        } 
+            case OB_TYPE.OBSTECLE:
+                if (position.x < -30)
+                {
+                    Destroy(gameObject);
+                    
+                }
+                break;
+            case OB_TYPE.COURSE:
+                if (position.x < -60)
+                {
+                    Destroy(gameObject);
+
+                }
+                break;
+            case OB_TYPE.COIN:
+                if (position.x < -60)
+                {
+                    Destroy(gameObject);
+
+                }
+                break;
+        }
             
 
         transform.position = position;
