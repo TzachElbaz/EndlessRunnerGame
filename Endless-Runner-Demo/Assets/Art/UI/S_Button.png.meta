@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: a384159d1c88c2a4bb71ba73d0a37d56
+guid: e3a43df760a40d34ea916297620ed4d6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1258999148892216058
-    second: Forest Layer 01_0
+      213: -4429903484248427312
+    second: S_Button_0
+  - first:
+      213: 3833435523114994507
+    second: S_Button_1
+  - first:
+      213: 3670006511878136530
+    second: S_Button_2
+  - first:
+      213: 5955667640708562672
+    second: S_Button_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,12 +46,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 8
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Forest Layer 01_0
+      name: S_Button_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 256
+        x: 117
+        y: 179
+        width: 84
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 605a2cdc1f2278ee0800000000000000
-      internalID: -1258999148892216058
+      spriteID: 0d47b107042d582c0800000000000000
+      internalID: -4429903484248427312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S_Button_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 86
+        width: 83
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4b02a04c49133530800000000000000
+      internalID: 3833435523114994507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S_Button_2
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 85
+        width: 84
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d2eddf5a7b7ee230800000000000000
+      internalID: 3670006511878136530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S_Button_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 85
+        width: 83
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fef8bc2a28c6a250800000000000000
+      internalID: 5955667640708562672
       vertices: []
       indices: 
       edges: []
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Forest Layer 01_0: -1258999148892216058
+      S_Button_0: -4429903484248427312
+      S_Button_1: 3833435523114994507
+      S_Button_2: 3670006511878136530
+      S_Button_3: 5955667640708562672
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

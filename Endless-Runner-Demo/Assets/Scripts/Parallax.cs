@@ -12,12 +12,12 @@ public class Parallax : MonoBehaviour
         player = GameObject.FindAnyObjectByType<Player>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         float realVelocity = player.velocity.x / depth;
         Vector2 position = transform.position;
 
-        position.x -= realVelocity * Time.fixedDeltaTime;
+        position.x -= realVelocity * Time.deltaTime;
 
         if(position.x < destroy)
             position.x = spawn;

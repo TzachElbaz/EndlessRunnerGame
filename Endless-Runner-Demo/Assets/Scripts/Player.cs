@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     private bool isDoubleJumping = false;
     private bool rollOnLand = false;
 
-    [HideInInspector]
+    //[HideInInspector]
     public Vector2 velocity;
     [HideInInspector]
     public float distance = 0f;
@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _animation = GetComponentInChildren<Animator>();
         _boxCollider = GetComponent<BoxCollider2D>();
+        velocity.x = 15f;
     }
 
     private void Start()
@@ -84,7 +85,8 @@ public class Player : MonoBehaviour
 
     private void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && CanPlayerJump())
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            && CanPlayerJump())
         {
             if (isRolling)
             {
@@ -95,7 +97,7 @@ public class Player : MonoBehaviour
             Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             if (isGrounded)
             {
@@ -124,9 +126,24 @@ public class Player : MonoBehaviour
     }
 
 
+    //private bool GroundCheck()
+    //{
+    //    Vector2 origin = new Vector2(transform.position.x, transform.position.y - _groundCheckDistance);
+
+    //    RaycastHit2D hit = Physics2D.BoxCast(origin, _groundCheckSize, 0f, Vector2.down, _groundCheckDistance, _groundLayers);
+    //    return hit.collider != null;
+    //}
+
+    //private void OnDrawGizmosSelected()
+    //{
+    //    Gizmos.color = _groundCheckColor;
+    //    Vector2 origin = new Vector2(transform.position.x, transform.position.y - _groundCheckDistance);
+    //    Gizmos.DrawWireCube(origin, _groundCheckSize);
+    //}
+
     private bool GroundCheck()
     {
-        Vector2 origin = new Vector2(transform.position.x, transform.position.y - _groundCheckDistance);
+        Vector2 origin = new Vector2(_boxCollider.bounds.center.x, _boxCollider.bounds.min.y);
 
         RaycastHit2D hit = Physics2D.BoxCast(origin, _groundCheckSize, 0f, Vector2.down, _groundCheckDistance, _groundLayers);
         return hit.collider != null;
@@ -134,11 +151,14 @@ public class Player : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = _groundCheckColor;
-        Vector2 origin = new Vector2(transform.position.x, transform.position.y - _groundCheckDistance);
-        Gizmos.DrawWireCube(origin, _groundCheckSize);
-    }
+        BoxCollider2D col = _boxCollider != null ? _boxCollider : GetComponent<BoxCollider2D>();
+        if (col == null) return;
 
+        Gizmos.color = _groundCheckColor;
+
+        Vector2 origin = new Vector2(col.bounds.center.x, col.bounds.min.y);
+        Gizmos.DrawWireCube(origin + (Vector2.down * _groundCheckDistance), _groundCheckSize);
+    }
     private void PlayerAnimation()
     {
         _animation.SetBool("isRolling", isRolling);
