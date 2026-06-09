@@ -1,0 +1,311 @@
+fileFormatVersion: 2
+guid: 22c99b3821d653e4c86fd82707e4cad9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5885462798311513198
+    second: buble (1)_0
+  - first:
+      213: 4423536415921986657
+    second: buble (1)_1
+  - first:
+      213: 1305294804014329586
+    second: buble (1)_2
+  - first:
+      213: 8735429417804614048
+    second: buble (1)_3
+  - first:
+      213: 5435596456275756393
+    second: buble (1)_4
+  - first:
+      213: -2126460766529678392
+    second: buble (1)_5
+  - first:
+      213: -5305638029820619377
+    second: buble (1)_6
+  - first:
+      213: 8391832028355907905
+    second: buble (1)_7
+  - first:
+      213: -5627805272019378137
+    second: buble (1)_8
+  - first:
+      213: 8369687227963579341
+    second: buble (1)_9
+  - first:
+      213: -6132701385688492664
+    second: buble (1)_10
+  - first:
+      213: -183100017814047099
+    second: buble (1)_11
+  - first:
+      213: 2631297257603166539
+    second: buble (1)_12
+  - first:
+      213: 2905070957145644711
+    second: buble (1)_13
+  - first:
+      213: 8161087900348651579
+    second: buble (1)_14
+  - first:
+      213: -8991224143808143882
+    second: buble (1)_15
+  - first:
+      213: 8391521310183469715
+    second: buble (1)_16
+  - first:
+      213: -6899051620019694472
+    second: buble (1)_17
+  - first:
+      213: 7876080515904884194
+    second: buble (1)_18
+  - first:
+      213: 8182707147136955883
+    second: buble (1)_19
+  - first:
+      213: 8764848331990626404
+    second: buble (1)_20
+  - first:
+      213: 4136984528059484503
+    second: buble (1)_21
+  - first:
+      213: -539019331405289794
+    second: buble (1)_22
+  - first:
+      213: 7882237250578989563
+    second: buble (1)_23
+  - first:
+      213: -6446291341275736967
+    second: buble (1)_24
+  - first:
+      213: 6584109514189917324
+    second: buble (1)_25
+  - first:
+      213: -8292508065637279158
+    second: buble (1)_26
+  - first:
+      213: 6541721994237627403
+    second: buble (1)_27
+  - first:
+      213: 798359441024537587
+    second: buble (1)_28
+  - first:
+      213: -458605580171939106
+    second: buble (1)_29
+  - first:
+      213: 2717358028316329513
+    second: buble (1)_30
+  - first:
+      213: 5897831930492780981
+    second: buble (1)_31
+  - first:
+      213: 3646369143709860007
+    second: buble (1)_32
+  - first:
+      213: 1421461388010336040
+    second: buble (1)_33
+  - first:
+      213: 1605311218985450562
+    second: buble (1)_34
+  - first:
+      213: -8045714232753522656
+    second: buble (1)_35
+  - first:
+      213: 6344222276483450156
+    second: buble (1)_36
+  - first:
+      213: 6761866511721754477
+    second: buble (1)_37
+  - first:
+      213: 496875597942885447
+    second: buble (1)_38
+  - first:
+      213: 8700447164730251529
+    second: buble (1)_39
+  - first:
+      213: 1881551846254349772
+    second: buble (1)_40
+  - first:
+      213: 6512724307677641881
+    second: buble (1)_41
+  - first:
+      213: 2919755167885066089
+    second: buble (1)_42
+  - first:
+      213: 2959017273288395260
+    second: buble (1)_43
+  - first:
+      213: -8508686820946578730
+    second: buble (1)_44
+  - first:
+      213: -59997020901578883
+    second: buble (1)_45
+  - first:
+      213: -5192276487552253271
+    second: buble (1)_46
+  - first:
+      213: -8072462550805295128
+    second: buble (1)_47
+  - first:
+      213: 897145481275410400
+    second: buble (1)_48
+  - first:
+      213: 1198069373063335108
+    second: buble (1)_49
+  - first:
+      213: -6543863505415590766
+    second: buble (1)_50
+  - first:
+      213: 3495673883495737920
+    second: buble (1)_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: buble (1)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 293add774c2a25ea0800000000000000
+      internalID: -5885462798311513198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 72b89bdb32d6db14e9f6b2197400495a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":400.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      buble (1)_0: -5885462798311513198
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
