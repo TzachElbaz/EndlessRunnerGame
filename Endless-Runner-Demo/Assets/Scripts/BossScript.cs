@@ -1,5 +1,6 @@
+using System.Collections;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
-
 public class BossScript : MonoBehaviour
 {
     private RunGameManeger _runGameManeger;
@@ -26,7 +27,8 @@ public class BossScript : MonoBehaviour
     private bool _uperTentacleSmashDown;
     private bool _lowerTentacleSmashUp;
 
-    private float _tentacleSmashClock =0;
+    private float _uperTentacleSmashClock =0;
+    private float _loweTentacleSmashClock = 0;
     [SerializeField] private float _tentacleSmashspeed;
 
     [Header("Tentacle send")]
@@ -34,6 +36,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] private float _tentacleSendspeed;
     [SerializeField] private float _warningTime1;
     [SerializeField] private float _tentacleSendTime;
+    [SerializeField] public float[] _attackHight;
     private float _tentacleSendClock = 0;
 
     [Header("Tentacle trip")]
@@ -53,6 +56,7 @@ public class BossScript : MonoBehaviour
     {
         _player = GameObject.FindAnyObjectByType<Player>();
         _runGameManeger = GameObject.FindAnyObjectByType<RunGameManeger>();
+        StartCoroutine(AttackPatern1());
     }
 
     // Update is called once per frame
@@ -66,36 +70,35 @@ public class BossScript : MonoBehaviour
         if (_tentacleSmashOn) TentacleSmash();
         if (_tentacleSmashDownOn) TentacleSmashDown();
 
-        if(_tentacleSendOn) TentacleSend();
 
-        if (_tripleTentacleOn && _TOn[0]) TripleTentacle(0);
-        if (_tripleTentacleOn && _TOn[1]) TripleTentacle(1);
-        if (_tripleTentacleOn && _TOn[2]) TripleTentacle(2);
-        if (_tripleTentacleOn && _TOn[3]) TripleTentacle(3);
-        if (_tripleTentacleOn && _TOn[4]) TripleTentacle(4);
+
+        if (_TOn[4]) TripleTentacle(4);
+        if (_TOn[0]) TripleTentacle(0);
+        if (_TOn[1]) TripleTentacle(1);
+        if (_TOn[2]) TripleTentacle(2);
+        if (_TOn[3]) TripleTentacle(3);
     }
     
     private void TentacleSmash()
     {
         Vector2 tnetLocation = new Vector2(10f, _uperTentacleSmash.transform.position.y);
-        if ( _tentacleSmashClock == 0)
+        if ( _uperTentacleSmashClock == 0)
         {
             _uperTentacleSmash.transform.position = new Vector2(10f,54f);
-            _lowerTentacleSmash.transform.position = new Vector2(10f, -23f);
+            
             _uperTentacleSmashDown = true;
-            _lowerTentacleSmashUp = true;
+            
             _uperBableSmash.transform.position = new Vector2(10f,28f);
         }
-        else if(_tentacleSmashClock >= _tentacleSmashTime)
+        else if(_uperTentacleSmashClock >= _tentacleSmashTime)
         {
             _uperTentacleSmash.transform.position = new Vector2(10f, 54f);
-            _lowerTentacleSmash.transform.position = new Vector2(10f, -23f);
-            _tentacleSmashClock = 0;
+            
+            _uperTentacleSmashClock = 0;
             _tentacleSmashOn = false;
         }
-        _tentacleSmashClock += Time.deltaTime;
-        Debug.Log(_tentacleSmashClock);
-        if (_tentacleSmashClock >= _warningTime-0.02f) //buble finisg
+        _uperTentacleSmashClock += Time.deltaTime;
+        if (_uperTentacleSmashClock >= _warningTime-0.02f) //buble finisg
         {
             _uperBableSmash.transform.position = new Vector2(10f, 100f);
         }
@@ -105,12 +108,12 @@ public class BossScript : MonoBehaviour
             _uperTentacleSmashDown = false;
         }
 
-        if (_uperTentacleSmashDown && _tentacleSmashClock>= _warningTime)
+        if (_uperTentacleSmashDown && _uperTentacleSmashClock>= _warningTime)
         {
             tnetLocation.y -= _tentacleSmashspeed * Time.deltaTime;
             _uperTentacleSmash.transform.position = new Vector2(10f, tnetLocation.y);
         }
-        else if (!_uperTentacleSmashDown && _tentacleSmashClock >= _warningTime)
+        else if (!_uperTentacleSmashDown && _uperTentacleSmashClock >= _warningTime)
         {
             tnetLocation.y += _tentacleSmashspeed * Time.deltaTime;
             _uperTentacleSmash.transform.position = new Vector2(10f, tnetLocation.y);
@@ -119,33 +122,32 @@ public class BossScript : MonoBehaviour
         if (_uperTentacleSmash.transform.position.y > 55f)
         {
             _tentacleSmashOn = false;
-            _tentacleSmashClock = 0;
+            _uperTentacleSmashClock = 0;
         }
 
     }
     private void TentacleSmashDown()
     {
         Vector2 tnetLocation = new Vector2(10f, _lowerTentacleSmash.transform.position.y);
-        if (_tentacleSmashClock == 0)
+        if (_loweTentacleSmashClock == 0)
         {
-            _uperTentacleSmash.transform.position = new Vector2(10f, 54f);
+           
             _lowerTentacleSmash.transform.position = new Vector2(10f, -23f);
-            _uperTentacleSmashDown = true;
+            
             _lowerTentacleSmashUp = true;
-            _uperBableSmash.transform.position = new Vector2(10f,-12f);
+            _lowerBableSmash.transform.position = new Vector2(10f,-12f);
         }
-        else if (_tentacleSmashClock >= _tentacleSmashTime)
+        else if (_loweTentacleSmashClock >= _tentacleSmashTime)
         {
-            _uperTentacleSmash.transform.position = new Vector2(10f, 54f);
+            
             _lowerTentacleSmash.transform.position = new Vector2(10f, -23f);
-            _tentacleSmashClock = 0;
+            _loweTentacleSmashClock = 0;
             _tentacleSmashDownOn = false;
         }
-        _tentacleSmashClock += Time.deltaTime;
-        Debug.Log(_tentacleSmashClock);
-        if (_tentacleSmashClock >= _warningTime - 0.02f) //buble finisg
+        _loweTentacleSmashClock += Time.deltaTime;
+        if (_loweTentacleSmashClock >= _warningTime - 0.02f) //buble finisg
         {
-            _uperBableSmash.transform.position = new Vector2(10f, 100f);
+            _lowerBableSmash.transform.position = new Vector2(10f, 100f);
         }
 
         if (_lowerTentacleSmash.transform.position.y >= -12f) //revers movment
@@ -153,12 +155,12 @@ public class BossScript : MonoBehaviour
             _lowerTentacleSmashUp = false;
         }
 
-        if (!_lowerTentacleSmashUp && _tentacleSmashClock >= _warningTime)
+        if (!_lowerTentacleSmashUp && _loweTentacleSmashClock >= _warningTime)
         {
             tnetLocation.y -= _tentacleSmashspeed * Time.deltaTime;
             _lowerTentacleSmash.transform.position = new Vector2(10f, tnetLocation.y);
         }
-        else if (_lowerTentacleSmashUp && _tentacleSmashClock >= _warningTime)
+        else if (_lowerTentacleSmashUp && _loweTentacleSmashClock >= _warningTime)
         {
             tnetLocation.y += _tentacleSmashspeed * Time.deltaTime;
             _lowerTentacleSmash.transform.position = new Vector2(10f, tnetLocation.y);
@@ -167,35 +169,21 @@ public class BossScript : MonoBehaviour
         if (_lowerTentacleSmash.transform.position.y < -24f)
         {
             _tentacleSmashDownOn = false;
-            _tentacleSmashClock = 0;
+            _loweTentacleSmashClock = 0;
         }
     }
    
-    private void TentacleSend()
+    private void TentacleSend(int higt)
     {
-        Vector2 tentLocation = new Vector2(_tentacleSend1.transform.position.x, _tentacleSend1.transform.position.y);
-        if (_tentacleSendClock == 0)
-        {
-            _tentacleSend1.transform.position = new Vector2(30, -23);
-        }
-        _tentacleSendClock += Time.deltaTime;
-        Debug.Log(_tentacleSendClock);
-        if (_tentacleSend1.transform.position.y< -12)
-        {
-            tentLocation.y += _tentacleSendspeed * Time.deltaTime;
-            _tentacleSend1.transform.position = tentLocation;
-        }
-        if (_tentacleSendClock > _warningTime1) 
-        {
-            tentLocation.x -= _tentacleSendspeed * Time.deltaTime;
-            _tentacleSend1.transform.position = tentLocation;
-        }
-        if(_tentacleSend1.transform.position.x < -10)
-        {
-            _tentacleSendClock = 0;
-            _tentacleSendOn = false;
-            _tentacleSend1.transform.position = new Vector2(30, -23);
-        }
+        GameObject Ob;
+        Ob = Instantiate(_tentacleSend1);
+        Ob.transform.position = new Vector2(30, -23);
+        sendTentacleScript tent = Ob.GetComponent<sendTentacleScript>();
+        tent._tentacleSendTime = _tentacleSendTime;
+        tent._tentacleSendspeed= _tentacleSendspeed;
+        tent._warningTime1= _warningTime1;
+        tent._isActive= true;
+        tent._attackHight = _attackHight[higt];
     }
     private void TripleTentacle(int lv)
     {
@@ -211,7 +199,6 @@ public class BossScript : MonoBehaviour
 
 
         _tripleTentacleClock[lv] += Time.deltaTime;
-        Debug.Log(_tripleTentacleClock);
         if (_tripleTentacleClock[lv] < _tripleWarningTime && tentLocation.x > 70)
         {
             tentLocation.x -= _tripleWarningSpeed * Time.deltaTime;
@@ -252,7 +239,7 @@ public class BossScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Keypad3))
         {
-            _tentacleSendOn =true;
+            TentacleSend(0);
         }
         if (Input.GetKeyDown(KeyCode.Keypad4))
         {
@@ -279,5 +266,42 @@ public class BossScript : MonoBehaviour
         {
             _TOn[4] = !_TOn[4];
         }
+    }
+    IEnumerator AttackPatern1()
+    {
+        TentacleSend(1);
+        yield return new WaitForSeconds(1.5f);
+        TentacleSend(0);
+        yield return new WaitForSeconds(4f);
+        _tentacleSmashOn = true;
+        yield return new WaitForSeconds(3f);
+        _tentacleSmashOn = true;
+        yield return new WaitForSeconds(2f);
+        _TOn[2] = true;
+        yield return new WaitForSeconds(2f);
+        _TOn[3] = true;
+        yield return new WaitForSeconds(2f);
+        _TOn[3] = true;
+        _TOn[4] = true;
+        yield return new WaitForSeconds(2f);
+        _TOn[1] = true;
+        _TOn[4]=true;
+        _TOn[3]=true;
+        yield return new WaitForSeconds(2f);
+        _TOn[0] = true;
+        _TOn[3] = true;
+        _TOn[4] = true;
+        yield return new WaitForSeconds(2f);
+        _TOn[0] = true;
+        _TOn[1]=true;
+        _TOn[2]=true;
+        _TOn[3] = true;
+        yield return new WaitForSeconds(2f);
+        _tentacleSmashDownOn = true;
+        yield return new WaitForSeconds(3f);
+        _tentacleSmashDownOn = true;
+        yield return new WaitForSeconds(0.7f);
+        _tentacleSmashOn=true;
+
     }
 }
