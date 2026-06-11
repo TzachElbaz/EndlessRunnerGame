@@ -13,7 +13,9 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameObject doubleJump;
     [SerializeField] private GameObject jumpAndRoll;
     [SerializeField] private GameObject rollAndJump;
+    [SerializeField] private GameObject platformJump; // Added platformJump UI element
     [SerializeField] private GameObject startGame;
+    [SerializeField] private Platform platform;
 
     [Header("Timing Settings")]
     [Tooltip("The time window in seconds to complete a combo action.")]
@@ -27,6 +29,9 @@ public class TutorialManager : MonoBehaviour
 
     // This prevents the player from inputting commands during the delay
     private bool isTransitioning = false;
+
+    // Changed to public so your player collision script can change it to true when they land
+    public bool isJumpOnPlatform = false;
 
     void Start()
     {
@@ -97,6 +102,16 @@ public class TutorialManager : MonoBehaviour
                     }
                 }
                 break;
+
+            case 6: // Platform Jump (New Stage)
+                platform.isMooving = true;
+                if (isJumpOnPlatform)
+                {
+                    // Reset to false to prevent it from triggering immediately if used again later
+                    isJumpOnPlatform = false;
+                    AdvanceStage();
+                }
+                break;
         }
     }
 
@@ -132,6 +147,7 @@ public class TutorialManager : MonoBehaviour
         doubleJump.SetActive(false);
         jumpAndRoll.SetActive(false);
         rollAndJump.SetActive(false);
+        platformJump.SetActive(false); // Hide the new UI element
     }
 
     private void UpdateTutorialUI()
@@ -141,8 +157,9 @@ public class TutorialManager : MonoBehaviour
         doubleJump.SetActive(stage == 3);
         jumpAndRoll.SetActive(stage == 4);
         rollAndJump.SetActive(stage == 5);
+        platformJump.SetActive(stage == 6); // Show the new UI element on stage 6
 
-        startGame.SetActive(stage > 5);
+        startGame.SetActive(stage > 6); // Push startGame to stage 7 and beyond
     }
 
     public void OnStartGameClicked()
