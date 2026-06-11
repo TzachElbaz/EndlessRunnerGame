@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cdc37474e665a884db2311224246c3f0
+guid: e349daf7e40fde5408a3f81132abd164
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3304471870264611613
-    second: City Layer 02_0
+      213: 8183104140295078791
+    second: Desert Layer 04_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: City Layer 02_0
+      name: Desert Layer 04_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 512
-        height: 160
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d13946d78a7dbdd20800000000000000
-      internalID: 3304471870264611613
+      spriteID: 78301521cd9309170800000000000000
+      internalID: 8183104140295078791
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      City Layer 02_0: 3304471870264611613
+      Desert Layer 04_0: 8183104140295078791
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
