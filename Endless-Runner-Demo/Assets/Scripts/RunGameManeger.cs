@@ -223,6 +223,7 @@ public class RunGameManeger : MonoBehaviour
 
             }
             
+            
             int randomObstacleEvent = Random.Range(0, 10);
             Ob = _curentObstecl[rund];
             pregen[i] = Ob;
@@ -287,7 +288,10 @@ public class RunGameManeger : MonoBehaviour
 
             }
 
-            
+            if(i>0 && genLength[i] == _jumpChaineLength && _jumpChaineLength == genLength[i - 1])
+            {
+                length += _addLength;
+            }
             genLength[i] = length;
             pursegen[i] = pursePlace;
             coinRangeCount++;

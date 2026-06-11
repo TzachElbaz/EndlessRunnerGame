@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5678149557898784989}
   - component: {fileID: 6973314431180355015}
-  - component: {fileID: 4722154567432336763}
+  - component: {fileID: 1770886487323913204}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -92,28 +92,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!95 &4722154567432336763
-Animator:
-  serializedVersion: 7
+--- !u!111 &1770886487323913204
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100945856312072850}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cdeeeeb52ff9e204992ade668985ec66, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
+  serializedVersion: 4
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
   m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1 &5985990412225251327
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +158,7 @@ MonoBehaviour:
   _so: {fileID: 0}
   _zone: 0
   _sprite: {fileID: 0}
-  _animator: {fileID: 0}
+  _animation: {fileID: 0}
 --- !u!61 &5469787667616171387
 BoxCollider2D:
   m_ObjectHideFlags: 0

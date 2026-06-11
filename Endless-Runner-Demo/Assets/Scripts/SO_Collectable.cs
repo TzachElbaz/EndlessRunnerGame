@@ -6,7 +6,7 @@ public class SO_Collectable : ScriptableObject
     [SerializeField] public int _colectableId;
     [SerializeField] public SCREEN_COL _zone;
     [SerializeField] public Sprite _sprite;
-    [SerializeField] public Animator _animator;
+    [SerializeField] public AnimationClip _animation;
     public enum SCREEN_COL
     {
         FOREST,
