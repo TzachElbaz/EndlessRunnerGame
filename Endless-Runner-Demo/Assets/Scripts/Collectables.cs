@@ -9,7 +9,7 @@ public class Collectables : MonoBehaviour
     [SerializeField] SO_Collectable _so;
     [SerializeField, HideInInspector] public SO_Collectable.SCREEN_COL _zone;
     [SerializeField, HideInInspector] private Sprite _sprite;
-    
+    [SerializeField, HideInInspector] public Animator _animator;
 
 
     private void Awake()
@@ -39,6 +39,7 @@ public class Collectables : MonoBehaviour
         _colectableId = _so._colectableId;
         _zone = _so._zone;
         _sprite = _so._sprite;
+        _animator = _so._animator;
         GetComponentInChildren<SpriteRenderer>().sprite= _sprite;
         
 
