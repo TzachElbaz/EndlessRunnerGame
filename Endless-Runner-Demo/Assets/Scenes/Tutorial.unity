@@ -2166,6 +2166,7 @@ MonoBehaviour:
   _groundCheckColor: {r: 1, g: 0, b: 0, a: 1}
   rollDuration: 0.7
   fastFallVelocity: 45
+  isGrounded: 0
   velocity: {x: 0, y: 0}
   distance: 0
   _collectableSpawnClock: 0
@@ -2302,9 +2303,45 @@ PrefabInstance:
       propertyPath: TManager
       value: 
       objectReference: {fileID: 1938213531}
+    - target: {fileID: 1695795253603577002, guid: cda212be273e85a479dbeb0e38415cbd, type: 3}
+      propertyPath: _groundCheckSize.x
+      value: 7.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695795253603577002, guid: cda212be273e85a479dbeb0e38415cbd, type: 3}
+      propertyPath: _groundCheckSize.y
+      value: 0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695795253603577002, guid: cda212be273e85a479dbeb0e38415cbd, type: 3}
+      propertyPath: _groundCheckColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695795253603577002, guid: cda212be273e85a479dbeb0e38415cbd, type: 3}
+      propertyPath: _groundCheckColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695795253603577002, guid: cda212be273e85a479dbeb0e38415cbd, type: 3}
+      propertyPath: _groundCheckColor.g
+      value: 0.0035750866
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695795253603577002, guid: cda212be273e85a479dbeb0e38415cbd, type: 3}
+      propertyPath: _groundCheckColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695795253603577002, guid: cda212be273e85a479dbeb0e38415cbd, type: 3}
+      propertyPath: _groundCheckDistance
+      value: -1.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695795253603577002, guid: cda212be273e85a479dbeb0e38415cbd, type: 3}
+      propertyPath: _groundLayers.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 4715577967704805345, guid: cda212be273e85a479dbeb0e38415cbd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6708810759327269588, guid: cda212be273e85a479dbeb0e38415cbd, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4023592560831317959, guid: cda212be273e85a479dbeb0e38415cbd, type: 3}
