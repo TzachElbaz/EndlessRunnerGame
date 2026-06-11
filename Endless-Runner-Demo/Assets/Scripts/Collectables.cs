@@ -9,11 +9,13 @@ public class Collectables : MonoBehaviour
     [SerializeField] SO_Collectable _so;
     [SerializeField, HideInInspector] public SO_Collectable.SCREEN_COL _zone;
     [SerializeField, HideInInspector] private Sprite _sprite;
-    [SerializeField, HideInInspector] public AnimationClip _animation;
+    [SerializeField, HideInInspector] public Animator _animation;
+    [SerializeField, HideInInspector] public string _name;
 
 
     private void Awake()
     {
+        _animation = GetComponentInChildren<Animator>();
         _runGameManager = GameObject.FindAnyObjectByType<RunGameManeger>();
         collectables = GameObject.FindAnyObjectByType<CollectablesManager>();
         if(!collectables._isCollectableAvalable) Destroy(gameObject);
@@ -39,8 +41,8 @@ public class Collectables : MonoBehaviour
         _colectableId = _so._colectableId;
         _zone = _so._zone;
         _sprite = _so._sprite;
-        _animation = _so._animation;
-        GetComponentInChildren<SpriteRenderer>().sprite= _sprite;
+        _name = _so._name;
+        _animation.Play(_name);
         
 
         collectables._isCollectableAvalable = false;

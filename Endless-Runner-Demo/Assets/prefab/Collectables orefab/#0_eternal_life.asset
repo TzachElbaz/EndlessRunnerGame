@@ -16,3 +16,4 @@ MonoBehaviour:
   _zone: 1
   _sprite: {fileID: 75288131104147410, guid: eea3ae2a3a3db0345bf83b6855e36636, type: 3}
   _animation: {fileID: 7400000, guid: 2fcc36a5d8df6ed488da13e125ee1bbd, type: 2}
+  _name: desert1

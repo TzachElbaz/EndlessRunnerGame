@@ -2477,7 +2477,7 @@ MonoBehaviour:
   distance: 0
   _collectableSpawnClock: 0
   health: 3
-  _hpOn: 1
+  _hpOn: 0
 --- !u!4 &335309341
 Transform:
   m_ObjectHideFlags: 0

@@ -16,3 +16,4 @@ MonoBehaviour:
   _zone: 0
   _sprite: {fileID: 1389336123374265791, guid: 1eb463e2f40e1b2438431830d6570c97, type: 3}
   _animation: {fileID: 7400000, guid: 8ff381f2c05220e4d81ee3190638e8da, type: 2}
+  _name: DnaTest

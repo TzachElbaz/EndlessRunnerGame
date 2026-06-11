@@ -16,3 +16,4 @@ MonoBehaviour:
   _zone: 0
   _sprite: {fileID: 6696854903130616587, guid: 4a29ec7295dd1424abcd498dfc9e8163, type: 3}
   _animation: {fileID: 7400000, guid: 9319c83319757704195ee2c0c8e94223, type: 2}
+  _name: foot
