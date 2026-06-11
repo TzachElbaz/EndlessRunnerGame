@@ -17,5 +17,9 @@ public class CoinScript : MonoBehaviour
             collectables._coinCount += _coinValue;
             Destroy(gameObject);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

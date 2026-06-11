@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField] public bool _IsObsteclCourse;
+    public OB_TYPE _type = OB_TYPE.OBSTECLE;
     [SerializeField] public float _GenerateDistance;
+    [SerializeField] private float destroy = -30;
     Player player;
     [SerializeField] private float depth = 1;
     public PASS_POINT _passPoint;
+    public GameObject[] _purseList;
+
 
     public enum PASS_POINT
     {
@@ -17,6 +20,13 @@ public class Obstacle : MonoBehaviour
         UP_DOWN,
         MIDDLE_DOWN,
 
+    }
+    public enum OB_TYPE
+    {
+        OBSTECLE,
+        COURSE,
+        COIN,
+        PLATFORM,
     }
     private void Awake()
     {
@@ -38,13 +48,16 @@ public class Obstacle : MonoBehaviour
 
         position.x -= realVelocity * Time.fixedDeltaTime;
 
-        if (position.x < -30 && !_IsObsteclCourse)
+
+
+        if (position.x < destroy)
         {
-            
-            if (!_IsObsteclCourse) Destroy(gameObject);
-            else if(position.x < -60) Destroy(gameObject);
-        } 
-            
+            Destroy(gameObject);
+
+        }
+
+
+
 
         transform.position = position;
     }
@@ -64,6 +77,11 @@ public class Obstacle : MonoBehaviour
         if (transform.position.x > 66) return;
         Destroy(gameObject);
         
+    }
+
+    public void ActivatePurse(int purseNum)
+    {
+        _purseList[purseNum].SetActive(true);
     }
 
     private void OnDrawGizmos()

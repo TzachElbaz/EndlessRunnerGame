@@ -328,10 +328,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df21e853c04fd84289635302620a40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstecl
-  _IsObsteclCourse: 0
+  _type: 1
   _GenerateDistance: 100
   depth: 1
   _passPoint: 0
+  _purseList:
+  - {fileID: 8764814594800341858}
+  - {fileID: 8764814594800341858}
+  - {fileID: 8764814594800341858}
 --- !u!1 &4499763898859638056
 GameObject:
   m_ObjectHideFlags: 0

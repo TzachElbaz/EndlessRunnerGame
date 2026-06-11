@@ -50,6 +50,8 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public int health = 3;
 
+    [Header("debug")]
+    [SerializeField] private bool _hpOn;
 
     private void Awake()
     {
@@ -117,7 +119,7 @@ public class Player : MonoBehaviour
         jumpRemaining -= 1;
         if (jumpRemaining == 0)
             isDoubleJumping = true;
-        
+
         float jumpingForce = jumpRemaining == 1 ? firstJumpForce : doubleJumpForce;
         _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, 0f);
         _rigidbody.AddForce(Vector2.up * jumpingForce, ForceMode2D.Impulse);
@@ -187,9 +189,11 @@ public class Player : MonoBehaviour
     private void EndRolling()
     {
         isRolling = false;
-        _boxCollider.size = standingSize;
-        _boxCollider.offset = standingOffset;
-
+        if (isGrounded)
+        {
+            _boxCollider.size = standingSize;
+            _boxCollider.offset = standingOffset;
+        }
     }
 
     private void SetColliders()
@@ -230,8 +234,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("obstacle"))
         {
             Debug.Log(collision.gameObject.GetComponentInParent<Obstacle>()._passPoint);
-            Destroy(collision.gameObject);
-            if (health >= 1)
+            RunGameManeger.Instance.InvokeClearOnScreenObstacles();
+            if (health >= 1 && _hpOn)
             {
                 health -= 1;
                 OnPlayerHit?.Invoke(health);
