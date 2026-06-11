@@ -22,7 +22,7 @@ public class TutorialManager : MonoBehaviour
     [Tooltip("Delay in seconds before moving to the next instruction.")]
     [SerializeField] private float transitionDelay = 0.5f;
 
-    private float lastSpaceTime = -10f;
+    private float lastUpTime = -10f;
     private float lastDownTime = -10f;
 
     // This prevents the player from inputting commands during the delay
@@ -41,42 +41,42 @@ public class TutorialManager : MonoBehaviour
         switch (stage)
         {
             case 1: // Jump
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
                     AdvanceStage();
                 }
                 break;
 
             case 2: // Roll
-                if (Input.GetKeyDown(KeyCode.DownArrow))
+                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
                 {
                     AdvanceStage();
                 }
                 break;
 
             case 3: // DoubleJump
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
-                    if (Time.time - lastSpaceTime <= comboTimeWindow)
+                    if (Time.time - lastUpTime <= comboTimeWindow)
                     {
                         AdvanceStage();
                     }
                     else
                     {
-                        lastSpaceTime = Time.time;
+                        lastUpTime = Time.time;
                     }
                 }
                 break;
 
             case 4: // Jump-Roll
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
-                    lastSpaceTime = Time.time;
+                    lastUpTime = Time.time;
                 }
 
-                if (Input.GetKeyDown(KeyCode.DownArrow))
+                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
                 {
-                    if (Time.time - lastSpaceTime <= comboTimeWindow)
+                    if (Time.time - lastUpTime <= comboTimeWindow)
                     {
                         AdvanceStage();
                     }
@@ -84,12 +84,12 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             case 5: // Roll-Jump
-                if (Input.GetKeyDown(KeyCode.DownArrow))
+                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
                 {
                     lastDownTime = Time.time;
                 }
 
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
                     if (Time.time - lastDownTime <= 0.6f)
                     {
