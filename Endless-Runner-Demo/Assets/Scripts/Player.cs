@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float rollDuration = .6f;
     [SerializeField] private float fastFallVelocity = 40f;
     private bool isRolling = false;
-    private bool isGrounded;
+    public bool isGrounded;
     private bool isDoubleJumping = false;
     private bool rollOnLand = false;
 
