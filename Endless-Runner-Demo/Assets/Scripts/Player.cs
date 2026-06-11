@@ -234,7 +234,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("obstacle"))
         {
             Debug.Log(collision.gameObject.GetComponentInParent<Obstacle>()._passPoint);
-            RunGameManeger.Instance.InvokeClearOnScreenObstacles();
+            //RunGameManeger.Instance.InvokeClearOnScreenObstacles();
+            Destroy(collision.gameObject);
             if (health >= 1 && _hpOn)
             {
                 health -= 1;

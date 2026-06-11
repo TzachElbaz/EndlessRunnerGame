@@ -712,25 +712,25 @@ MonoBehaviour:
   _obstacleCurseCount: 5
   _curentScreen: 0
   _nextScreen: 0
-  _pregenLength: 20
+  _pregenLength: 200
   _minLength: 30
   _addLength: 12
   pursegen: 
   _jumpChaineLength: 11
   _dropChaineLength: 16
-  _obstecalChainChance: 3
+  _obstecalChainChance: 4
   _obsteclBrakeChance: 1
   _obstaclePause: 0
   _generateAlt: 1
   _velocityLengthAdd: 0
-  _velocityLengthAddThreshhold: 20
-  _coinChens: 1
+  _velocityLengthAddThreshhold: 40
+  _coinChens: 4
   _coinList:
   - {fileID: 5275269377308949381, guid: f5601ae42c7e86f4ca7bde2aa97a049e, type: 3}
   - {fileID: 2803904376587287898, guid: 8385609412f56f8418638d06f92ec138, type: 3}
   - {fileID: 7536886399388741415, guid: f9b1188b04c66334ab52939a7865241c, type: 3}
   - {fileID: 1672266272119882872, guid: 70da2e0b54cc1db47aae7275fe49b79f, type: 3}
-  _coinGenerationRange: {x: 0, y: 0}
+  _coinGenerationRange: {x: 20, y: 25}
 --- !u!114 &84267935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2473,11 +2473,12 @@ MonoBehaviour:
   _groundCheckColor: {r: 1, g: 0, b: 0, a: 1}
   rollDuration: 0.7
   fastFallVelocity: 45
+  isGrounded: 0
   velocity: {x: 0, y: 0}
   distance: 0
   _collectableSpawnClock: 0
   health: 3
-  _hpOn: 0
+  _hpOn: 1
 --- !u!4 &335309341
 Transform:
   m_ObjectHideFlags: 0
