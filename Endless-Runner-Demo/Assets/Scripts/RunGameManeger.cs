@@ -18,6 +18,7 @@ public class RunGameManeger : MonoBehaviour
 
     [SerializeField] private Player _Player;
     [SerializeField] private GameObject _PlayerObject;
+    [SerializeField] private Vector2 _playerSpawn;
 
     [Header("Transition")]
     [SerializeField] private GameObject _forestBackground;
@@ -84,7 +85,27 @@ public class RunGameManeger : MonoBehaviour
     [SerializeField] private GameObject[] _coinList;
     [SerializeField] private Vector2Int _coinGenerationRange;
 
-    
+
+    [Header("kraken")]
+    [SerializeField] private GameObject _kraken;
+    [SerializeField] private Vector2 _krskenSpawn;
+    [SerializeField] private GameObject _tentacleUp;
+    [SerializeField] private Vector2 _tntacleUpSpawn;
+    [SerializeField] private GameObject _tentacleDown;
+    [SerializeField] private Vector2 _tentacleDownSpawn;
+    [SerializeField] private GameObject _bubleUp;
+    [SerializeField] private Vector2 _bubleUpSpawn;
+    [SerializeField] private GameObject _bubleDown;
+    [SerializeField] private Vector2 _bubleDownSpawn;
+    [SerializeField] private GameObject _tripleTentaacle;
+    [SerializeField] private Vector2 _tripleTentaacleSpawn;
+
+    [SerializeField] private Vector2 _playerBossSpawn;
+
+    [SerializeField] private GameObject _krakenTransition;
+    [SerializeField] private GameObject _krakenBubleTransition;
+
+
 
 
 
@@ -117,7 +138,8 @@ public class RunGameManeger : MonoBehaviour
     public enum SCREEN_ENUM
     {
         FOREST,
-        DESERT
+        DESERT,
+        KRAKEN
     }
 
     void Start()
@@ -309,6 +331,9 @@ public class RunGameManeger : MonoBehaviour
 
                 case SCREEN_ENUM.DESERT:
                     DesertTransition();
+                    break;
+                case SCREEN_ENUM.KRAKEN:
+                    KrakenTransition();
                     break;
             }
             
@@ -758,4 +783,24 @@ public class RunGameManeger : MonoBehaviour
     {
         ClearOffScreenObstacles?.Invoke();
     }
+    private void KrakenTransition()
+    {
+        if (_transitionClock == 0)
+        {
+            
+        }
+        if( _transitionClock >= 6)
+        {
+            _krakenTransition.SetActive(true);
+        }
+        if (_transitionClock >= 9)
+        {
+            _krakenTransition.GetComponentInParent<krakenBackgroundTransition>()._continu=true;
+        }
+
+
+
+        _transitionClock += Time.deltaTime;
+    }
+    
 }
