@@ -104,9 +104,10 @@ public class RunGameManeger : MonoBehaviour
 
     [SerializeField] private GameObject _krakenTransition;
     [SerializeField] private GameObject _krakenBubleTransition;
+    [SerializeField] private GameObject _krakenBubleTransition2;
 
 
-
+    private bool test;
 
 
     private void Awake()
@@ -176,6 +177,7 @@ public class RunGameManeger : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+        ControllOveride();
         AddVelocityObsteclDistant();
         TimeKiper();
     }
@@ -337,6 +339,10 @@ public class RunGameManeger : MonoBehaviour
                     break;
             }
             
+        }
+        if (test)
+        {
+            KrakenTransition();
         }
     }
     private bool SpawnCheck()
@@ -789,18 +795,27 @@ public class RunGameManeger : MonoBehaviour
         {
             
         }
-        if( _transitionClock >= 6)
+        if( _transitionClock >= 6 && _transitionClock<6.3)
         {
             _krakenTransition.SetActive(true);
+            _krakenBubleTransition.SetActive(true);
+            _krakenBubleTransition2.SetActive(true);
         }
-        if (_transitionClock >= 9)
+        if (_transitionClock >= 15)
         {
             _krakenTransition.GetComponentInParent<krakenBackgroundTransition>()._continu=true;
+            _transitionClock = 0;
         }
-
+        
 
 
         _transitionClock += Time.deltaTime;
     }
-    
+    private void ControllOveride()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+           test = true;
+        }
+    }
 }

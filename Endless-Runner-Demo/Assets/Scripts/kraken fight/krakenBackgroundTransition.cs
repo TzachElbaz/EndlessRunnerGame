@@ -17,28 +17,28 @@ public class krakenBackgroundTransition : MonoBehaviour
 
     private void Update()
     {
-        float realVelocity = player.velocity.y / depth;
+        float realVelocity = player.velocity.x / depth;
         Vector2 position = transform.position;
 
-       
+        Debug.Log(position.y);
 
-        if (position.y < stop)
+        if (position.y + 2.69 < stop)
         {
-            position.y -= realVelocity * Time.deltaTime;
+            position.y += realVelocity * Time.deltaTime;
             transform.position = position;
         }
         else if (_continu)
         {
-            position.y -= realVelocity * Time.deltaTime;
+            position.y += realVelocity * Time.deltaTime;
             transform.position = position;
         }
-        if (position.y > repose) 
+        if (position.y + 2.69 > repose) 
         {
             position = _startPosition;
             gameObject.SetActive(false);
         }
         //position.y = spawn;
+        Debug.Log(position.y + "k");
 
-       
     }
 }

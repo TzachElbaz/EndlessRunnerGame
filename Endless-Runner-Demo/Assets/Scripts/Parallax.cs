@@ -6,6 +6,7 @@ public class Parallax : MonoBehaviour
     [SerializeField] private float depth = 1;
     [SerializeField] private float destroy = -30;
     [SerializeField] private float spawn = 75;
+    [SerializeField] private bool _yMove= false;
 
     private void Awake()
     {
@@ -17,12 +18,21 @@ public class Parallax : MonoBehaviour
         float realVelocity = player.velocity.x / depth;
         Vector2 position = transform.position;
 
-        position.x -= realVelocity * Time.deltaTime;
+        if (!_yMove)
+        {
+            position.x -= realVelocity * Time.deltaTime;
 
-        if(position.x < destroy)
-            position.x = spawn;
+            if (position.x < destroy)
+                position.x = spawn;
+        }
+        else
+        {
+            position.y += realVelocity * Time.deltaTime;
 
-        transform.position = position;
+            if (position.y > destroy)
+                position.y = spawn;
+        }
+            transform.position = position;
     }
 
 }
