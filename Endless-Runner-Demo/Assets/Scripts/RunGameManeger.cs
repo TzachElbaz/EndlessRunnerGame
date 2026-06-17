@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+using System.Collections;
 using static Obstacle;
 using Random = UnityEngine.Random;
 
@@ -103,8 +103,13 @@ public class RunGameManeger : MonoBehaviour
     [SerializeField] private Vector2 _playerBossSpawn;
 
     [SerializeField] private GameObject _krakenTransition;
+    [SerializeField] private Vector2 _krakenTransitionSpawn;
     [SerializeField] private GameObject _krakenBubleTransition;
     [SerializeField] private GameObject _krakenBubleTransition2;
+    [SerializeField] private GameObject _krakenTentacleTranzition;
+    [SerializeField] private Vector2 _krakenTentacleTranzitionSpawn;
+    [SerializeField] private GameObject[] _krakenWaves;
+    [SerializeField] private Vector2[] _waveSpawn;
 
 
     private bool test;
@@ -340,10 +345,7 @@ public class RunGameManeger : MonoBehaviour
             }
             
         }
-        if (test)
-        {
-            KrakenTransition();
-        }
+      
     }
     private bool SpawnCheck()
     {
@@ -789,24 +791,52 @@ public class RunGameManeger : MonoBehaviour
     {
         ClearOffScreenObstacles?.Invoke();
     }
-    private void KrakenTransition()
+    IEnumerator KrakenTransition()
     {
-        if (_transitionClock == 0)
-        {
-            
-        }
-        if( _transitionClock >= 6 && _transitionClock<6.3)
-        {
-            _krakenTransition.SetActive(true);
-            _krakenBubleTransition.SetActive(true);
-            _krakenBubleTransition2.SetActive(true);
-        }
-        if (_transitionClock >= 15)
-        {
-            _krakenTransition.GetComponentInParent<krakenBackgroundTransition>()._continu=true;
-            _transitionClock = 0;
-        }
-        
+        _krakenWaves[0].SetActive(true);
+        //_krakenWaves[0].transform.localPosition = _waveSpawn[0];
+        _krakenWaves[1].SetActive(true);
+        //_krakenWaves[1].transform.localPosition = _waveSpawn[1];
+        _krakenWaves[2].SetActive(true);
+        //_krakenWaves[2].transform.localPosition = _waveSpawn[2];
+        yield return new WaitForSeconds(3.5f);
+
+        _krakenTentacleTranzition.SetActive(true);
+        _krakenTentacleTranzition.transform.localPosition = _krakenTransitionSpawn;
+
+
+        yield return new WaitForSeconds(10);
+
+        _krakenTransition.SetActive(true);
+        _krakenBubleTransition.SetActive(true);
+        _krakenBubleTransition2.SetActive(true);
+        _Player.transform.position = _playerBossSpawn;
+        _Player._rigidbody.gravityScale = 0;
+
+        _krakenWaves[0].GetComponent<Parallax>()._yMove = true;
+        _krakenWaves[0].GetComponent<Parallax>().depth = 1.5f;
+        _krakenWaves[0].GetComponent<Parallax>().spawn = 4.5f;
+        _krakenWaves[0].GetComponent<Parallax>().destroy = 100;
+
+        _krakenWaves[1].GetComponent<Parallax>()._yMove = true;
+        _krakenWaves[1].GetComponent<Parallax>().depth = 1.5f;
+        _krakenWaves[1].GetComponent<Parallax>().spawn = 4.5f;
+        _krakenWaves[1].GetComponent<Parallax>().destroy = 100;
+
+        _krakenWaves[2].GetComponent<Parallax>()._yMove = true;       
+        _krakenWaves[2].GetComponent<Parallax>().depth = 1.5f;
+        _krakenWaves[2].GetComponent<Parallax>().spawn = 4.5f;
+        _krakenWaves[2].GetComponent<Parallax>().destroy = 100;
+
+        yield return new WaitForSeconds(3);
+        _krakenTransition.GetComponentInParent<krakenBackgroundTransition>()._continu = true;
+        yield return new WaitForSeconds(3);
+        _krakenTransition.SetActive(false);
+        _krakenBubleTransition.SetActive(false);
+        _krakenBubleTransition2.SetActive(false);
+        _Player._rigidbody.gravityScale = 10;
+
+
 
 
         _transitionClock += Time.deltaTime;
@@ -815,7 +845,7 @@ public class RunGameManeger : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-           test = true;
+            StartCoroutine(KrakenTransition());
         }
     }
 }

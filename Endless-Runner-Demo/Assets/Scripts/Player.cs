@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public static event Action<int> OnPlayerHit;
     public static event Action OnPlayerDied;
 
-    private Rigidbody2D _rigidbody;
+    [SerializeField, HideInInspector] public Rigidbody2D _rigidbody;
     private Animator _animation;
     private BoxCollider2D _boxCollider;
 
@@ -243,6 +243,17 @@ public class Player : MonoBehaviour
                     OnPlayerDied?.Invoke();
             }
         }
+    }
+    public void TentacleGrabAnimation()
+    {
+        Debug.Log("boop");
+        _animation.Play("PlayerTentacleGrab");
+    }
+    public void PlayerFallAnimation()
+    {
+        isRolling = false;
+        isGrounded = false;
+        isDoubleJumping = false;
     }
 
 }

@@ -3,14 +3,15 @@ using UnityEngine;
 public class Parallax : MonoBehaviour
 {
     Player player;
-    [SerializeField] private float depth = 1;
-    [SerializeField] private float destroy = -30;
-    [SerializeField] private float spawn = 75;
-    [SerializeField] private bool _yMove= false;
-
+    public float depth = 1;
+    public float destroy = -30;
+    public float spawn = 75;
+    public bool _yMove= false;
+    public Vector2 _startPosition;
     private void Awake()
     {
         player = GameObject.FindAnyObjectByType<Player>();
+        _startPosition = transform.position;
     }
 
     private void Update()
@@ -33,6 +34,10 @@ public class Parallax : MonoBehaviour
                 position.y = spawn;
         }
             transform.position = position;
+    }
+    private void OnDisable()
+    {
+        transform.position = _startPosition;
     }
 
 }

@@ -266,6 +266,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &28481402
 SpriteRenderer:
   serializedVersion: 2
@@ -374,6 +375,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &28807905
 SpriteRenderer:
   serializedVersion: 2
@@ -444,6 +446,7 @@ GameObject:
   - component: {fileID: 37680696}
   - component: {fileID: 37680695}
   - component: {fileID: 37680697}
+  - component: {fileID: 37680698}
   m_Layer: 0
   m_Name: Player Sprite
   m_TagString: Player
@@ -498,7 +501,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 102
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1973195037945353777, guid: 61283686e1cfb5f40b3db000c01fbf88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -547,6 +550,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &37680698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37680694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a407355d490539d42b2bf42740dcce68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::animationcomand
+  _PlayerGrab: 0
+  _DestoyMe: 0
+  _DisableMe: 0
+  _PlayerBossTeleport: 0
 --- !u!1 &59399341
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,10 +765,18 @@ MonoBehaviour:
   _bubleDownSpawn: {x: 10, y: -34}
   _tripleTentaacle: {fileID: 1822123852}
   _tripleTentaacleSpawn: {x: 80, y: 6}
-  _playerBossSpawn: {x: 10, y: 3.5}
+  _playerBossSpawn: {x: 10, y: 50}
   _krakenTransition: {fileID: 1816948769}
+  _krakenTransitionSpawn: {x: 0, y: 0}
   _krakenBubleTransition: {fileID: 359484156}
   _krakenBubleTransition2: {fileID: 868951958}
+  _krakenTentacleTranzition: {fileID: 1112282622}
+  _krakenTentacleTranzitionSpawn: {x: 0, y: 0}
+  _krakenWaves:
+  - {fileID: 1795599361}
+  - {fileID: 1040490567}
+  - {fileID: 534844470}
+  _waveSpawn: []
 --- !u!114 &84267935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1175,6 +1202,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!1 &142118157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,6 +1252,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &142118160
 SpriteRenderer:
   serializedVersion: 2
@@ -1332,6 +1361,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &143112633
 SpriteRenderer:
   serializedVersion: 2
@@ -1656,6 +1686,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &192473661
 SpriteRenderer:
   serializedVersion: 2
@@ -1764,6 +1795,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &219469004
 SpriteRenderer:
   serializedVersion: 2
@@ -1872,6 +1904,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &231788616
 SpriteRenderer:
   serializedVersion: 2
@@ -2168,6 +2201,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &320935131
 SpriteRenderer:
   serializedVersion: 2
@@ -2333,6 +2367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811999d4cbcab184fa5702415c07bda7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  _rigidbody: {fileID: 0}
   firstJumpForce: 45
   doubleJumpForce: 40
   acceleration: 2
@@ -2519,7 +2554,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 103
+  m_SortingOrder: 200
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2794082207958579582, guid: d2742d03b878cd840a70621e99979450, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2547,6 +2582,7 @@ MonoBehaviour:
   destroy: 50
   spawn: -14
   _yMove: 1
+  _startPosition: {x: 0, y: 0}
 --- !u!1 &366300180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,6 +2618,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!61 &366300182
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3167,7 +3204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &534844471
 Transform:
   m_ObjectHideFlags: 0
@@ -3177,7 +3214,7 @@ Transform:
   m_GameObject: {fileID: 534844470}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 210.8626, y: 4.4044, z: 0}
+  m_LocalPosition: {x: 210.8626, y: 4.5, z: 0}
   m_LocalScale: {x: 3.2831228, y: 3.5063508, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3258,6 +3295,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 85
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!1 &538419445
 GameObject:
   m_ObjectHideFlags: 0
@@ -4424,6 +4462,7 @@ MonoBehaviour:
   destroy: 50
   spawn: -14
   _yMove: 1
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &868951961
 SpriteRenderer:
   serializedVersion: 2
@@ -4471,7 +4510,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 103
+  m_SortingOrder: 200
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2794082207958579582, guid: d2742d03b878cd840a70621e99979450, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4623,6 +4662,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &920956765
 SpriteRenderer:
   serializedVersion: 2
@@ -5061,7 +5101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1040490568
 Transform:
   m_ObjectHideFlags: 0
@@ -5071,7 +5111,7 @@ Transform:
   m_GameObject: {fileID: 1040490567}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 148.17259, y: 4.4044, z: 0}
+  m_LocalPosition: {x: 148.17259, y: 4.5, z: 0}
   m_LocalScale: {x: 3.2831228, y: 3.5063508, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5093,6 +5133,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 85
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &1040490570
 SpriteRenderer:
   serializedVersion: 2
@@ -5421,6 +5462,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!1 &1102437235
 GameObject:
   m_ObjectHideFlags: 0
@@ -5470,6 +5512,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &1102437238
 SpriteRenderer:
   serializedVersion: 2
@@ -5578,6 +5621,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &1104745073
 SpriteRenderer:
   serializedVersion: 2
@@ -5648,13 +5692,14 @@ GameObject:
   - component: {fileID: 1112282626}
   - component: {fileID: 1112282625}
   - component: {fileID: 1112282623}
+  - component: {fileID: 1112282627}
   m_Layer: 0
   m_Name: Capsule (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1112282623
 Animator:
   serializedVersion: 7
@@ -5751,6 +5796,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1112282627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112282622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a407355d490539d42b2bf42740dcce68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::animationcomand
+  _PlayerGrab: 0
+  _DestoyMe: 0
+  _DisableMe: 0
+  _PlayerBossTeleport: 0
 --- !u!1 &1159873890
 GameObject:
   m_ObjectHideFlags: 0
@@ -5826,6 +5887,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!61 &1180606759
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5995,6 +6057,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &1201934016
 SpriteRenderer:
   serializedVersion: 2
@@ -6549,6 +6612,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &1379409940
 SpriteRenderer:
   serializedVersion: 2
@@ -6655,7 +6719,6 @@ GameObject:
   - component: {fileID: 1396430970}
   - component: {fileID: 1396430969}
   - component: {fileID: 1396430968}
-  - component: {fileID: 1396430967}
   m_Layer: 0
   m_Name: Capsule (5)
   m_TagString: Untagged
@@ -6663,28 +6726,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1396430967
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1396430966}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0c93a971e62cc1845b641973290bc172, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1396430968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7102,6 +7143,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &1490745096
 SpriteRenderer:
   serializedVersion: 2
@@ -8090,6 +8132,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &1784834744
 SpriteRenderer:
   serializedVersion: 2
@@ -8166,7 +8209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1795599362
 Transform:
   m_ObjectHideFlags: 0
@@ -8176,7 +8219,7 @@ Transform:
   m_GameObject: {fileID: 1795599361}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 85.2, y: 4.4044, z: 0}
+  m_LocalPosition: {x: 85.2, y: 4.5, z: 0}
   m_LocalScale: {x: 3.2831228, y: 3.5063508, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8257,6 +8300,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 85
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!1 &1816948769
 GameObject:
   m_ObjectHideFlags: 0
@@ -8274,7 +8318,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1816948770
 Transform:
   m_ObjectHideFlags: 0
@@ -8284,7 +8328,7 @@ Transform:
   m_GameObject: {fileID: 1816948769}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.93, y: -13.5, z: 0}
+  m_LocalPosition: {x: 21.93, y: -13.31, z: 0}
   m_LocalScale: {x: 3.314, y: 2.966, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8337,7 +8381,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 101
+  m_SortingOrder: 200
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8126605573197925764, guid: 2b9d14cfc4bc4754f8627d16470c0187, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8450,6 +8494,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &1850167115
 SpriteRenderer:
   serializedVersion: 2
@@ -8666,6 +8711,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &1955870116
 SpriteRenderer:
   serializedVersion: 2
@@ -9103,6 +9149,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _startPosition: {x: 0, y: 0}
 --- !u!212 &2055370269
 SpriteRenderer:
   serializedVersion: 2
