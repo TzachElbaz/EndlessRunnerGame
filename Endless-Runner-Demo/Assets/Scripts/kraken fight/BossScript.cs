@@ -12,6 +12,8 @@ public class BossScript : MonoBehaviour
     private bool _tripleTentacleOn;
     private bool _tentacleSendOn;
     [SerializeField] GameObject _tentacle;
+
+    [SerializeField] float _revelSpeed;
    
 
     [Header("Tentacle Smash")]
@@ -50,20 +52,30 @@ public class BossScript : MonoBehaviour
     private bool[] _teltacleStabForward = new bool[5];
     [SerializeField] private bool[] _TOn ;
 
+    private bool IsStartPositioning;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private void Awake()
+    {
+        IsStartPositioning = true;
+    }
     void Start()
     {
         _player = GameObject.FindAnyObjectByType<Player>();
         _runGameManeger = GameObject.FindAnyObjectByType<RunGameManeger>();
         StartCoroutine(AttackPatern1());
     }
+    
 
     // Update is called once per frame
     void Update()
     {
         attackOveride();
         Timekiper();
+        if (IsStartPositioning)
+        {
+            StartPositioning();
+        }
     }
     private void Timekiper()
     {
@@ -303,5 +315,12 @@ public class BossScript : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         _tentacleSmashOn=true;
 
+    }
+
+    private void StartPositioning()
+    {
+        float move = transform.position.x- _revelSpeed* Time.deltaTime;
+        transform.position = new Vector2(move,transform.position.y);
+        if(transform.position.x< 75.1f) IsStartPositioning = false;
     }
 }

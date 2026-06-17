@@ -1,8 +1,9 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 using static Obstacle;
+using static UnityEngine.Rendering.DebugUI;
 using Random = UnityEngine.Random;
 
 public class RunGameManeger : MonoBehaviour
@@ -793,6 +794,11 @@ public class RunGameManeger : MonoBehaviour
     }
     IEnumerator KrakenTransition()
     {
+        _forestTransitionList[1].SetActive(true);
+        yield return new WaitForSeconds(_transitionSwitch);
+        _forestTransitionList[2].SetActive(true);
+        yield return new WaitForSeconds(3f);
+        _Player.GetComponentInChildren<SpriteRenderer>().sortingOrder = 102;
         _krakenWaves[0].SetActive(true);
         //_krakenWaves[0].transform.localPosition = _waveSpawn[0];
         _krakenWaves[1].SetActive(true);
@@ -805,36 +811,45 @@ public class RunGameManeger : MonoBehaviour
         _krakenTentacleTranzition.transform.localPosition = _krakenTransitionSpawn;
 
 
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(8);
 
         _krakenTransition.SetActive(true);
         _krakenBubleTransition.SetActive(true);
         _krakenBubleTransition2.SetActive(true);
         _Player.transform.position = _playerBossSpawn;
         _Player._rigidbody.gravityScale = 0;
+        for (int i = 0; i < 3; i++)
+        {
+            _krakenWaves[i].GetComponent<Parallax>()._yMove = true;
+            _krakenWaves[i].GetComponent<Parallax>().depth = 1.5f;
+            _krakenWaves[i].GetComponent<Parallax>().spawn = 4.5f;
+            _krakenWaves[i].GetComponent<Parallax>().destroy = 100;
+        }
 
-        _krakenWaves[0].GetComponent<Parallax>()._yMove = true;
-        _krakenWaves[0].GetComponent<Parallax>().depth = 1.5f;
-        _krakenWaves[0].GetComponent<Parallax>().spawn = 4.5f;
-        _krakenWaves[0].GetComponent<Parallax>().destroy = 100;
-
-        _krakenWaves[1].GetComponent<Parallax>()._yMove = true;
-        _krakenWaves[1].GetComponent<Parallax>().depth = 1.5f;
-        _krakenWaves[1].GetComponent<Parallax>().spawn = 4.5f;
-        _krakenWaves[1].GetComponent<Parallax>().destroy = 100;
-
-        _krakenWaves[2].GetComponent<Parallax>()._yMove = true;       
-        _krakenWaves[2].GetComponent<Parallax>().depth = 1.5f;
-        _krakenWaves[2].GetComponent<Parallax>().spawn = 4.5f;
-        _krakenWaves[2].GetComponent<Parallax>().destroy = 100;
-
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
+        _forestTransitionList[1].SetActive(false);
+        _forestTransitionList[2].SetActive(false);
         _krakenTransition.GetComponentInParent<krakenBackgroundTransition>()._continu = true;
-        yield return new WaitForSeconds(3);
+        for (int i = 0; i < 3; i++)
+        {
+            _krakenWaves[i].SetActive(false);
+        }
+        yield return new WaitForSeconds(2);
+        _krakenBubleTransition.GetComponent<Parallax>().destroy = 500;
+        _krakenBubleTransition2.GetComponent<Parallax>().destroy = 500;
+        yield return new WaitForSeconds(1);
         _krakenTransition.SetActive(false);
+       
+
+        _Player.GetComponentInChildren<SpriteRenderer>().sortingOrder = 11;
+        _Player._rigidbody.gravityScale = 10;
+        yield return new WaitForSeconds(4);
         _krakenBubleTransition.SetActive(false);
         _krakenBubleTransition2.SetActive(false);
-        _Player._rigidbody.gravityScale = 10;
+        _krakenBubleTransition.GetComponent<Parallax>().destroy = 50;
+        _krakenBubleTransition2.GetComponent<Parallax>().destroy = 50;
+        _kraken.transform.position = _krskenSpawn;
+        _kraken.SetActive(true);
 
 
 
