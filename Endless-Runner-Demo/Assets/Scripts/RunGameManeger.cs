@@ -26,6 +26,7 @@ public class RunGameManeger : MonoBehaviour
     [SerializeField] private GameObject[] _forestTransitionList;
     [SerializeField] private GameObject _desertBackground;
     [SerializeField] private GameObject[] _desertTransitionList;
+    [SerializeField] private GameObject _krakenBackground;
     [SerializeField] private float _transitionTime;
     [SerializeField] private float _transitionSwitch;
     private float _transitionClock;
@@ -112,6 +113,8 @@ public class RunGameManeger : MonoBehaviour
     [SerializeField] private GameObject[] _krakenWaves;
     [SerializeField] private Vector2[] _waveSpawn;
 
+    
+
 
     private bool test;
 
@@ -160,8 +163,7 @@ public class RunGameManeger : MonoBehaviour
         listCount = 0;
         _pregenEmpty = true;
         pregen[pregen.Length - 1] = _curentObstecl[0];
-
-
+        CangeErea();
     }
 
 
@@ -345,7 +347,8 @@ public class RunGameManeger : MonoBehaviour
                     DesertTransition();
                     break;
                 case SCREEN_ENUM.KRAKEN:
-                    KrakenTransition();
+                    _transitioning = false;
+                    StartCoroutine(KrakenTransition());
                     break;
             }
             
@@ -697,6 +700,9 @@ public class RunGameManeger : MonoBehaviour
             case SCREEN_ENUM.DESERT:
                 _desertBackground.SetActive(false);
                 break;
+            case SCREEN_ENUM.KRAKEN:
+                _krakenBackground.SetActive(false);
+                break;
 
         }
         _curentScreen = _nextScreen;
@@ -709,6 +715,9 @@ public class RunGameManeger : MonoBehaviour
                 break;
             case SCREEN_ENUM.DESERT:
                 _desertBackground.SetActive(true);
+                break;
+            case SCREEN_ENUM.KRAKEN:
+                _krakenBackground.SetActive(true);
                 break;
 
         }
@@ -831,6 +840,7 @@ public class RunGameManeger : MonoBehaviour
         }
 
         yield return new WaitForSeconds(4);
+        CangeErea();
         _forestTransitionList[1].SetActive(false);
         _forestTransitionList[2].SetActive(false);
         _krakenTransition.GetComponentInParent<krakenBackgroundTransition>()._continu = true;
@@ -847,7 +857,7 @@ public class RunGameManeger : MonoBehaviour
 
         _Player.GetComponentInChildren<SpriteRenderer>().sortingOrder = 11;
         _Player._rigidbody.gravityScale = 10;
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
         _krakenBubleTransition.SetActive(false);
         _krakenBubleTransition2.SetActive(false);
         _krakenBubleTransition.GetComponent<Parallax>().destroy = 50;
@@ -858,13 +868,17 @@ public class RunGameManeger : MonoBehaviour
 
 
 
-        _transitionClock += Time.deltaTime;
+        
     }
     private void ControllOveride()
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
             StartCoroutine(KrakenTransition());
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            InvokeCangeErea();
         }
     }
 }
