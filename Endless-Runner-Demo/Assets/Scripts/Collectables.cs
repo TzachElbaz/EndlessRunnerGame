@@ -9,23 +9,27 @@ public class Collectables : MonoBehaviour
     [SerializeField] SO_Collectable _so;
     [SerializeField, HideInInspector] public SO_Collectable.SCREEN_COL _zone;
     [SerializeField, HideInInspector] private Sprite _sprite;
-    
+    [SerializeField, HideInInspector] public Animator _animation;
+    [SerializeField, HideInInspector] public string _name;
 
 
     private void Awake()
     {
+        _animation = GetComponentInChildren<Animator>();
         _runGameManager = GameObject.FindAnyObjectByType<RunGameManeger>();
         collectables = GameObject.FindAnyObjectByType<CollectablesManager>();
         if(!collectables._isCollectableAvalable) Destroy(gameObject);
-        int random = Random.Range(0,4);
-        while (collectables._colectableList[random])
-        {
-            random++;
-            if(random >= collectables._colectableList.Length)
-            {
-                random = 0;
-            }
-        }
+        //int random = Random.Range(0,4);
+        //while (collectables._colectableList[random])
+        //{
+        //    random++;
+        //    if(random >= collectables._colectableList.Length)
+        //    {
+        //        random = 0;
+        //    }
+        //}
+        int random = 0;
+        while (collectables._colectableList[random] && random < collectables._colectableList.Length) random++;
         switch (_runGameManager._curentScreen)
         {
             case RunGameManeger.SCREEN_ENUM.FOREST:
@@ -39,7 +43,8 @@ public class Collectables : MonoBehaviour
         _colectableId = _so._colectableId;
         _zone = _so._zone;
         _sprite = _so._sprite;
-        GetComponentInChildren<SpriteRenderer>().sprite= _sprite;
+        _name = _so._name;
+        _animation.Play(_name);
         
 
         collectables._isCollectableAvalable = false;

@@ -1,0 +1,452 @@
+fileFormatVersion: 2
+guid: d2742d03b878cd840a70621e99979450
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2794082207958579582
+    second: buble transition_0
+  - first:
+      213: -3969658746291015647
+    second: buble transition_1
+  - first:
+      213: -1411832123872944466
+    second: buble transition_2
+  - first:
+      213: -5048056620421573656
+    second: buble transition_3
+  - first:
+      213: -5770446769696393312
+    second: buble transition_4
+  - first:
+      213: 5223245125078779503
+    second: buble transition_5
+  - first:
+      213: 3314362034038083364
+    second: buble transition_6
+  - first:
+      213: 180904267867966868
+    second: buble transition_7
+  - first:
+      213: 6609052345682230818
+    second: buble transition_8
+  - first:
+      213: 252137752435972331
+    second: buble transition_9
+  - first:
+      213: -506787418756525882
+    second: buble transition_10
+  - first:
+      213: -6464567430614493151
+    second: buble transition_11
+  - first:
+      213: -700853095015979328
+    second: buble transition_12
+  - first:
+      213: 2555274017736995940
+    second: buble transition_13
+  - first:
+      213: -2473501248698082031
+    second: buble transition_14
+  - first:
+      213: -5563499857759261276
+    second: buble transition_15
+  - first:
+      213: -2883580789731191154
+    second: buble transition_16
+  - first:
+      213: 1467925587684007603
+    second: buble transition_17
+  - first:
+      213: 7099924012182713637
+    second: buble transition_18
+  - first:
+      213: -7901188917455792424
+    second: buble transition_19
+  - first:
+      213: 3549260660501654347
+    second: buble transition_20
+  - first:
+      213: -8497684072112140826
+    second: buble transition_21
+  - first:
+      213: 275551575889760574
+    second: buble transition_22
+  - first:
+      213: -3414356628377441229
+    second: buble transition_23
+  - first:
+      213: 7317781812450536329
+    second: buble transition_24
+  - first:
+      213: -5406467019490579961
+    second: buble transition_25
+  - first:
+      213: -6624620490346631603
+    second: buble transition_26
+  - first:
+      213: -8897974169987257266
+    second: buble transition_27
+  - first:
+      213: 8991034204808911189
+    second: buble transition_28
+  - first:
+      213: -2432152610265161842
+    second: buble transition_29
+  - first:
+      213: 2881965728746977765
+    second: buble transition_30
+  - first:
+      213: -5492602002596519260
+    second: buble transition_31
+  - first:
+      213: -3899502182388096379
+    second: buble transition_32
+  - first:
+      213: -8982886008184538022
+    second: buble transition_33
+  - first:
+      213: 426087046108475264
+    second: buble transition_34
+  - first:
+      213: -3723059428095425005
+    second: buble transition_35
+  - first:
+      213: 6975044940539816479
+    second: buble transition_36
+  - first:
+      213: 4551290821244981097
+    second: buble transition_37
+  - first:
+      213: -60909926342014645
+    second: buble transition_38
+  - first:
+      213: 293132904957401781
+    second: buble transition_39
+  - first:
+      213: 4793406741343980877
+    second: buble transition_40
+  - first:
+      213: 8732829767546518724
+    second: buble transition_41
+  - first:
+      213: 5861365599836199334
+    second: buble transition_42
+  - first:
+      213: 1532323327522767895
+    second: buble transition_43
+  - first:
+      213: -5617199797986870430
+    second: buble transition_44
+  - first:
+      213: 7302494307091621145
+    second: buble transition_45
+  - first:
+      213: 425677977302430540
+    second: buble transition_46
+  - first:
+      213: -1782210619682053423
+    second: buble transition_47
+  - first:
+      213: 7184778617700706836
+    second: buble transition_48
+  - first:
+      213: 2563537026447680898
+    second: buble transition_49
+  - first:
+      213: 4392543890299825816
+    second: buble transition_50
+  - first:
+      213: -6700237213251833782
+    second: buble transition_51
+  - first:
+      213: 8643936103317531116
+    second: buble transition_52
+  - first:
+      213: 9001057757309923045
+    second: buble transition_53
+  - first:
+      213: 1861131065039505442
+    second: buble transition_54
+  - first:
+      213: 1433947880569516820
+    second: buble transition_55
+  - first:
+      213: -1211982406800645289
+    second: buble transition_56
+  - first:
+      213: 5643551158638125187
+    second: buble transition_57
+  - first:
+      213: -3149404006098817934
+    second: buble transition_58
+  - first:
+      213: -7162433355096146600
+    second: buble transition_59
+  - first:
+      213: 2386195921183312526
+    second: buble transition_60
+  - first:
+      213: -1090759629240169086
+    second: buble transition_61
+  - first:
+      213: 7613851332638096416
+    second: buble transition_62
+  - first:
+      213: 4853626612259867835
+    second: buble transition_63
+  - first:
+      213: -6664277534139063287
+    second: buble transition_64
+  - first:
+      213: 1527917583627126871
+    second: buble transition_65
+  - first:
+      213: 2549791546796979566
+    second: buble transition_66
+  - first:
+      213: -5378070379414077716
+    second: buble transition_67
+  - first:
+      213: 7052530198290663528
+    second: buble transition_68
+  - first:
+      213: 2136414213341194712
+    second: buble transition_69
+  - first:
+      213: 822722227246245686
+    second: buble transition_70
+  - first:
+      213: 3280624524727482232
+    second: buble transition_71
+  - first:
+      213: 2767877842060009836
+    second: buble transition_72
+  - first:
+      213: 8496703966242640967
+    second: buble transition_73
+  - first:
+      213: 6603030535706626940
+    second: buble transition_74
+  - first:
+      213: -7288864908307105367
+    second: buble transition_75
+  - first:
+      213: -3484158480677278622
+    second: buble transition_76
+  - first:
+      213: 8975676805555326726
+    second: buble transition_77
+  - first:
+      213: -1926933105367217531
+    second: buble transition_78
+  - first:
+      213: -3173580711858547235
+    second: buble transition_79
+  - first:
+      213: 6584280400092954278
+    second: buble transition_80
+  - first:
+      213: -8229063593346766920
+    second: buble transition_81
+  - first:
+      213: -8131801621574805415
+    second: buble transition_82
+  - first:
+      213: -179216054451846344
+    second: buble transition_83
+  - first:
+      213: -2079769304096775787
+    second: buble transition_84
+  - first:
+      213: -358725957832443331
+    second: buble transition_85
+  - first:
+      213: 8103092489664611826
+    second: buble transition_86
+  - first:
+      213: -3509723629794452542
+    second: buble transition_87
+  - first:
+      213: 3722093375990390057
+    second: buble transition_88
+  - first:
+      213: 8139970457515000617
+    second: buble transition_89
+  - first:
+      213: 4221059495780569858
+    second: buble transition_90
+  - first:
+      213: -1059562907272938836
+    second: buble transition_91
+  - first:
+      213: -4690449646124823995
+    second: buble transition_92
+  - first:
+      213: 5866216651644036057
+    second: buble transition_93
+  - first:
+      213: -7166548741261309833
+    second: buble transition_94
+  - first:
+      213: -5157369771072140283
+    second: buble transition_95
+  - first:
+      213: -867223751269951363
+    second: buble transition_96
+  - first:
+      213: -8047272453666303783
+    second: buble transition_97
+  - first:
+      213: -7787691053956965817
+    second: buble transition_98
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: buble transition_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e793c96e6f296c620800000000000000
+      internalID: 2794082207958579582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 95720710363b27748b3fcac5de26bfee
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1920.0,"y":1080.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      buble transition_0: 2794082207958579582
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

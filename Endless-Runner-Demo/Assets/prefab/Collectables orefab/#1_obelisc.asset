@@ -15,3 +15,5 @@ MonoBehaviour:
   _colectableId: 1
   _zone: 1
   _sprite: {fileID: 2241445810119581475, guid: e0a3be12b351cc548b4c80ca7d506170, type: 3}
+  _animation: {fileID: 7400000, guid: 2df1b1d5771a9a54daf0e67dd0991fe5, type: 2}
+  _name: desert2
