@@ -1,25 +1,16 @@
 fileFormatVersion: 2
-guid: 61283686e1cfb5f40b3db000c01fbf88
+guid: bfdf6514739a458428984a7a2d28de73
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1973195037945353777
-    second: running mobile sprite_0
+      213: -6844633275777678374
+    second: held platform (1)_0
   - first:
-      213: -4297609950856245720
-    second: running mobile sprite_1
+      213: 6622200962644566332
+    second: held platform (1)_1
   - first:
-      213: -6524239579438478388
-    second: running mobile sprite_2
-  - first:
-      213: 8144023023098295620
-    second: running mobile sprite_3
-  - first:
-      213: 7663377266459979160
-    second: running mobile sprite_4
-  - first:
-      213: -2720029789576798220
-    second: running mobile sprite_5
+      213: -9123553997170817168
+    second: held platform (1)_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 60
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -128,133 +119,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: running mobile sprite_0
+      name: held platform (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fc924b2419dcd94e0800000000000000
-      internalID: -1973195037945353777
+      spriteID: ad30473dc4af201a0800000000000000
+      internalID: -6844633275777678374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running mobile sprite_1
+      name: held platform (1)_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 82e8708f482db54c0800000000000000
-      internalID: -4297609950856245720
+      spriteID: c31eda980b8c6eb50800000000000000
+      internalID: 6622200962644566332
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running mobile sprite_2
+      name: held platform (1)_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 64
+        width: 128
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ccb860e5bae3575a0800000000000000
-      internalID: -6524239579438478388
+      spriteID: 077c98d6aff926180800000000000000
+      internalID: -9123553997170817168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running mobile sprite_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 44570666ac1650170800000000000000
-      internalID: 8144023023098295620
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: running mobile sprite_4
+      name: held platform (1)_4
       rect:
         serializedVersion: 2
         x: 256
         y: 0
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 89da6238509c95a60800000000000000
-      internalID: 7663377266459979160
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: running mobile sprite_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4ff5bc55153804ad0800000000000000
-      internalID: -2720029789576798220
+      spriteID: 153b7736bf238d04cb21aa8e9effb06b
+      internalID: -1665394813
       vertices: []
       indices: 
       edges: []
@@ -263,7 +210,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 81abef63c2a5f7642a10bb4731eaa2bd
+    spriteID: 1b4ec30bb007c6946a7c5bbcfe90ee76
     internalID: 0
     vertices: []
     indices: 
@@ -273,14 +220,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      running mobile sprite_0: -1973195037945353777
-      running mobile sprite_1: -4297609950856245720
-      running mobile sprite_2: -6524239579438478388
-      running mobile sprite_3: 8144023023098295620
-      running mobile sprite_4: 7663377266459979160
-      running mobile sprite_5: -2720029789576798220
+      held platform (1)_0: -6844633275777678374
+      held platform (1)_1: 6622200962644566332
+      held platform (1)_2: -9123553997170817168
+      held platform (1)_3: -1653180431
+      held platform (1)_4: -1665394813
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

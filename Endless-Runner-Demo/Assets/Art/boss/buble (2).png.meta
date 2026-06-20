@@ -1,0 +1,675 @@
+fileFormatVersion: 2
+guid: 6f798b9ef1c37bf4d8473168d755a04a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5337138312292540493
+    second: buble (2)_0
+  - first:
+      213: -8494284701023318083
+    second: buble (2)_1
+  - first:
+      213: -2327103619078572453
+    second: buble (2)_2
+  - first:
+      213: 1234214992235804598
+    second: buble (2)_3
+  - first:
+      213: -747702892554480484
+    second: buble (2)_4
+  - first:
+      213: 7080540184121351971
+    second: buble (2)_5
+  - first:
+      213: -7859408606318644606
+    second: buble (2)_6
+  - first:
+      213: -8519944374393415516
+    second: buble (2)_7
+  - first:
+      213: 3871145016562530961
+    second: buble (2)_8
+  - first:
+      213: -4674917870613043477
+    second: buble (2)_9
+  - first:
+      213: -5972518353395346387
+    second: buble (2)_10
+  - first:
+      213: -7279462473124346375
+    second: buble (2)_11
+  - first:
+      213: -7714729695377609029
+    second: buble (2)_12
+  - first:
+      213: -7838847873510958069
+    second: buble (2)_13
+  - first:
+      213: -757900480785584115
+    second: buble (2)_14
+  - first:
+      213: -7451742992658307070
+    second: buble (2)_15
+  - first:
+      213: -6192309451273249711
+    second: buble (2)_16
+  - first:
+      213: -1927566131232114850
+    second: buble (2)_17
+  - first:
+      213: -248597302805020715
+    second: buble (2)_18
+  - first:
+      213: -5199769466518700155
+    second: buble (2)_19
+  - first:
+      213: -6271002319881722907
+    second: buble (2)_20
+  - first:
+      213: -9155585294951602895
+    second: buble (2)_21
+  - first:
+      213: 6446442515634800043
+    second: buble (2)_22
+  - first:
+      213: 4932069640803245438
+    second: buble (2)_23
+  - first:
+      213: -7624404642267684239
+    second: buble (2)_24
+  - first:
+      213: 1683215948954112473
+    second: buble (2)_25
+  - first:
+      213: 6232251933671673398
+    second: buble (2)_26
+  - first:
+      213: -2244391695080607060
+    second: buble (2)_27
+  - first:
+      213: -2773347004127645701
+    second: buble (2)_28
+  - first:
+      213: -9186840711954610133
+    second: buble (2)_29
+  - first:
+      213: -7778676907050439383
+    second: buble (2)_30
+  - first:
+      213: 1543796058522600555
+    second: buble (2)_31
+  - first:
+      213: 8708243675931299705
+    second: buble (2)_32
+  - first:
+      213: -6588111548778184594
+    second: buble (2)_33
+  - first:
+      213: -5630920256393191963
+    second: buble (2)_34
+  - first:
+      213: -1717723383821755976
+    second: buble (2)_35
+  - first:
+      213: -9219685319517620423
+    second: buble (2)_36
+  - first:
+      213: -5040989622952450832
+    second: buble (2)_37
+  - first:
+      213: 907768529957245888
+    second: buble (2)_38
+  - first:
+      213: -9108195883639058811
+    second: buble (2)_39
+  - first:
+      213: 1974889550502109825
+    second: buble (2)_40
+  - first:
+      213: 2100036458717365668
+    second: buble (2)_41
+  - first:
+      213: -7719688403259388067
+    second: buble (2)_42
+  - first:
+      213: -6974534288994072885
+    second: buble (2)_43
+  - first:
+      213: 1143656971421783267
+    second: buble (2)_44
+  - first:
+      213: -7832098214913695504
+    second: buble (2)_45
+  - first:
+      213: 2785185259129108508
+    second: buble (2)_46
+  - first:
+      213: 7559116308668137779
+    second: buble (2)_47
+  - first:
+      213: 6224594982753334561
+    second: buble (2)_48
+  - first:
+      213: -1243857121650904570
+    second: buble (2)_49
+  - first:
+      213: 6008762591630029485
+    second: buble (2)_50
+  - first:
+      213: 5189585910064167373
+    second: buble (2)_51
+  - first:
+      213: -7623737179401680516
+    second: buble (2)_52
+  - first:
+      213: 2847257909656658944
+    second: buble (2)_53
+  - first:
+      213: -7638500282578110751
+    second: buble (2)_54
+  - first:
+      213: -8689903763755534598
+    second: buble (2)_55
+  - first:
+      213: -5646071761851491874
+    second: buble (2)_56
+  - first:
+      213: 4845059220334355552
+    second: buble (2)_57
+  - first:
+      213: 3038201090012587656
+    second: buble (2)_58
+  - first:
+      213: 4133981940985045075
+    second: buble (2)_59
+  - first:
+      213: -3783599214984984643
+    second: buble (2)_60
+  - first:
+      213: -572805942657018718
+    second: buble (2)_61
+  - first:
+      213: 3168423478058370772
+    second: buble (2)_62
+  - first:
+      213: -1858868457558590588
+    second: buble (2)_63
+  - first:
+      213: -2918079255727129044
+    second: buble (2)_64
+  - first:
+      213: 2648940338873543614
+    second: buble (2)_65
+  - first:
+      213: 2758072364457312389
+    second: buble (2)_66
+  - first:
+      213: -3173543898339696534
+    second: buble (2)_67
+  - first:
+      213: 8985509973532854902
+    second: buble (2)_68
+  - first:
+      213: -3783856984047089599
+    second: buble (2)_69
+  - first:
+      213: -8773639546320457173
+    second: buble (2)_70
+  - first:
+      213: 4723538555840254824
+    second: buble (2)_71
+  - first:
+      213: -3044434505093320910
+    second: buble (2)_72
+  - first:
+      213: -8719539223641082432
+    second: buble (2)_73
+  - first:
+      213: 5799469040701908319
+    second: buble (2)_74
+  - first:
+      213: -7566758090105916822
+    second: buble (2)_75
+  - first:
+      213: 2152517581011477279
+    second: buble (2)_76
+  - first:
+      213: -2404972859278452866
+    second: buble (2)_77
+  - first:
+      213: 7040942610968798774
+    second: buble (2)_78
+  - first:
+      213: 6737600182312540216
+    second: buble (2)_79
+  - first:
+      213: -756420201347406593
+    second: buble (2)_80
+  - first:
+      213: 7801145114395197015
+    second: buble (2)_81
+  - first:
+      213: -1550828967264181020
+    second: buble (2)_82
+  - first:
+      213: -9118200631611451575
+    second: buble (2)_83
+  - first:
+      213: 3900115736916904666
+    second: buble (2)_84
+  - first:
+      213: -3331339341175935849
+    second: buble (2)_85
+  - first:
+      213: 1774200913878981994
+    second: buble (2)_86
+  - first:
+      213: -8748785184902630648
+    second: buble (2)_87
+  - first:
+      213: 313500004085853166
+    second: buble (2)_88
+  - first:
+      213: 7635761315910970848
+    second: buble (2)_89
+  - first:
+      213: 6303399980702481614
+    second: buble (2)_90
+  - first:
+      213: -9024433765320048879
+    second: buble (2)_91
+  - first:
+      213: -226058707518873589
+    second: buble (2)_92
+  - first:
+      213: 7734838503975253798
+    second: buble (2)_93
+  - first:
+      213: 7667199233469718576
+    second: buble (2)_94
+  - first:
+      213: -999229601955309946
+    second: buble (2)_95
+  - first:
+      213: 3670428380822709539
+    second: buble (2)_96
+  - first:
+      213: -2240292085784982
+    second: buble (2)_97
+  - first:
+      213: 745323698575887952
+    second: buble (2)_98
+  - first:
+      213: -7376214361338281804
+    second: buble (2)_99
+  - first:
+      213: 8238224703301276128
+    second: buble (2)_100
+  - first:
+      213: 1810582153816940742
+    second: buble (2)_101
+  - first:
+      213: -3632009154368755459
+    second: buble (2)_102
+  - first:
+      213: 6117543329901742372
+    second: buble (2)_103
+  - first:
+      213: -776664813544342071
+    second: buble (2)_104
+  - first:
+      213: 3647365712896873476
+    second: buble (2)_105
+  - first:
+      213: -8130153469298889851
+    second: buble (2)_106
+  - first:
+      213: 9144538991502957631
+    second: buble (2)_107
+  - first:
+      213: 161612407597208106
+    second: buble (2)_108
+  - first:
+      213: 2459268138978346884
+    second: buble (2)_109
+  - first:
+      213: 4775790488087747966
+    second: buble (2)_110
+  - first:
+      213: 6138567431848902035
+    second: buble (2)_111
+  - first:
+      213: -6073839758824368303
+    second: buble (2)_112
+  - first:
+      213: 5188741189417722682
+    second: buble (2)_113
+  - first:
+      213: 2810989038820600533
+    second: buble (2)_114
+  - first:
+      213: -8840987969343453774
+    second: buble (2)_115
+  - first:
+      213: 2584898247260700586
+    second: buble (2)_116
+  - first:
+      213: -2939813026969589997
+    second: buble (2)_117
+  - first:
+      213: -9072831151617200477
+    second: buble (2)_118
+  - first:
+      213: 7026991078494698620
+    second: buble (2)_119
+  - first:
+      213: 1661807817589686380
+    second: buble (2)_120
+  - first:
+      213: 4123379825309700026
+    second: buble (2)_121
+  - first:
+      213: -5741694209068896168
+    second: buble (2)_122
+  - first:
+      213: 7380554368557909935
+    second: buble (2)_123
+  - first:
+      213: -2690406420931859178
+    second: buble (2)_124
+  - first:
+      213: 2844604608911862897
+    second: buble (2)_125
+  - first:
+      213: -8724351364166152846
+    second: buble (2)_126
+  - first:
+      213: 1689153453442215559
+    second: buble (2)_127
+  - first:
+      213: 1396381615807929541
+    second: buble (2)_128
+  - first:
+      213: -2196337864841560209
+    second: buble (2)_129
+  - first:
+      213: -478101051616418126
+    second: buble (2)_130
+  - first:
+      213: 1505814819796329260
+    second: buble (2)_131
+  - first:
+      213: 3848957327889433461
+    second: buble (2)_132
+  - first:
+      213: 2273577558020343425
+    second: buble (2)_133
+  - first:
+      213: 2954419146638654015
+    second: buble (2)_134
+  - first:
+      213: -8330345629241071779
+    second: buble (2)_135
+  - first:
+      213: -4858774373139486915
+    second: buble (2)_136
+  - first:
+      213: -3027344874960061537
+    second: buble (2)_137
+  - first:
+      213: -7491885512604998844
+    second: buble (2)_138
+  - first:
+      213: -2790140694910655792
+    second: buble (2)_139
+  - first:
+      213: 6911344471485383719
+    second: buble (2)_140
+  - first:
+      213: 8845824735845994617
+    second: buble (2)_141
+  - first:
+      213: -1612979974148998698
+    second: buble (2)_142
+  - first:
+      213: 5410027617256903784
+    second: buble (2)_143
+  - first:
+      213: 8721118545530701243
+    second: buble (2)_144
+  - first:
+      213: 1428367467209093477
+    second: buble (2)_145
+  - first:
+      213: -6234619536326188887
+    second: buble (2)_146
+  - first:
+      213: 8655910038900445239
+    second: buble (2)_147
+  - first:
+      213: 6293170434205398335
+    second: buble (2)_148
+  - first:
+      213: 8531968518352882775
+    second: buble (2)_149
+  - first:
+      213: 7612069369448037863
+    second: buble (2)_150
+  - first:
+      213: 6829551976834467114
+    second: buble (2)_151
+  - first:
+      213: -6898540739706124323
+    second: buble (2)_152
+  - first:
+      213: -8538692567890722555
+    second: buble (2)_153
+  - first:
+      213: 7533054871093632598
+    second: buble (2)_154
+  - first:
+      213: 8825708993867782849
+    second: buble (2)_155
+  - first:
+      213: 94706204367791890
+    second: buble (2)_156
+  - first:
+      213: 1693578315242990206
+    second: buble (2)_157
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: buble (2)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bfdcaa7bfcaee5b0800000000000000
+      internalID: -5337138312292540493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble (2)_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbf487ea11d3e1a80800000000000000
+      internalID: -8494284701023318083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble (2)_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b56bb45869774bfd0800000000000000
+      internalID: -2327103619078572453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4e0380014d44cb14184e61f3f0c74edf
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":400.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      buble (2)_0: -5337138312292540493
+      buble (2)_1: -8494284701023318083
+      buble (2)_2: -2327103619078572453
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

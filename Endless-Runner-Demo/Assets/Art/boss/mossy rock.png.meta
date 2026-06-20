@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 61283686e1cfb5f40b3db000c01fbf88
+guid: 12beed31687517548b5a86b5d1b7cd5b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1973195037945353777
-    second: running mobile sprite_0
+      213: 106554098081925291
+    second: mossy rock_0
   - first:
-      213: -4297609950856245720
-    second: running mobile sprite_1
+      213: -6570740454903912128
+    second: mossy rock_1
   - first:
-      213: -6524239579438478388
-    second: running mobile sprite_2
+      213: 9039338678343945927
+    second: mossy rock_2
   - first:
-      213: 8144023023098295620
-    second: running mobile sprite_3
+      213: 5791053730835961818
+    second: mossy rock_3
   - first:
-      213: 7663377266459979160
-    second: running mobile sprite_4
+      213: 8972227225498341270
+    second: mossy rock_4
   - first:
-      213: -2720029789576798220
-    second: running mobile sprite_5
+      213: 6580326279184509622
+    second: mossy rock_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 60
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -128,133 +128,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: running mobile sprite_0
+      name: mossy rock_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fc924b2419dcd94e0800000000000000
-      internalID: -1973195037945353777
+      spriteID: ba8098d336e8a7100800000000000000
+      internalID: 106554098081925291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running mobile sprite_1
+      name: mossy rock_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 82e8708f482db54c0800000000000000
-      internalID: -4297609950856245720
+      spriteID: 049e92a9e5a00d4a0800000000000000
+      internalID: -6570740454903912128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running mobile sprite_2
+      name: mossy rock_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ccb860e5bae3575a0800000000000000
-      internalID: -6524239579438478388
+      spriteID: 7cec32fa2ae227d70800000000000000
+      internalID: 9039338678343945927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running mobile sprite_3
+      name: mossy rock_3
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 44570666ac1650170800000000000000
-      internalID: 8144023023098295620
+      spriteID: ad79da59fa4fd5050800000000000000
+      internalID: 5791053730835961818
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running mobile sprite_4
+      name: mossy rock_4
       rect:
         serializedVersion: 2
         x: 256
         y: 0
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 89da6238509c95a60800000000000000
-      internalID: 7663377266459979160
+      spriteID: 69fcaebef11c38c70800000000000000
+      internalID: 8972227225498341270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running mobile sprite_5
+      name: mossy rock_5
       rect:
         serializedVersion: 2
         x: 320
         y: 0
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ff5bc55153804ad0800000000000000
-      internalID: -2720029789576798220
+      spriteID: 6bae5f803e3025b50800000000000000
+      internalID: 6580326279184509622
       vertices: []
       indices: 
       edges: []
@@ -263,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 81abef63c2a5f7642a10bb4731eaa2bd
+    spriteID: 73a37f517ef37be4e82a12797e6d7615
     internalID: 0
     vertices: []
     indices: 
@@ -273,14 +273,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      running mobile sprite_0: -1973195037945353777
-      running mobile sprite_1: -4297609950856245720
-      running mobile sprite_2: -6524239579438478388
-      running mobile sprite_3: 8144023023098295620
-      running mobile sprite_4: 7663377266459979160
-      running mobile sprite_5: -2720029789576798220
+      mossy rock_0: 106554098081925291
+      mossy rock_1: -6570740454903912128
+      mossy rock_2: 9039338678343945927
+      mossy rock_3: 5791053730835961818
+      mossy rock_4: 8972227225498341270
+      mossy rock_5: 6580326279184509622
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11,6 +11,7 @@ public class SO_Collectable : ScriptableObject
     public enum SCREEN_COL
     {
         FOREST,
-        DESERT
+        DESERT,
+        KRAKEN
     }
 }
