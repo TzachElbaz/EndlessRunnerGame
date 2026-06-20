@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 3d52ce1468fb7874795d6c0335f70aa7
+guid: 70b588dfe2472574fa724be5e9a9c865
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2970355923971754368
-    second: "\u05E9\u05DE\u05D9\u05DD 2_0"
+      213: -8571815942342793148
+    second: pixil-frame-7 (1)_0
+  - first:
+      213: 3759815357617417389
+    second: pixil-frame-7 (1)_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 3
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -96,30 +99,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u05E9\u05DE\u05D9\u05DD 2_0"
+      name: pixil-frame-7 (1)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 100
-        height: 100
+        y: 13
+        width: 512
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 086bf27560d27c6d0800000000000000
-      internalID: -2970355923971754368
+      spriteID: 448a0acd0daca0980800000000000000
+      internalID: -8571815942342793148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixil-frame-7 (1)_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 46
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac28dbb52c8d2430800000000000000
+      internalID: 3759815357617417389
       vertices: []
       indices: 
       edges: []
@@ -148,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u05E9\u05DE\u05D9\u05DD 2_0": -2970355923971754368
+      pixil-frame-7 (1)_0: -8571815942342793148
+      pixil-frame-7 (1)_1: 3759815357617417389
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
