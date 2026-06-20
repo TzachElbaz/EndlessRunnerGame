@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float rollDuration = .6f;
     [SerializeField] private float fastFallVelocity = 40f;
     private bool isRolling = false;
-    private bool isGrounded;
+    public bool isGrounded;
     private bool isDoubleJumping = false;
     private bool rollOnLand = false;
 
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _animation = GetComponentInChildren<Animator>();
         _boxCollider = GetComponent<BoxCollider2D>();
-        velocity.x = 15f;
+        velocity.x = 5f;
     }
 
     private void Start()
