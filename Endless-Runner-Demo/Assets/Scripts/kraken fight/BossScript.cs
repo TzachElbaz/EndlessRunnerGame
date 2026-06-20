@@ -52,6 +52,19 @@ public class BossScript : MonoBehaviour
     private bool[] _teltacleStabForward = new bool[5];
     [SerializeField] private bool[] _TOn ;
 
+    [Header("Rock Crash")] 
+    [SerializeField] private GameObject _rockCrashOB;
+    [SerializeField] private float _rokSmashForce;
+    [SerializeField] private float _rokSmashGravity;
+    [SerializeField] private Vector2 _rokSmashSpawn;
+
+    [Header("Rock throw low")]
+    [SerializeField] private GameObject _rockThrowLowOB;
+    [SerializeField] private float _rokThrowLowForce;
+    [SerializeField] private float _rokThrowLowGravity;
+    [SerializeField] private Vector2 _rokThrowLowSpawn;
+    [SerializeField] private Vector2 _rokThrowHighSpawn;
+
     private bool IsStartPositioning;
 
 
@@ -63,7 +76,7 @@ public class BossScript : MonoBehaviour
     {
         _player = GameObject.FindAnyObjectByType<Player>();
         _runGameManeger = GameObject.FindAnyObjectByType<RunGameManeger>();
-        StartCoroutine(AttackPatern1());
+        
     }
     
 
@@ -203,15 +216,15 @@ public class BossScript : MonoBehaviour
 
         if ( _tripleTentacleClock[lv] == 0)
         {
-            _tripTentaclePerent.transform.position = new Vector2(80, 6);
+            _tripTentaclePerent.transform.position = new Vector2(77, 6);
             _teltacleStabForward[lv] = true;
-            _tripTentacle[lv].transform.position = new Vector2(80-6, _tripTentacle[lv].transform.position.y);
+            _tripTentacle[lv].transform.position = new Vector2(77-6, _tripTentacle[lv].transform.position.y);
         }
         Vector2 tentLocation = _tripTentacle[lv].transform.position;
 
 
         _tripleTentacleClock[lv] += Time.deltaTime;
-        if (_tripleTentacleClock[lv] < _tripleWarningTime && tentLocation.x > 70)
+        if (_tripleTentacleClock[lv] < _tripleWarningTime && tentLocation.x > 67)
         {
             tentLocation.x -= _tripleWarningSpeed * Time.deltaTime;
             _tripTentacle[lv].transform.position = tentLocation;
@@ -221,7 +234,7 @@ public class BossScript : MonoBehaviour
             tentLocation.x -= _tripTentacleSpeed * Time.deltaTime;
             _tripTentacle[lv].transform.position = tentLocation;
         }
-        if (tentLocation.x < 30)
+        if (tentLocation.x < 27)
         {
             _teltacleStabForward[lv] = false;
         }
@@ -230,13 +243,31 @@ public class BossScript : MonoBehaviour
             tentLocation.x += _tripTentacleSpeed * Time.deltaTime;
             _tripTentacle[lv].transform.position = tentLocation;
         }
-        if (tentLocation.x > 74 && !_teltacleStabForward[lv])
+        if (tentLocation.x > 71 && !_teltacleStabForward[lv])
         {
             _TOn[lv] = false;
             _tripleTentacleClock[lv] = 0;
-            _tripTentacle[lv].transform.position = new Vector2(80 - 6, _tripTentacle[lv].transform.position.y);
+            _tripTentacle[lv].transform.position = new Vector2(77 - 6, _tripTentacle[lv].transform.position.y);
         }
 
+    }
+
+    private void RockKrash()
+    {
+        //_rockCrashOB.GetComponent<Rigidbody2D>().AddForceY(1000);
+        _rockCrashOB.transform.position = _rokSmashSpawn;
+        _rockCrashOB.GetComponent<Parallax>().enabled = true;
+        _rockCrashOB.GetComponent<Rigidbody2D>().gravityScale = _rokSmashGravity;
+        _rockCrashOB.GetComponent<Rigidbody2D>().AddForceY(_rokSmashForce, ForceMode2D.Impulse);
+        Debug.Log("glap");
+    }
+
+    private void RockThrowLow(Vector2 span)
+    {
+        _rockThrowLowOB.transform.position = span;
+        _rockThrowLowOB.GetComponent<Parallax>().enabled = true;
+        _rockThrowLowOB.GetComponent<Rigidbody2D>().gravityScale = _rokThrowLowGravity;
+        _rockThrowLowOB.GetComponent<Rigidbody2D>().AddForceY(_rokThrowLowForce, ForceMode2D.Impulse);
     }
     private void attackOveride()
     {
@@ -256,6 +287,18 @@ public class BossScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Keypad4))
         {
             _tripleTentacleOn = !_tripleTentacleOn;
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad5))
+        {
+            RockKrash();
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad6))
+        {
+            RockThrowLow(_rokThrowLowSpawn);
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad7))
+        {
+            RockThrowLow(_rokThrowHighSpawn);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -277,6 +320,10 @@ public class BossScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             _TOn[4] = !_TOn[4];
+        }
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            StartCoroutine(AttackPatern1());
         }
     }
     IEnumerator AttackPatern1()
@@ -321,6 +368,6 @@ public class BossScript : MonoBehaviour
     {
         float move = transform.position.x- _revelSpeed* Time.deltaTime;
         transform.position = new Vector2(move,transform.position.y);
-        if(transform.position.x< 75.1f) IsStartPositioning = false;
+        if(transform.position.x< 53.4f) IsStartPositioning = false;
     }
 }
