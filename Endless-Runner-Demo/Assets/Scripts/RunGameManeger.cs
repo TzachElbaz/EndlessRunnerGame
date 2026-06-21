@@ -163,7 +163,7 @@ public class RunGameManeger : MonoBehaviour
         listCount = 0;
         _pregenEmpty = true;
         pregen[pregen.Length - 1] = _curentObstecl[0];
-        CangeErea();
+        //CangeErea();
     }
 
 

@@ -8,6 +8,7 @@ public class Parallax : MonoBehaviour
     public float spawn = 75;
     public bool _yMove= false;
     public Vector2 _startPosition;
+    public bool _willDelet;
     private void Awake()
     {
         player = GameObject.FindAnyObjectByType<Player>();
@@ -22,16 +23,16 @@ public class Parallax : MonoBehaviour
         if (!_yMove)
         {
             position.x -= realVelocity * Time.deltaTime;
-
+            if (position.x < destroy && _willDelet) Destroy(gameObject);
             if (position.x < destroy)
                 position.x = spawn;
         }
         else
         {
             position.y += realVelocity * Time.deltaTime;
+            if (position.y > destroy && _willDelet) Destroy(gameObject);
 
-            if (position.y > destroy)
-                position.y = spawn;
+            if (position.y > destroy) position.y = spawn;
         }
             transform.position = position;
     }

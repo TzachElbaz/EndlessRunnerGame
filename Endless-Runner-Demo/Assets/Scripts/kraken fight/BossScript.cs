@@ -65,7 +65,21 @@ public class BossScript : MonoBehaviour
     [SerializeField] private Vector2 _rokThrowLowSpawn;
     [SerializeField] private Vector2 _rokThrowHighSpawn;
 
+    [Header("stalagtite fall")]
+    [SerializeField] private GameObject[] _stelagtiteOB;
+
     private bool IsStartPositioning;
+
+    [Header("rundom bulshit")]
+    [SerializeField] private GameObject[] _bulshitOB;
+    private GameObject _curentBS;
+    [SerializeField] private float _bulshitTime;
+    [SerializeField] private GameObject _bulshitTentacle;
+    [SerializeField] private float _bulshitTentacleSpawn;
+    [SerializeField] private float _bulshitTentacleHigt;
+    [SerializeField] private float _bulshitTentacleSpeed;
+    private float _bulshitClock;
+    private bool _goingUp;
 
 
     private void Awake()
@@ -94,6 +108,7 @@ public class BossScript : MonoBehaviour
     {
         if (_tentacleSmashOn) TentacleSmash();
         if (_tentacleSmashDownOn) TentacleSmashDown();
+        //RundomBulshit();
 
 
 
@@ -251,23 +266,32 @@ public class BossScript : MonoBehaviour
         }
 
     }
+    private void stalagtiteFall(int lv)
+    {
+        GameObject Ob;
+        Ob = Instantiate(_stelagtiteOB[lv]);
+        Ob.transform.position = new Vector2(68.5f, 23.16f);
+    }
 
     private void RockKrash()
     {
-        //_rockCrashOB.GetComponent<Rigidbody2D>().AddForceY(1000);
-        _rockCrashOB.transform.position = _rokSmashSpawn;
-        _rockCrashOB.GetComponent<Parallax>().enabled = true;
-        _rockCrashOB.GetComponent<Rigidbody2D>().gravityScale = _rokSmashGravity;
-        _rockCrashOB.GetComponent<Rigidbody2D>().AddForceY(_rokSmashForce, ForceMode2D.Impulse);
+        GameObject Ob;
+        Ob = Instantiate(_rockCrashOB);
+        Ob.transform.position = _rokSmashSpawn;
+        Ob.GetComponent<Parallax>().enabled = true;
+        Ob.GetComponent<Rigidbody2D>().gravityScale = _rokSmashGravity;
+        Ob.GetComponent<Rigidbody2D>().AddForceY(_rokSmashForce, ForceMode2D.Impulse);
         Debug.Log("glap");
     }
 
     private void RockThrowLow(Vector2 span)
     {
-        _rockThrowLowOB.transform.position = span;
-        _rockThrowLowOB.GetComponent<Parallax>().enabled = true;
-        _rockThrowLowOB.GetComponent<Rigidbody2D>().gravityScale = _rokThrowLowGravity;
-        _rockThrowLowOB.GetComponent<Rigidbody2D>().AddForceY(_rokThrowLowForce, ForceMode2D.Impulse);
+        GameObject Ob;
+        Ob = Instantiate(_rockThrowLowOB);
+        Ob.transform.position = span;
+        Ob.GetComponent<Parallax>().enabled = true;
+        Ob.GetComponent<Rigidbody2D>().gravityScale = _rokThrowLowGravity;
+        Ob.GetComponent<Rigidbody2D>().AddForceY(_rokThrowLowForce, ForceMode2D.Impulse);
     }
     private void attackOveride()
     {
@@ -300,6 +324,18 @@ public class BossScript : MonoBehaviour
         {
             RockThrowLow(_rokThrowHighSpawn);
         }
+        if (Input.GetKeyDown(KeyCode.Keypad8))
+        {
+           stalagtiteFall(0);
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad9))
+        {
+            stalagtiteFall(1);
+        }
+        if (Input.GetKeyDown(KeyCode.KeypadPlus))
+        {
+            stalagtiteFall(2);
+        }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -325,6 +361,41 @@ public class BossScript : MonoBehaviour
         {
             StartCoroutine(AttackPatern1());
         }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            _bulshitTentacle.SetActive(true);
+        }
+    }
+    private void RundomBulshit()
+    {
+        Vector2 move = new Vector2(_curentBS.transform.position.x, _curentBS.transform.position.y);
+        if(_bulshitClock == 0)
+        {
+            _goingUp = true;
+        }
+        else if (_goingUp && move.y<15)
+        {
+            move.y = move.y + _bulshitTentacleSpeed * Time.deltaTime;
+            _curentBS.transform.position = new Vector2(move.x, move.y);
+           
+        }
+        else if (_goingUp && move.y >= 15)
+        {
+            _goingUp = false;
+        }
+        else if (!_goingUp && move.y > _bulshitTentacleHigt)
+        {
+            move.y = move.y - _bulshitTentacleSpeed * Time.deltaTime;
+            _curentBS.transform.position = new Vector2(move.x, move.y);
+        }
+        _bulshitClock += Time.deltaTime;
+    }
+    public void SpawnBulshit()
+    {
+        GameObject ob;
+        ob = Instantiate(_curentBS);
+        ob.GetComponent<Parallax>().enabled = true;
+        ob.transform.position = _curentBS.transform.position;
     }
     IEnumerator AttackPatern1()
     {
@@ -362,12 +433,17 @@ public class BossScript : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         _tentacleSmashOn=true;
 
-    }
-
+    } 
     private void StartPositioning()
     {
         float move = transform.position.x- _revelSpeed* Time.deltaTime;
         transform.position = new Vector2(move,transform.position.y);
-        if(transform.position.x< 53.4f) IsStartPositioning = false;
+        if(transform.position.x< 48.5f) IsStartPositioning = false;
+    }
+    public void ChooseBulshit()
+    {
+        int rn = Random.Range(0, _bulshitOB.Length);
+        _curentBS = _bulshitOB[rn];
+        _curentBS.SetActive(true);
     }
 }

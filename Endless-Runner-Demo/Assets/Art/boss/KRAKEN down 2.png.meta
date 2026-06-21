@@ -1,16 +1,43 @@
 fileFormatVersion: 2
-guid: f29f15a7fededd642a968e290d8d3fa5
+guid: 9d51fd14c239e9d4cb5a99ea6afb4079
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8317467663749572043
-    second: KRAKEN (1)_0
+      213: 5302930786909939701
+    second: KRAKEN down 2_0
   - first:
-      213: 2158458255176311760
-    second: KRAKEN (1)_1
+      213: -7341446254245523547
+    second: KRAKEN down 2_1
   - first:
-      213: -6494502488425961501
-    second: KRAKEN (1)_2
+      213: -5108711967581961658
+    second: KRAKEN down 2_2
+  - first:
+      213: 309746121804877988
+    second: KRAKEN down 2_3
+  - first:
+      213: 3103232938516604834
+    second: KRAKEN down 2_4
+  - first:
+      213: -1756400716924987577
+    second: KRAKEN down 2_5
+  - first:
+      213: -7313982928000391820
+    second: KRAKEN down 2_6
+  - first:
+      213: -2887244140161675077
+    second: KRAKEN down 2_7
+  - first:
+      213: 4691036877435281461
+    second: KRAKEN down 2_8
+  - first:
+      213: -2104248533145186843
+    second: KRAKEN down 2_9
+  - first:
+      213: -1375638314128456687
+    second: KRAKEN down 2_10
+  - first:
+      213: 4012102917160858827
+    second: KRAKEN down 2_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,7 +146,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KRAKEN (1)_0
+      name: KRAKEN down 2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -134,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc56798b5c49d6370800000000000000
-      internalID: 8317467663749572043
+      spriteID: 5f7ef3e547bc79940800000000000000
+      internalID: 5302930786909939701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KRAKEN (1)_1
+      name: KRAKEN down 2_1
       rect:
         serializedVersion: 2
         x: 64
@@ -156,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d32b4ad85264fd10800000000000000
-      internalID: 2158458255176311760
+      spriteID: 5afc2164781fd1a90800000000000000
+      internalID: -7341446254245523547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KRAKEN (1)_2
+      name: KRAKEN down 2_2
       rect:
         serializedVersion: 2
         x: 128
@@ -178,8 +205,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3e7ea786564eed5a0800000000000000
-      internalID: -6494502488425961501
+      spriteID: 6428d7858853a19b0800000000000000
+      internalID: -5108711967581961658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KRAKEN down 2_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a01cb8e4707c4400800000000000000
+      internalID: 309746121804877988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KRAKEN down 2_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a7e29b7ae5e01b20800000000000000
+      internalID: 3103232938516604834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KRAKEN down 2_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 747d1709ad200a7e0800000000000000
+      internalID: -1756400716924987577
       vertices: []
       indices: 
       edges: []
@@ -188,7 +281,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 480ff20c7154109478b1064f89693192
+    spriteID: 3f5103503ca0ff44689c2558e09604d3
     internalID: 0
     vertices: []
     indices: 
@@ -200,9 +293,12 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      KRAKEN (1)_0: 8317467663749572043
-      KRAKEN (1)_1: 2158458255176311760
-      KRAKEN (1)_2: -6494502488425961501
+      KRAKEN down 2_0: 5302930786909939701
+      KRAKEN down 2_1: -7341446254245523547
+      KRAKEN down 2_2: -5108711967581961658
+      KRAKEN down 2_3: 309746121804877988
+      KRAKEN down 2_4: 3103232938516604834
+      KRAKEN down 2_5: -1756400716924987577
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

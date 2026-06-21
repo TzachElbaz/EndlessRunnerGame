@@ -30,6 +30,7 @@ public class animationcomand : MonoBehaviour
         if (_DestoyMe) DestoyMe();
         if (_DisableMe) DisableMe();
         if (_PlayerBossTeleport) PlayerBossTeleport();
+       
         //if (_teleport != null) Teleport();
         //if (_teleportPerent != null) TeleportPerent();
     }
@@ -60,18 +61,26 @@ public class animationcomand : MonoBehaviour
 
         _PlayerBossTeleport = false;
     }
+    public void SpawnBulshit()
+    {
+        kraken.SpawnBulshit();
+    }
+    public void ChooseBulshit() 
+    {
+        kraken.ChooseBulshit();
+    }
 
     //public void Teleport()
     //{
-       
+
     //       transform.position = _teleport;
-       
+
     //}
     //public void TeleportPerent()
     //{
-       
+
     //        GameObject parent = transform.parent.gameObject;
     //        parent.transform.position = _teleport;
-       
+
     //}
 }
