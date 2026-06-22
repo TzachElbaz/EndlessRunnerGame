@@ -812,6 +812,7 @@ public class RunGameManeger : MonoBehaviour
         _forestTransitionList[2].SetActive(true);
         yield return new WaitForSeconds(3f);
         _Player.GetComponentInChildren<SpriteRenderer>().sortingOrder = 102;
+        CollectablesManager.instance.DisableColectables();
         _krakenWaves[0].SetActive(true);
         //_krakenWaves[0].transform.localPosition = _waveSpawn[0];
         _krakenWaves[1].SetActive(true);
@@ -864,11 +865,14 @@ public class RunGameManeger : MonoBehaviour
         _krakenBubleTransition2.GetComponent<Parallax>().destroy = 50;
         _kraken.transform.position = _krskenSpawn;
         _kraken.SetActive(true);
+        yield return new WaitForSeconds(2);
+       
 
 
 
 
-        
+
+
     }
     private void ControllOveride()
     {

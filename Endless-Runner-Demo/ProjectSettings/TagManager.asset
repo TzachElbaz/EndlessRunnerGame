@@ -8,6 +8,7 @@ TagManager:
   - obstacle
   - coin
   - Platform
+  - counter
   layers:
   - Default
   - TransparentFX

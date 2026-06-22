@@ -1,6 +1,7 @@
 using System.Collections;
 
 using UnityEngine;
+using UnityEngine.UI;
 public class BossScript : MonoBehaviour
 {
     private RunGameManeger _runGameManeger;
@@ -11,9 +12,14 @@ public class BossScript : MonoBehaviour
     private bool _tentacleSmashDownOn;
     private bool _tripleTentacleOn;
     private bool _tentacleSendOn;
-    [SerializeField] GameObject _tentacle;
-
+    [SerializeField] private Sprite _blanckHeart;
+    [SerializeField] private Sprite _FillHeart;
+    [SerializeField] private GameObject[] _hearts;
+    [SerializeField] private GameObject _heartParent;
+    [SerializeField] private GameObject _tentacle;
+    [SerializeField] private Animator _animator;
     [SerializeField] float _revelSpeed;
+    
    
 
     [Header("Tentacle Smash")]
@@ -39,7 +45,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] private float _warningTime1;
     [SerializeField] private float _tentacleSendTime;
     [SerializeField] public float[] _attackHight;
-    private float _tentacleSendClock = 0;
+    //private float _tentacleSendClock = 0;
 
     [Header("Tentacle trip")]
     [SerializeField] private GameObject _tripTentaclePerent;
@@ -81,13 +87,27 @@ public class BossScript : MonoBehaviour
     private float _bulshitClock;
     private bool _goingUp;
 
+    [Header("Platform send")]
+    [SerializeField] private GameObject _PlatformSend1;
+    [SerializeField] private float _PlatformSendspeed;
+    [SerializeField] private float _PlatformWarningTime1;
+    [SerializeField] private float _PlatformSendTime;
+    [SerializeField] public float _PlatformAttackHight;
+    [SerializeField] private float _PlatformSendSpawn;
 
     private void Awake()
     {
+        _animator.SetBool("is5", false);
+        _animator.SetBool("is3", false);
         IsStartPositioning = true;
     }
     void Start()
     {
+        _curentHp = _maxHp;
+        for (int i = 0; i < 9; i++)
+        {
+            _hearts[i].GetComponent<Image>().sprite = _FillHeart;
+        }
         _player = GameObject.FindAnyObjectByType<Player>();
         _runGameManeger = GameObject.FindAnyObjectByType<RunGameManeger>();
         
@@ -104,6 +124,22 @@ public class BossScript : MonoBehaviour
             StartPositioning();
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.CompareTag("counter"))
+        {
+            Destroy(collision.gameObject);
+            if (_curentHp > 0)
+            {
+                
+                _curentHp--;
+                _hearts[_curentHp-1].GetComponent<Image>().sprite = _blanckHeart;
+            }
+        }
+    }
+
     private void Timekiper()
     {
         if (_tentacleSmashOn) TentacleSmash();
@@ -231,7 +267,7 @@ public class BossScript : MonoBehaviour
 
         if ( _tripleTentacleClock[lv] == 0)
         {
-            _tripTentaclePerent.transform.position = new Vector2(77, 6);
+            _tripTentaclePerent.transform.position = new Vector2(77, 5.7f);
             _teltacleStabForward[lv] = true;
             _tripTentacle[lv].transform.position = new Vector2(77-6, _tripTentacle[lv].transform.position.y);
         }
@@ -365,6 +401,10 @@ public class BossScript : MonoBehaviour
         {
             _bulshitTentacle.SetActive(true);
         }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            PlatformSend(_PlatformAttackHight, _PlatformSendSpawn);
+        }
     }
     private void RundomBulshit()
     {
@@ -396,6 +436,19 @@ public class BossScript : MonoBehaviour
         ob = Instantiate(_curentBS);
         ob.GetComponent<Parallax>().enabled = true;
         ob.transform.position = _curentBS.transform.position;
+    }
+
+    private void PlatformSend(float higt, float spawn)
+    {
+        GameObject Ob;
+        Ob = Instantiate(_PlatformSend1);
+        Ob.transform.position = new Vector2(spawn, -4);
+        sendTentacleScript tent = Ob.GetComponent<sendTentacleScript>();
+        tent._tentacleSendTime = _PlatformSendTime;
+        tent._tentacleSendspeed = _PlatformSendspeed;
+        tent._warningTime1 = _PlatformWarningTime1;
+        tent._isActive = true;
+        tent._attackHight = higt;
     }
     IEnumerator AttackPatern1()
     {
@@ -438,7 +491,12 @@ public class BossScript : MonoBehaviour
     {
         float move = transform.position.x- _revelSpeed* Time.deltaTime;
         transform.position = new Vector2(move,transform.position.y);
-        if(transform.position.x< 48.5f) IsStartPositioning = false;
+        if (transform.position.x < 48.5f)
+        {
+            IsStartPositioning = false;
+            _animator.SetBool("is5",true);
+            _heartParent.SetActive(true);
+        }
     }
     public void ChooseBulshit()
     {
