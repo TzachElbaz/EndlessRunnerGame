@@ -1,5 +1,6 @@
-using JetBrains.Annotations;
+
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class animationcomand : MonoBehaviour
 {
@@ -68,6 +69,19 @@ public class animationcomand : MonoBehaviour
     public void ChooseBulshit() 
     {
         kraken.ChooseBulshit();
+    }
+
+    public void UnperentTheChiled()
+    {
+        Transform[] children = GetComponentsInChildren<Transform>();
+
+        for (int i = 0; i < children.Length; i++)
+        {
+            if (children[i] != transform) // skip parent
+            {
+                children[i].gameObject.SetActive(false);
+            }
+        }
     }
 
     //public void Teleport()

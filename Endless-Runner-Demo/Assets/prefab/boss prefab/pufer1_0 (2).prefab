@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5418319228021348034
+--- !u!1 &7743599633221375432
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 514894070036425748}
-  - component: {fileID: 8893373061174216071}
-  - component: {fileID: 4283596203806504507}
-  - component: {fileID: 7964724096643198838}
-  - component: {fileID: 6526612214814302909}
+  - component: {fileID: 8072090140282831654}
+  - component: {fileID: 2522163423922891000}
+  - component: {fileID: 4191403336565414832}
+  - component: {fileID: 7661317900956202974}
   m_Layer: 0
-  m_Name: mossy smash
-  m_TagString: boss obstacle
+  m_Name: pufer1_0 (2)
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &514894070036425748
+--- !u!4 &8072090140282831654
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418319228021348034}
+  m_GameObject: {fileID: 7743599633221375432}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 49, y: 17, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 47.341026, y: -1.529419, z: 0}
+  m_LocalScale: {x: 0.4999999, y: 0.49999994, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8893373061174216071
+--- !u!212 &2522163423922891000
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418319228021348034}
+  m_GameObject: {fileID: 7743599633221375432}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -82,52 +81,43 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 22
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 9039338678343945927, guid: 12beed31687517548b5a86b5d1b7cd5b, type: 3}
+  m_Sprite: {fileID: 6199020186364550146, guid: d189480bba2a0c74f90a3f6857447417, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5, y: 4.40625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!50 &4283596203806504507
-Rigidbody2D:
-  serializedVersion: 5
+--- !u!114 &4191403336565414832
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418319228021348034}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 5
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 128
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!58 &7964724096643198838
+  m_GameObject: {fileID: 7743599633221375432}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a048ccc0ab04e3140b4c2f3f310f8f5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Parallax
+  depth: 1
+  destroy: -30
+  spawn: 75
+  _yMove: 0
+  _startPosition: {x: 0, y: 0}
+  _willDelet: 1
+--- !u!58 &7661317900956202974
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418319228021348034}
+  m_GameObject: {fileID: 7743599633221375432}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -155,23 +145,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.05016419}
-  m_Radius: 0.35351804
---- !u!114 &6526612214814302909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418319228021348034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a048ccc0ab04e3140b4c2f3f310f8f5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Parallax
-  depth: 1.5
-  destroy: -30
-  spawn: 75
-  _yMove: 0
-  _startPosition: {x: 0, y: 0}
-  _willDelet: 1
+  m_Offset: {x: 0.033893593, y: -0.05648447}
+  m_Radius: 2.0594218

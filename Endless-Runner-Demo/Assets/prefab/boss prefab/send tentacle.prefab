@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5476413758014719236}
   - component: {fileID: 3548045432311105722}
   - component: {fileID: 8835663676745482430}
+  - component: {fileID: 706249234449608000}
   m_Layer: 0
   m_Name: send tentacle
-  m_TagString: Untagged
+  m_TagString: trig obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,3 +110,43 @@ MonoBehaviour:
   _warningTime1: 0
   _attackHight: 0
   _isActive: 0
+  _debri: {fileID: 5115236219779926100, guid: 509e188fd812b834e87876542a262c09, type: 3}
+  _isDebri: 1
+  _force: {x: -20, y: 37}
+--- !u!70 &706249234449608000
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4537316944722181252}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.6208898, y: 1.8714317}
+  m_Direction: 0

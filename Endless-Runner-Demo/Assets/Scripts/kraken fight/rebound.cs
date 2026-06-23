@@ -33,6 +33,11 @@ public class rebound : MonoBehaviour
             ob._startPosition=transform.position;
             ob.enabled = false;
             _isActive = true;
+            if (gameObject.GetComponent<Rigidbody2D>() != null) 
+            {
+                gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+                gameObject.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0,0);
+            }
            
         }
     }

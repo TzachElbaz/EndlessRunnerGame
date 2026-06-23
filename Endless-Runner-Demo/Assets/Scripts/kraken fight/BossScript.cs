@@ -45,6 +45,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] private float _warningTime1;
     [SerializeField] private float _tentacleSendTime;
     [SerializeField] public float[] _attackHight;
+    [SerializeField] private float _tentacleSendSPAWN;
     //private float _tentacleSendClock = 0;
 
     [Header("Tentacle trip")]
@@ -78,7 +79,9 @@ public class BossScript : MonoBehaviour
 
     [Header("rundom bulshit")]
     [SerializeField] private GameObject[] _bulshitOB;
+    [SerializeField] private GameObject[] _bulshitGlowOB;
     private GameObject _curentBS;
+    private GameObject _curentGlowBS;
     [SerializeField] private float _bulshitTime;
     [SerializeField] private GameObject _bulshitTentacle;
     [SerializeField] private float _bulshitTentacleSpawn;
@@ -86,6 +89,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] private float _bulshitTentacleSpeed;
     private float _bulshitClock;
     private bool _goingUp;
+    public bool _isGlow;
 
     [Header("Platform send")]
     [SerializeField] private GameObject _PlatformSend1;
@@ -94,6 +98,8 @@ public class BossScript : MonoBehaviour
     [SerializeField] private float _PlatformSendTime;
     [SerializeField] public float _PlatformAttackHight;
     [SerializeField] private float _PlatformSendSpawn;
+
+    public int _faze;
 
     private void Awake()
     {
@@ -133,9 +139,20 @@ public class BossScript : MonoBehaviour
             Destroy(collision.gameObject);
             if (_curentHp > 0)
             {
-                
+                _animator.Play("kraken blink");
                 _curentHp--;
-                _hearts[_curentHp-1].GetComponent<Image>().sprite = _blanckHeart;
+                _hearts[_curentHp].GetComponent<Image>().sprite = _blanckHeart;
+                if (_curentHp == 6) //seconde fase
+                {
+                    _animator.SetBool("is5", false);
+                    _animator.SetBool("is3", true);
+                }
+                else if (_curentHp == 3) //third fase
+                {
+                    _animator.SetBool("is5", false);
+                    _animator.SetBool("is3", false);
+                }
+
             }
         }
     }
@@ -253,7 +270,7 @@ public class BossScript : MonoBehaviour
     {
         GameObject Ob;
         Ob = Instantiate(_tentacleSend1);
-        Ob.transform.position = new Vector2(30, -23);
+        Ob.transform.position = new Vector2(_tentacleSendSPAWN, -23);
         sendTentacleScript tent = Ob.GetComponent<sendTentacleScript>();
         tent._tentacleSendTime = _tentacleSendTime;
         tent._tentacleSendspeed= _tentacleSendspeed;
@@ -432,10 +449,20 @@ public class BossScript : MonoBehaviour
     }
     public void SpawnBulshit()
     {
-        GameObject ob;
-        ob = Instantiate(_curentBS);
-        ob.GetComponent<Parallax>().enabled = true;
-        ob.transform.position = _curentBS.transform.position;
+        if (_isGlow)
+        {
+            GameObject ob;
+            ob = Instantiate(_curentGlowBS);
+            ob.GetComponent<Parallax>().enabled = true;
+            ob.transform.position = _curentBS.transform.position;
+        }
+        else
+        {
+            GameObject ob;
+            ob = Instantiate(_curentBS);
+            ob.GetComponent<Parallax>().enabled = true;
+            ob.transform.position = _curentBS.transform.position;
+        }
     }
 
     private void PlatformSend(float higt, float spawn)
@@ -502,6 +529,7 @@ public class BossScript : MonoBehaviour
     {
         int rn = Random.Range(0, _bulshitOB.Length);
         _curentBS = _bulshitOB[rn];
+        _curentGlowBS =_bulshitGlowOB[rn];
         _curentBS.SetActive(true);
     }
 }

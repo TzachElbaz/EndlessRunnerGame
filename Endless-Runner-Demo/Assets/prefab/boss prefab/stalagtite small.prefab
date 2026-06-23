@@ -70,6 +70,7 @@ MonoBehaviour:
   spawn: 80
   _yMove: 0
   _startPosition: {x: 0, y: 0}
+  _willDelet: 0
 --- !u!1 &3921076815977023536
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +86,7 @@ GameObject:
   - component: {fileID: 2782462341358023237}
   m_Layer: 0
   m_Name: stelagtite (1)_6
-  m_TagString: Untagged
+  m_TagString: boss obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,7 +218,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -288,7 +289,7 @@ GameObject:
   - component: {fileID: 7961252244032028605}
   m_Layer: 0
   m_Name: stelagtite (1)_5
-  m_TagString: Untagged
+  m_TagString: boss obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

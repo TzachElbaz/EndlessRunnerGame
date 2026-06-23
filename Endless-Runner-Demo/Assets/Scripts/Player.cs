@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
     private Vector2 jumpingOffset = new Vector2(-0.02f, 0.57f);
     private Vector2 jumpingSize = new Vector2(0.61f, 0.74f);
 
+    [SerializeField] private float _invincTime;
+
     [Header("Rolling")]
     [SerializeField] private float rollDuration = .6f;
     [SerializeField] private float fastFallVelocity = 40f;
@@ -52,6 +54,7 @@ public class Player : MonoBehaviour
 
     [Header("debug")]
     [SerializeField] private bool _hpOn;
+    private bool _canHit=true;
 
     private void Awake()
     {
@@ -166,6 +169,7 @@ public class Player : MonoBehaviour
         _animation.SetBool("isRolling", isRolling);
         _animation.SetBool("isGrounded", isGrounded);
         _animation.SetBool("isDoubleJumping", isDoubleJumping);
+        _animation.SetBool("isHert", !_canHit);
     }
 
     private void Roll()
@@ -236,10 +240,35 @@ public class Player : MonoBehaviour
             Debug.Log(collision.gameObject.GetComponentInParent<Obstacle>()._passPoint);
             //RunGameManeger.Instance.InvokeClearOnScreenObstacles();
             Destroy(collision.gameObject);
-            if (health >= 1 && _hpOn)
+            if (health >= 1 && _hpOn && _canHit)
             {
                 health -= 1;
                 OnPlayerHit?.Invoke(health);
+                if (health == 0)
+                    OnPlayerDied?.Invoke();
+            }
+        }
+        if (collision.gameObject.CompareTag("boss obstacle"))
+        {
+            collision.gameObject.layer = LayerMask.NameToLayer("ignor colision");
+            if (health >= 1 && _hpOn && _canHit)
+            {
+                health -= 1;
+                OnPlayerHit?.Invoke(health);
+                if (health == 0)
+                    OnPlayerDied?.Invoke();
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("trig obstacle"))
+        {
+            if (health >= 1 && _hpOn && _canHit)
+            {
+                health -= 1;
+                OnPlayerHit?.Invoke(health);
+                StartCoroutine(InvincRutin(_invincTime));
                 if (health == 0)
                     OnPlayerDied?.Invoke();
             }
@@ -255,6 +284,12 @@ public class Player : MonoBehaviour
         isRolling = false;
         isGrounded = false;
         isDoubleJumping = false;
+    }
+    private IEnumerator InvincRutin(float time)
+    {
+        _canHit = false;
+        yield return new WaitForSeconds(time);
+        _canHit = true;
     }
 
 }
