@@ -1,7 +1,9 @@
+using NUnit.Framework;
 using System.Collections;
 
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 public class BossScript : MonoBehaviour
 {
     private RunGameManeger _runGameManeger;
@@ -84,12 +86,15 @@ public class BossScript : MonoBehaviour
     private GameObject _curentGlowBS;
     [SerializeField] private float _bulshitTime;
     [SerializeField] private GameObject _bulshitTentacle;
+    [SerializeField] private Animator _BSanimation;
     [SerializeField] private float _bulshitTentacleSpawn;
     [SerializeField] private float _bulshitTentacleHigt;
     [SerializeField] private float _bulshitTentacleSpeed;
+    [SerializeField] private float _bulshitTentacleRate;
     private float _bulshitClock;
     private bool _goingUp;
     public bool _isGlow;
+    private bool _RBon=false;
 
     [Header("Platform send")]
     [SerializeField] private GameObject _PlatformSend1;
@@ -133,7 +138,7 @@ public class BossScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
+        
         if (collision.gameObject.CompareTag("counter"))
         {
             Destroy(collision.gameObject);
@@ -161,8 +166,8 @@ public class BossScript : MonoBehaviour
     {
         if (_tentacleSmashOn) TentacleSmash();
         if (_tentacleSmashDownOn) TentacleSmashDown();
-        //RundomBulshit();
 
+        if (_RBon) RunBulshit();
 
 
         if (_TOn[4]) TripleTentacle(4);
@@ -416,54 +421,14 @@ public class BossScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
-            _bulshitTentacle.SetActive(true);
+            TrhowBulshit(4, 2);
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
             PlatformSend(_PlatformAttackHight, _PlatformSendSpawn);
         }
     }
-    private void RundomBulshit()
-    {
-        Vector2 move = new Vector2(_curentBS.transform.position.x, _curentBS.transform.position.y);
-        if(_bulshitClock == 0)
-        {
-            _goingUp = true;
-        }
-        else if (_goingUp && move.y<15)
-        {
-            move.y = move.y + _bulshitTentacleSpeed * Time.deltaTime;
-            _curentBS.transform.position = new Vector2(move.x, move.y);
-           
-        }
-        else if (_goingUp && move.y >= 15)
-        {
-            _goingUp = false;
-        }
-        else if (!_goingUp && move.y > _bulshitTentacleHigt)
-        {
-            move.y = move.y - _bulshitTentacleSpeed * Time.deltaTime;
-            _curentBS.transform.position = new Vector2(move.x, move.y);
-        }
-        _bulshitClock += Time.deltaTime;
-    }
-    public void SpawnBulshit()
-    {
-        if (_isGlow)
-        {
-            GameObject ob;
-            ob = Instantiate(_curentGlowBS);
-            ob.GetComponent<Parallax>().enabled = true;
-            ob.transform.position = _curentBS.transform.position;
-        }
-        else
-        {
-            GameObject ob;
-            ob = Instantiate(_curentBS);
-            ob.GetComponent<Parallax>().enabled = true;
-            ob.transform.position = _curentBS.transform.position;
-        }
-    }
+   
 
     private void PlatformSend(float higt, float spawn)
     {
@@ -532,4 +497,53 @@ public class BossScript : MonoBehaviour
         _curentGlowBS =_bulshitGlowOB[rn];
         _curentBS.SetActive(true);
     }
+    public void SpawnBulshit()
+    {
+        if (_isGlow)
+        {
+            GameObject ob;
+            ob = Instantiate(_curentGlowBS);
+            ob.GetComponent<Parallax>().enabled = true;
+            ob.transform.position = _curentBS.transform.position;
+            _isGlow = false;
+        }
+        else
+        {
+            GameObject ob;
+            ob = Instantiate(_curentBS);
+            ob.GetComponent<Parallax>().enabled = true;
+            ob.transform.position = _curentBS.transform.position;
+        }
+        _BSlong--;
+    }
+    private int _BSlong;
+    private int _BScounter;
+    public void TrhowBulshit(int Long, int Counter)
+    {
+
+        _bulshitTentacle.SetActive(true);
+        _RBon = true;
+        _BSlong = Long;
+        _BScounter = Counter;
+
+    }
+    public void RunBulshit()
+    {
+        if (_BSlong > 0)
+        {
+            _bulshitTentacle.GetComponent<Animator>().SetBool("isThrowing", true);
+            if (_BSlong == _BScounter)
+            {
+                _isGlow = true;
+            }
+
+        }
+        else 
+        {
+            _RBon= false;
+            _bulshitTentacle.GetComponent<Animator>().SetBool("isThrowing", false);
+        }
+    }
+
+
 }

@@ -7,8 +7,10 @@ public class Parallax : MonoBehaviour
     public float destroy = -30;
     public float spawn = 75;
     public bool _yMove= false;
+    public bool _back= false;
     public Vector2 _startPosition;
     public bool _willDelet;
+    public bool _willDisable= false;
     private void Awake()
     {
         player = GameObject.FindAnyObjectByType<Player>();
@@ -20,19 +22,43 @@ public class Parallax : MonoBehaviour
         float realVelocity = player.velocity.x / depth;
         Vector2 position = transform.position;
 
-        if (!_yMove)
+        if (!_back)
         {
-            position.x -= realVelocity * Time.deltaTime;
-            if (position.x < destroy && _willDelet) Destroy(gameObject);
-            if (position.x < destroy)
-                position.x = spawn;
+            if (!_yMove)
+            {
+                position.x -= realVelocity * Time.deltaTime;
+                if (position.x < destroy && _willDelet) Destroy(gameObject);
+                else if (position.x < destroy && _willDisable) gameObject.SetActive(false);
+                if (position.x < destroy)
+                    position.x = spawn;
+            }
+            else
+            {
+                position.y += realVelocity * Time.deltaTime;
+                if (position.y > destroy && _willDelet) Destroy(gameObject);
+                else if (position.y > destroy && _willDisable) gameObject.SetActive(false);
+
+                if (position.y > destroy) position.y = spawn;
+            }
         }
         else
         {
-            position.y += realVelocity * Time.deltaTime;
-            if (position.y > destroy && _willDelet) Destroy(gameObject);
+            if (!_yMove)
+            {
+                position.x += realVelocity * Time.deltaTime;
+                if (position.x > destroy && _willDelet) Destroy(gameObject);
+                else if (position.x > destroy && _willDisable) gameObject.SetActive(false);
+                if (position.x > destroy)
+                    position.x = spawn;
+            }
+            else
+            {
+                position.y -= realVelocity * Time.deltaTime;
+                if (position.y < destroy && _willDelet) Destroy(gameObject);
+                else if(position.y < destroy && _willDisable) gameObject.SetActive(false);
 
-            if (position.y > destroy) position.y = spawn;
+                if (position.y < destroy) position.y = spawn;
+            }
         }
             transform.position = position;
     }

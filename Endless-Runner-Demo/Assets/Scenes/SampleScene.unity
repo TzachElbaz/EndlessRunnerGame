@@ -403,8 +403,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &28481402
 SpriteRenderer:
   serializedVersion: 2
@@ -513,8 +515,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &28807905
 SpriteRenderer:
   serializedVersion: 2
@@ -845,8 +849,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &47768815
 SpriteRenderer:
   serializedVersion: 2
@@ -1619,8 +1625,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!1 &142118157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,8 +1678,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &142118160
 SpriteRenderer:
   serializedVersion: 2
@@ -1780,8 +1790,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &143112633
 SpriteRenderer:
   serializedVersion: 2
@@ -2106,8 +2118,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &192473661
 SpriteRenderer:
   serializedVersion: 2
@@ -2291,8 +2305,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &219469004
 SpriteRenderer:
   serializedVersion: 2
@@ -2539,8 +2555,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &231788616
 SpriteRenderer:
   serializedVersion: 2
@@ -2914,8 +2932,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &320935131
 SpriteRenderer:
   serializedVersion: 2
@@ -3298,8 +3318,10 @@ MonoBehaviour:
   destroy: 50
   spawn: -14
   _yMove: 1
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!1 &366300180
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,8 +3357,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!61 &366300182
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3749,8 +3773,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &413500561
 SpriteRenderer:
   serializedVersion: 2
@@ -4376,8 +4402,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 85
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!1 &538419445
 GameObject:
   m_ObjectHideFlags: 0
@@ -5041,8 +5069,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &731711437
 SpriteRenderer:
   serializedVersion: 2
@@ -5488,9 +5518,11 @@ MonoBehaviour:
   - {fileID: 4379640431452312886, guid: 2aa85b4bf47e28b418cb6312093ccbce, type: 3}
   _bulshitTime: 0
   _bulshitTentacle: {fileID: 1850019423}
+  _BSanimation: {fileID: 1850019426}
   _bulshitTentacleSpawn: 0
   _bulshitTentacleHigt: -5
   _bulshitTentacleSpeed: 10
+  _bulshitTentacleRate: 0
   _isGlow: 1
   _PlatformSend1: {fileID: 1771162359}
   _PlatformSendspeed: 20
@@ -5498,6 +5530,7 @@ MonoBehaviour:
   _PlatformSendTime: 200
   _PlatformAttackHight: 10
   _PlatformSendSpawn: 70
+  _faze: 0
 --- !u!61 &743920556
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6017,8 +6050,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &855450618
 SpriteRenderer:
   serializedVersion: 2
@@ -6127,8 +6162,10 @@ MonoBehaviour:
   destroy: 50
   spawn: -14
   _yMove: 1
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &868951961
 SpriteRenderer:
   serializedVersion: 2
@@ -6441,8 +6478,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &920956765
 SpriteRenderer:
   serializedVersion: 2
@@ -6784,8 +6823,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 1
+  _willDisable: 0
 --- !u!212 &976031268
 SpriteRenderer:
   serializedVersion: 2
@@ -7289,8 +7330,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 85
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &1040490570
 SpriteRenderer:
   serializedVersion: 2
@@ -7619,8 +7662,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!1 &1083956833
 GameObject:
   m_ObjectHideFlags: 0
@@ -7808,8 +7853,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &1102437238
 SpriteRenderer:
   serializedVersion: 2
@@ -7918,8 +7965,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &1102583881
 SpriteRenderer:
   serializedVersion: 2
@@ -8028,8 +8077,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &1104745073
 SpriteRenderer:
   serializedVersion: 2
@@ -8270,8 +8321,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!61 &1117746701
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8426,8 +8479,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &1150357694
 SpriteRenderer:
   serializedVersion: 2
@@ -8565,8 +8620,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!61 &1180606759
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8736,8 +8793,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &1201934016
 SpriteRenderer:
   serializedVersion: 2
@@ -9502,8 +9561,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &1366384052
 SpriteRenderer:
   serializedVersion: 2
@@ -9612,8 +9673,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &1379409940
 SpriteRenderer:
   serializedVersion: 2
@@ -9930,8 +9993,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 1
+  _willDisable: 0
 --- !u!1 &1434971408
 GameObject:
   m_ObjectHideFlags: 0
@@ -10258,8 +10323,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &1490745096
 SpriteRenderer:
   serializedVersion: 2
@@ -10614,7 +10681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1522198912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11209,8 +11276,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!61 &1697250168
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11366,8 +11435,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!61 &1712998590
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11652,8 +11723,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!61 &1720138092
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11924,7 +11997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1738292404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12249,8 +12322,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &1784834744
 SpriteRenderer:
   serializedVersion: 2
@@ -12418,8 +12493,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 85
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!1 &1816948769
 GameObject:
   m_ObjectHideFlags: 0
@@ -12651,7 +12728,7 @@ Transform:
   m_GameObject: {fileID: 1850019423}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.422337, y: -22.03, z: 0}
+  m_LocalPosition: {x: 47.422337, y: -23, z: 0}
   m_LocalScale: {x: 0.8130942, y: 1.3823724, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12746,8 +12823,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &1850167115
 SpriteRenderer:
   serializedVersion: 2
@@ -12856,8 +12935,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &1889827800
 SpriteRenderer:
   serializedVersion: 2
@@ -13103,8 +13184,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!61 &1937132134
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13269,8 +13352,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &1955476550
 SpriteRenderer:
   serializedVersion: 2
@@ -13379,8 +13464,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &1955870116
 SpriteRenderer:
   serializedVersion: 2
@@ -13490,8 +13577,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!61 &2023918784
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13866,8 +13955,10 @@ MonoBehaviour:
   destroy: -40
   spawn: 150
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!212 &2055370269
 SpriteRenderer:
   serializedVersion: 2
@@ -14119,8 +14210,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 0
+  _willDisable: 0
 --- !u!1001 &1066524004692058066
 PrefabInstance:
   m_ObjectHideFlags: 0
