@@ -271,7 +271,7 @@ public class BossScript : MonoBehaviour
         }
     }
    
-    private void TentacleSend(int higt)
+    private void TentacleSend(int higt, bool counter)
     {
         GameObject Ob;
         Ob = Instantiate(_tentacleSend1);
@@ -282,6 +282,7 @@ public class BossScript : MonoBehaviour
         tent._warningTime1= _warningTime1;
         tent._isActive= true;
         tent._attackHight = _attackHight[higt];
+        tent._isDebri = counter;
     }
     private void TripleTentacle(int lv)
     {
@@ -364,7 +365,7 @@ public class BossScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Keypad3))
         {
-            TentacleSend(0);
+            TentacleSend(0, true);
         }
         if (Input.GetKeyDown(KeyCode.Keypad4))
         {
@@ -444,9 +445,9 @@ public class BossScript : MonoBehaviour
     }
     IEnumerator AttackPatern1()
     {
-        TentacleSend(1);
+        TentacleSend(1, false);
         yield return new WaitForSeconds(1.5f);
-        TentacleSend(0);
+        TentacleSend(0, true);
         yield return new WaitForSeconds(4f);
         _tentacleSmashOn = true;
         yield return new WaitForSeconds(3f);
