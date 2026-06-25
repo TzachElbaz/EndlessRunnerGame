@@ -14,6 +14,7 @@ public class BossScript : MonoBehaviour
     private bool _tentacleSmashDownOn;
     private bool _tripleTentacleOn;
     private bool _tentacleSendOn;
+    private bool _IsDefet;
     [SerializeField] private Sprite _blanckHeart;
     [SerializeField] private Sprite _FillHeart;
     [SerializeField] private GameObject[] _hearts;
@@ -106,6 +107,11 @@ public class BossScript : MonoBehaviour
 
     public int _faze;
 
+    [Header("defet")]
+    [SerializeField] private float _defetTime;
+    private float _defetClock;
+
+
     private void Awake()
     {
         _animator.SetBool("is5", false);
@@ -134,6 +140,10 @@ public class BossScript : MonoBehaviour
         {
             StartPositioning();
         }
+        if (_IsDefet)
+        {
+            Defet();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -157,8 +167,14 @@ public class BossScript : MonoBehaviour
                     _animator.SetBool("is5", false);
                     _animator.SetBool("is3", false);
                 }
+                else if(_curentHp == 0)
+                {
+                    _IsDefet= false;
+                   
+                }
 
             }
+            
         }
     }
 
@@ -445,7 +461,7 @@ public class BossScript : MonoBehaviour
     }
     IEnumerator AttackPatern1()
     {
-        TentacleSend(1, false);
+        TentacleSend(1, false); //f
         yield return new WaitForSeconds(1.5f);
         TentacleSend(0, true);
         yield return new WaitForSeconds(4f);
@@ -544,6 +560,38 @@ public class BossScript : MonoBehaviour
             _RBon= false;
             _bulshitTentacle.GetComponent<Animator>().SetBool("isThrowing", false);
         }
+    }
+    int defetHandeler = 0;
+    private void Defet()
+    {
+        if (_defetClock ==0)
+        {
+            RunGameManeger.Instance.InvokeCangeErea();
+        }
+        
+        if (transform.position.y < -17f)
+        {
+            IsStartPositioning = false;
+            _animator.SetBool("is5", true);
+            _heartParent.SetActive(true);
+        }
+        
+        switch (defetHandeler)
+        {
+            case 0: // move down
+
+                float move = transform.position.y - _revelSpeed * Time.deltaTime;
+                transform.position = new Vector2(transform.position.x, move);
+                if(transform.position.y < -17f) defetHandeler ++;
+                break;
+
+            case 1:
+                RunGameManeger.Instance.InvokeCangeErea();
+                break;
+
+        }
+
+
     }
 
 
