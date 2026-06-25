@@ -531,11 +531,12 @@ public class BossScript : MonoBehaviour
     {
         if (_BSlong > 0)
         {
-            _bulshitTentacle.GetComponent<Animator>().SetBool("isThrowing", true);
             if (_BSlong == _BScounter)
             {
                 _isGlow = true;
             }
+            _bulshitTentacle.GetComponent<Animator>().SetBool("isThrowing", true);
+            
 
         }
         else 
@@ -543,6 +544,11 @@ public class BossScript : MonoBehaviour
             _RBon= false;
             _bulshitTentacle.GetComponent<Animator>().SetBool("isThrowing", false);
         }
+    }
+    IEnumerator AttackPatern2()
+    {
+
+        yield return new WaitForSeconds(1.5f);
     }
 
 

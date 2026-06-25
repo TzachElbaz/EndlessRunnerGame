@@ -5483,7 +5483,7 @@ MonoBehaviour:
   _tentacleSendTime: 200
   _attackHight:
   - -12
-  - -12
+  - -6
   _tentacleSendSPAWN: 40
   _tripTentaclePerent: {fileID: 1822123852}
   _tripTentacle:
