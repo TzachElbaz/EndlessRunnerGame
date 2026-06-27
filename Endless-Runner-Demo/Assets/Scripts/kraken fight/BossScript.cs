@@ -127,7 +127,9 @@ public class BossScript : MonoBehaviour
         }
         _player = GameObject.FindAnyObjectByType<Player>();
         _runGameManeger = GameObject.FindAnyObjectByType<RunGameManeger>();
-        
+        _IsDefet = false;
+
+
     }
     
 
@@ -159,17 +161,19 @@ public class BossScript : MonoBehaviour
                 _hearts[_curentHp].GetComponent<Image>().sprite = _blanckHeart;
                 if (_curentHp == 6) //seconde fase
                 {
+                    _tripTentaclePerent.transform.position = new Vector2(100, 5.7f);
                     _animator.SetBool("is5", false);
                     _animator.SetBool("is3", true);
                 }
                 else if (_curentHp == 3) //third fase
                 {
+                    _tripTentaclePerent.transform.position = new Vector2(77, 5.7f);
                     _animator.SetBool("is5", false);
                     _animator.SetBool("is3", false);
                 }
                 else if(_curentHp == 0)
                 {
-                    _IsDefet= false;
+                    _IsDefet= true;
                    
                 }
 
@@ -563,30 +567,21 @@ public class BossScript : MonoBehaviour
     }
     int defetHandeler = 0;
     private void Defet()
-    {
-        if (_defetClock ==0)
-        {
-            RunGameManeger.Instance.InvokeCangeErea();
-        }
-        
-        if (transform.position.y < -17f)
-        {
-            IsStartPositioning = false;
-            _animator.SetBool("is5", true);
-            _heartParent.SetActive(true);
-        }
-        
+    { 
         switch (defetHandeler)
         {
             case 0: // move down
-
+                _tripTentaclePerent.transform.position = new Vector2(100, 5.7f);
                 float move = transform.position.y - _revelSpeed * Time.deltaTime;
                 transform.position = new Vector2(transform.position.x, move);
                 if(transform.position.y < -17f) defetHandeler ++;
                 break;
 
             case 1:
+                defetHandeler = 0;
+                _heartParent.SetActive(false);             
                 RunGameManeger.Instance.InvokeCangeErea();
+                gameObject.SetActive(false);
                 break;
 
         }

@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static Obstacle;
-using static UnityEngine.Rendering.DebugUI;
 using Random = UnityEngine.Random;
 
 public class RunGameManeger : MonoBehaviour
@@ -29,6 +28,7 @@ public class RunGameManeger : MonoBehaviour
     [SerializeField] private GameObject _krakenBackground;
     [SerializeField] private float _transitionTime;
     [SerializeField] private float _transitionSwitch;
+    [SerializeField] private float _krakenRetransitionSpeed;
     private float _transitionClock;
     private bool _transitioning;
     [Header("Obstacles")]
@@ -340,7 +340,7 @@ public class RunGameManeger : MonoBehaviour
             {
 
                 case SCREEN_ENUM.FOREST:
-                    ForestTransition();
+                    ForestTransitionAlt();
                     break;
 
                 case SCREEN_ENUM.DESERT:
@@ -666,13 +666,18 @@ public class RunGameManeger : MonoBehaviour
             case SCREEN_ENUM.FOREST:
                 _curentObstecl = _forestObstecl;
                 _curentObsteclCours = _forestObsteclCurse;
-                _curentPlatforms =_forestPlatforms;
+                _curentPlatforms = _forestPlatforms;
                 break;
 
             case SCREEN_ENUM.DESERT:
                 _curentObstecl = _desertObstecl;
                 _curentObsteclCours = _desertObsteclCurse;
                 _curentPlatforms = _desertPlatforms;
+                break;
+            default:
+                _curentObstecl = _forestObstecl;
+                _curentObsteclCours = _forestObsteclCurse;
+                _curentPlatforms = _forestPlatforms;
                 break;
         }
     }
@@ -873,6 +878,44 @@ public class RunGameManeger : MonoBehaviour
 
 
 
+    }
+    int SW_forestTrans=0;
+    private void ForestTransitionAlt()
+    {
+        Vector2 KrTrans = _krakenTransition.transform.position;
+        switch (SW_forestTrans)
+        {
+            case 0:
+
+                _krakenTransition.transform.position = new Vector2(KrTrans.x, 51);
+                _krakenTransition.SetActive(true);
+                _krakenTransition.GetComponent<krakenBackgroundTransition>().enabled = false;
+                _krakenBubleTransition.SetActive(true);
+
+                _krakenBubleTransition2.SetActive(true);
+                SW_forestTrans++;
+                break;
+
+            case 1:
+                KrTrans.y -= _krakenRetransitionSpeed * Time.deltaTime;
+                _krakenTransition.transform.position = KrTrans;
+                if(KrTrans.y <= 18.7 && KrTrans.y >= 18.6)
+                {
+                    _Player.transform.position = new Vector2 (20,3.6f);
+                    CollectablesManager.instance.EnableColectables();
+                    CangeErea();
+                }
+                if (KrTrans.y <= -14) SW_forestTrans++;
+                break;
+            case 2:
+                _krakenTransition.SetActive(false);
+                _krakenTransition.GetComponent<krakenBackgroundTransition>().enabled = true;
+                _krakenBubleTransition.GetComponent<Parallax>()._willDisable = true;
+                _krakenBubleTransition2.GetComponent<Parallax>()._willDisable = true;
+                SW_forestTrans = 0;
+                _transitioning = false;
+                break;
+        }
     }
     private void ControllOveride()
     {
