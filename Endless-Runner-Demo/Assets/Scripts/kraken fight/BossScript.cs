@@ -180,7 +180,7 @@ public class BossScript : MonoBehaviour
                 }
                 else if (_curentHp == 0)
                 {
-                    _IsDefet = true;
+                    
 
                 }
 
@@ -517,6 +517,8 @@ public class BossScript : MonoBehaviour
             yield return StartCoroutine(AttackPhaze3loop1());
             
         }
+        yield return new WaitUntil(() => _curentHp <= 0);
+        _IsDefet = true;
 
     }
 
