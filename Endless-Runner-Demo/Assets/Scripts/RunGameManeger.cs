@@ -914,6 +914,7 @@ public class RunGameManeger : MonoBehaviour
                 _krakenBubleTransition2.GetComponent<Parallax>()._willDisable = true;
                 SW_forestTrans = 0;
                 _transitioning = false;
+                _obstaclePause = false;
                 break;
         }
     }
