@@ -73,6 +73,8 @@ public class Player : MonoBehaviour
     {
         HandleInput();
         PlayerAnimation();
+        if(!_canHit) InvincRutin(_invincTime);
+
     }
 
     private void FixedUpdate()
@@ -237,7 +239,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("obstacle"))
         {
-            Debug.Log(collision.gameObject.GetComponentInParent<Obstacle>()._passPoint);
+            
             //RunGameManeger.Instance.InvokeClearOnScreenObstacles();
             Destroy(collision.gameObject);
             if (health >= 1 && _hpOn && _canHit)
@@ -266,9 +268,10 @@ public class Player : MonoBehaviour
         {
             if (health >= 1 && _hpOn && _canHit)
             {
+                
                 health -= 1;
                 OnPlayerHit?.Invoke(health);
-                StartCoroutine(InvincRutin(_invincTime));
+                _canHit = false;
                 if (health == 0)
                     OnPlayerDied?.Invoke();
             }
@@ -285,11 +288,16 @@ public class Player : MonoBehaviour
         isGrounded = false;
         isDoubleJumping = false;
     }
-    private IEnumerator InvincRutin(float time)
+    private float _invincClock;
+    private void InvincRutin(float time)
     {
-        _canHit = false;
-        yield return new WaitForSeconds(time);
-        _canHit = true;
+        _invincClock += Time.deltaTime;
+        if (_invincClock >= time)
+        {
+            _canHit = true;
+            _invincClock = 0;
+        }
+         
     }
 
 }

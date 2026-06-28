@@ -657,7 +657,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6622200962644566332, guid: bfdf6514739a458428984a7a2d28de73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3105,7 +3105,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   firstJumpForce: 45
   doubleJumpForce: 40
-  acceleration: 25
+  acceleration: 100
   maxXVelocity: 25
   _groundCheckDistance: 0.06
   _groundCheckSize: {x: 2.68, y: 0.18}
@@ -3846,6 +3846,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 422249377}
+  - component: {fileID: 422249378}
   m_Layer: 0
   m_Name: big held platform
   m_TagString: Untagged
@@ -3862,7 +3863,7 @@ Transform:
   m_GameObject: {fileID: 422249376}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 53.745834, y: -9.720373, z: 0}
+  m_LocalPosition: {x: 27.5, y: -4.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3872,6 +3873,27 @@ Transform:
   - {fileID: 625415662}
   m_Father: {fileID: 712874096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &422249378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422249376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475ea83a1f987a643a8a16e75d72f7b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::sendTentacleScript
+  _tentacleSendTime: 0
+  _tentacleSendspeed: 0
+  _warningTime1: 0
+  _attackHight: 0
+  _isActive: 0
+  _debri: {fileID: 5115236219779926100, guid: 509e188fd812b834e87876542a262c09, type: 3}
+  _isDebri: 1
+  _force: {x: -20, y: 37}
+  _debrySpawn: {x: 40, y: 1}
 --- !u!1 &437715608
 GameObject:
   m_ObjectHideFlags: 0
@@ -5480,7 +5502,7 @@ Transform:
   m_GameObject: {fileID: 743920552}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 48.5, y: 16.08, z: 0}
+  m_LocalPosition: {x: 60.5, y: 16.08, z: 0}
   m_LocalScale: {x: 45, y: 45, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5532,7 +5554,7 @@ MonoBehaviour:
   _tentacleSendTime: 200
   _attackHight:
   - -12
-  - -12
+  - -6
   _tentacleSendSPAWN: 40
   _tripTentaclePerent: {fileID: 1822123852}
   _tripTentacle:
@@ -5544,7 +5566,7 @@ MonoBehaviour:
   _tripleTentacleTime: 200
   _tripTentacleSpeed: 100
   _tripleWarningSpeed: 30
-  _tripleWarningTime: 0.5
+  _tripleWarningTime: 0.7
   _TOn: 0000000000
   _rockCrashOB: {fileID: 5418319228021348034, guid: 7894e250b19ab014d8c5c52ef3c772a7, type: 3}
   _rokSmashForce: 20
@@ -5553,8 +5575,8 @@ MonoBehaviour:
   _rockThrowLowOB: {fileID: 976901119963927522, guid: d7d858883b6266a479f9ca22f2b11c3b, type: 3}
   _rokThrowLowForce: 5
   _rokThrowLowGravity: 0.9
-  _rokThrowLowSpawn: {x: 44, y: 20}
-  _rokThrowHighSpawn: {x: 44, y: 10}
+  _rokThrowLowSpawn: {x: 44, y: 10}
+  _rokThrowHighSpawn: {x: 44, y: 20}
   _stelagtiteOB:
   - {fileID: 3077337002891176246, guid: 9efd7b4c0e4b9ba46b73fdbae6f70fa2, type: 3}
   - {fileID: 6377789641397385021, guid: cea335e1cf2e91d44834370a2e732aea, type: 3}
@@ -5572,8 +5594,9 @@ MonoBehaviour:
   _bulshitTentacleHigt: -5
   _bulshitTentacleSpeed: 10
   _bulshitTentacleRate: 0
-  _isGlow: 1
+  _isGlow: 0
   _PlatformSend1: {fileID: 1771162359}
+  _PlatformSend2: {fileID: 422249376}
   _PlatformSendspeed: 20
   _PlatformWarningTime1: 1
   _PlatformSendTime: 200
@@ -6850,9 +6873,10 @@ GameObject:
   - component: {fileID: 976031269}
   - component: {fileID: 976031268}
   - component: {fileID: 976031267}
+  - component: {fileID: 976031270}
   m_Layer: 0
   m_Name: pufer1_0 (1)
-  m_TagString: Untagged
+  m_TagString: trig obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6951,6 +6975,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1850019425}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &976031270
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976031266}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.16, y: -0.16}
+  m_Radius: 1.6729
 --- !u!1 &999303750
 GameObject:
   m_ObjectHideFlags: 0
@@ -7796,7 +7856,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1665394813, guid: bfdf6514739a458428984a7a2d28de73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9019,7 +9079,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6844633275777678374, guid: bfdf6514739a458428984a7a2d28de73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9861,6 +9921,7 @@ MonoBehaviour:
   _debri: {fileID: 0}
   _isDebri: 0
   _force: {x: 0, y: 0}
+  _debrySpawn: {x: 40, y: 1}
 --- !u!212 &1396430969
 SpriteRenderer:
   serializedVersion: 2
@@ -9946,6 +10007,7 @@ GameObject:
   - component: {fileID: 1404065868}
   - component: {fileID: 1404065867}
   - component: {fileID: 1404065869}
+  - component: {fileID: 1404065870}
   m_Layer: 0
   m_Name: sea mine-1.png_0
   m_TagString: Untagged
@@ -10047,6 +10109,42 @@ MonoBehaviour:
   _startPosition: {x: 0, y: 0}
   _willDelet: 1
   _willDisable: 0
+--- !u!58 &1404065870
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404065866}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.05032954}
+  m_Radius: 0.27471876
 --- !u!1 &1434971408
 GameObject:
   m_ObjectHideFlags: 0
@@ -10915,6 +11013,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9f5663f3321c5c498d689fdad512261, type: 3}
+--- !u!1 &1571038602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5115236219779926100, guid: 509e188fd812b834e87876542a262c09, type: 3}
+  m_PrefabInstance: {fileID: 8339795439532062163}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1588007779
 GameObject:
   m_ObjectHideFlags: 0
@@ -12303,9 +12406,10 @@ MonoBehaviour:
   _warningTime1: 0
   _attackHight: 0
   _isActive: 0
-  _debri: {fileID: 0}
+  _debri: {fileID: 1571038602}
   _isDebri: 0
-  _force: {x: 0, y: 0}
+  _force: {x: -20, y: 37}
+  _debrySpawn: {x: 40, y: 1}
 --- !u!4 &1771162361
 Transform:
   m_ObjectHideFlags: 0
@@ -12315,7 +12419,7 @@ Transform:
   m_GameObject: {fileID: 1771162359}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.51, y: -3, z: 0}
+  m_LocalPosition: {x: 27.57, y: -4.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

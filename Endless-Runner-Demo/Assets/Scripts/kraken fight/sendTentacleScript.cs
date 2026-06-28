@@ -11,6 +11,7 @@ public class sendTentacleScript : MonoBehaviour
     [SerializeField] public GameObject _debri;
     public bool _isDebri;
     public Vector2 _force;
+    public Vector2 _debrySpawn= new Vector2(40, 1);
     void Update()
     {
         Movment();
@@ -51,7 +52,7 @@ public class sendTentacleScript : MonoBehaviour
     {
         GameObject Ob;
         Ob = Instantiate(_debri);
-        Ob.transform.position = new Vector2(40,1);
+        Ob.transform.position = _debrySpawn;
         Ob.GetComponent<Rigidbody2D>().AddForce( _force, ForceMode2D.Impulse);
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 707179582442743991}
   - component: {fileID: 6408715832035080532}
   - component: {fileID: 2325314098477569397}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mossy rock throw
   m_TagString: boss obstacle
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -173,5 +173,7 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 1
+  _willDisable: 0

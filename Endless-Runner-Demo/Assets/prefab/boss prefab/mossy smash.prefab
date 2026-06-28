@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4283596203806504507}
   - component: {fileID: 7964724096643198838}
   - component: {fileID: 6526612214814302909}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mossy smash
   m_TagString: boss obstacle
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -169,9 +169,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a048ccc0ab04e3140b4c2f3f310f8f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Parallax
-  depth: 1.5
+  depth: 1.4
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 1
+  _willDisable: 0
