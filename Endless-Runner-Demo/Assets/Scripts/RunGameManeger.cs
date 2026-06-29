@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static Obstacle;
@@ -70,6 +71,8 @@ public class RunGameManeger : MonoBehaviour
     [SerializeField] private float _dropChaineLength;
     
     [SerializeField] private int _obstecalChainChance;
+    [SerializeField] private int _obstecalChainChanceMax;
+    [SerializeField] private int _obstecalChainMark;
     [SerializeField] private int _obsteclBrakeChance;
 
     public bool _obstaclePause;
@@ -77,6 +80,7 @@ public class RunGameManeger : MonoBehaviour
 
     private bool isGameOver = false;
     private int pursePlace;
+    private float _chineCounter;
 
     [Header("obstacle distant change")]
     [SerializeField] private float _velocityLengthAdd = 0f;
@@ -200,6 +204,12 @@ public class RunGameManeger : MonoBehaviour
         {
             SpawnOB();
         }
+        _chineCounter += _Player.velocity.x * Time.fixedDeltaTime;
+        if (_chineCounter >= _obstecalChainMark && _obstecalChainChance< _obstecalChainChanceMax) 
+        {
+            _obstecalChainChance++;
+            _chineCounter = 0;
+        }
 
     }
 
@@ -314,6 +324,10 @@ public class RunGameManeger : MonoBehaviour
                     break;
                 case OB_TYPE.PLATFORM:
                     length = TwoOBDistantCheck(prev, now)+ prev._GenerateDistance;
+                    if (now._passPoint == PASS_POINT.UP || now._passPoint == PASS_POINT.UP_MIDDLE)
+                    {
+                        length += _addLength;
+                    }
                     break;
 
 
@@ -324,6 +338,7 @@ public class RunGameManeger : MonoBehaviour
             {
                 length += _addLength;
             }
+            
             genLength[i] = length;
             pursegen[i] = pursePlace;
             coinRangeCount++;
@@ -506,15 +521,13 @@ public class RunGameManeger : MonoBehaviour
                         pursePlace = 2;
                         break;
 
-                    case Obstacle.PASS_POINT.UP_DOWN:
-                        if (1 == Random.Range(0, 2)) length = _addLength;
-                        else length = _minLength;
+                    case Obstacle.PASS_POINT.UP_DOWN:                        
+                        length = _minLength;
                         pursePlace = 2;
                         break;
 
                     case Obstacle.PASS_POINT.MIDDLE_DOWN:
-                        if (1 == Random.Range(0, 2)) length = _addLength;
-                        else length = _minLength;
+                        length = _minLength;
                         pursePlace =2;
                         break;
 

@@ -1080,17 +1080,19 @@ MonoBehaviour:
   _Yspon: 1.7
   _platformChance: 1
   _obstacleCurseCount: 4
-  _curentScreen: 2
-  _nextScreen: 2
+  _curentScreen: 0
+  _nextScreen: 0
   _pregenLength: 20
   _minLength: 30
   _addLength: 12
   pursegen: 
   _jumpChaineLength: 11
   _dropChaineLength: 16
-  _obstecalChainChance: 3
+  _obstecalChainChance: 1
+  _obstecalChainChanceMax: 5
+  _obstecalChainMark: 600
   _obsteclBrakeChance: 1
-  _obstaclePause: 1
+  _obstaclePause: 0
   _generateAlt: 1
   _velocityLengthAdd: 0
   _velocityLengthAddThreshhold: 40
@@ -3909,7 +3911,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &437715609
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4077,7 +4079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &497650669
 Transform:
   m_ObjectHideFlags: 0
@@ -5053,7 +5055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &712874096
 Transform:
   m_ObjectHideFlags: 0
@@ -7363,7 +7365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1040382535
 Transform:
   m_ObjectHideFlags: 0
@@ -12343,7 +12345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1766636767
 RectTransform:
   m_ObjectHideFlags: 0
