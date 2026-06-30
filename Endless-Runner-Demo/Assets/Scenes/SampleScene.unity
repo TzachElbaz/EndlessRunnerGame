@@ -4290,7 +4290,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 3511
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -8864,7 +8864,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1186737204}
   - component: {fileID: 1186737203}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8884,7 +8884,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11427,7 +11427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1668466130}
   - component: {fileID: 1668466129}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11447,7 +11447,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11455,8 +11455,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 8.19949
+  MaxDistance: 134.67392
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -11539,13 +11539,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668466128}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.16192566, y: -0, z: -0, w: 0.98680294}
+  m_LocalPosition: {x: 10, y: 3.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1997237593}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 738.637, y: 0, z: 0}
 --- !u!1 &1685819748
 GameObject:
   m_ObjectHideFlags: 0
@@ -13949,7 +13949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1997237593}
   - component: {fileID: 1997237592}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: AudioManager
   m_TagString: Audio
   m_Icon: {fileID: 0}
@@ -13976,9 +13976,10 @@ MonoBehaviour:
   atlantis: {fileID: 8300000, guid: 171f5320863b7b54bbbaae1c6e0f4a09, type: 3}
   bubbles: {fileID: 8300000, guid: 6b3b5a0180bff0b4cae08ca7fbc06fa4, type: 3}
   coin: {fileID: 8300000, guid: 316e5e07fea396b43a288e6a272f7e0a, type: 3}
-  jump: {fileID: 8300000, guid: 2345122ad72114040826282fc5c55317, type: 3}
+  jump: {fileID: 8300000, guid: f79060c540068f84fa641ef0ffad83bf, type: 3}
   doubleJump: {fileID: 8300000, guid: 1f28e024178fc9b40a3e097775ab7a78, type: 3}
-  hit: {fileID: 8300000, guid: 557655482fd826a45a37f1971202e454, type: 3}
+  hit: {fileID: 8300000, guid: 9dd80052b5730b2429ffa0572a662f5b, type: 3}
+  Groundhit: {fileID: 8300000, guid: 35cb535c49c3a5c48a2918e7d0c57174, type: 3}
 --- !u!4 &1997237593
 Transform:
   m_ObjectHideFlags: 0

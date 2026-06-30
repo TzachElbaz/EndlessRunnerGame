@@ -16,6 +16,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip jump;
     public AudioClip doubleJump;
     public AudioClip hit;
+    public AudioClip Groundhit;
+
 
     private void Start()
     {

@@ -44,8 +44,6 @@ public class Player : MonoBehaviour
     private bool isDoubleJumping = false;
     private bool rollOnLand = false;
 
-    [Header("Audio")]
-
 
     //[HideInInspector]
     public Vector2 velocity;
@@ -126,7 +124,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        //_audioManager.PlaySFX(_audioManager.jump);
+        _audioManager.PlaySFX(_audioManager.jump);
         jumpRemaining -= 1;
         if (jumpRemaining == 0)
             isDoubleJumping = true;
@@ -231,27 +229,20 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("obstacle"))
         {
 
-            _audioManager.PlaySFX(_audioManager.hit);
             //RunGameManeger.Instance.InvokeClearOnScreenObstacles();
             Destroy(collision.gameObject);
             if (health >= 1 && _hpOn && _canHit)
             {
-                health -= 1;
-                OnPlayerHit?.Invoke(health);
-                if (health == 0)
-                    OnPlayerDied?.Invoke();
+
+                HitPlayer();
             }
         }
         if (collision.gameObject.CompareTag("boss obstacle"))
         {
-            _audioManager.PlaySFX(_audioManager.hit);
             collision.gameObject.layer = LayerMask.NameToLayer("ignor colision");
             if (health >= 1 && _hpOn && _canHit)
             {
-                health -= 1;
-                OnPlayerHit?.Invoke(health);
-                if (health == 0)
-                    OnPlayerDied?.Invoke();
+                HitPlayer();
             }
         }
     }
@@ -262,11 +253,8 @@ public class Player : MonoBehaviour
             if (health >= 1 && _hpOn && _canHit)
             {
 
-                health -= 1;
-                OnPlayerHit?.Invoke(health);
+                HitPlayer();
                 _canHit = false;
-                if (health == 0)
-                    OnPlayerDied?.Invoke();
             }
         }
     }
@@ -291,6 +279,15 @@ public class Player : MonoBehaviour
             _invincClock = 0;
         }
 
+    }
+
+    private void HitPlayer()
+    {
+        _audioManager.PlaySFX(_audioManager.hit);
+        health -= 1;
+        OnPlayerHit?.Invoke(health);
+        if (health == 0)
+            OnPlayerDied?.Invoke();
     }
 
 }
