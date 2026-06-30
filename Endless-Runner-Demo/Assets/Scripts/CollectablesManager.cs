@@ -11,12 +11,22 @@ public class CollectablesManager : MonoBehaviour
     [SerializeField] public SO_Collectable[] _soForestCollectableList;
     [SerializeField] public SO_Collectable[] _soDesertCollectableList;
     [SerializeField] private float _collectableSpawnDistant;
+    [SerializeField] private GameObject _colectableParent;
 
     [SerializeField] private float _transitionTime;
     private float _transitionCLOCK;
     private bool _isTransitioning;
     public bool _isCollectableAvalable;
 
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+    }
     private void OnEnable()
     {
         player = GameObject.FindAnyObjectByType<Player>();
@@ -77,6 +87,14 @@ public class CollectablesManager : MonoBehaviour
     {
         _isTransitioning = true;
         _transitionCLOCK = 0f;
-    } 
+    }
+    public void DisableColectables()
+    {
+        _colectableParent.SetActive(false);
+    }
+    public void EnableColectables()
+    {
+        _colectableParent.SetActive(true);
+    }
 
 }

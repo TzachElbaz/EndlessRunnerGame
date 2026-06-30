@@ -18,7 +18,7 @@ public class ereaBackgroundMove : MonoBehaviour
 
         position.x -= realVelocity * Time.fixedDeltaTime;
 
-        if (position.x < -10)
+        if (position.x < -5)
             position.x = 65;
 
         transform.position = position;

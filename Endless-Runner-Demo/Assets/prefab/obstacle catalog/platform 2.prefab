@@ -120,8 +120,8 @@ Transform:
   m_GameObject: {fileID: 4226047801991745395}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: 28.3611, y: 17.54, z: 0}
-  m_LocalScale: {x: 56.457275, y: 9.797652, z: 1}
+  m_LocalPosition: {x: 30.2185, y: 17.54, z: 0}
+  m_LocalScale: {x: 60.17216, y: 9.797652, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2967484995032178629}
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstecl
   _type: 3
-  _GenerateDistance: 52
+  _GenerateDistance: 57.2
   destroy: -60
   depth: 1
   _passPoint: 5
@@ -375,7 +375,7 @@ SpriteRenderer:
   m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -513,7 +513,7 @@ SpriteRenderer:
   m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -651,7 +651,7 @@ SpriteRenderer:
   m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

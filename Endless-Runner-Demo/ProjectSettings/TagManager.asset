@@ -8,6 +8,9 @@ TagManager:
   - obstacle
   - coin
   - Platform
+  - counter
+  - boss obstacle
+  - trig obstacle
   layers:
   - Default
   - TransparentFX
@@ -19,8 +22,8 @@ TagManager:
   - Ground
   - Player
   - 
-  - 
-  - 
+  - ignor colision
+  - rock
   - 
   - 
   - 

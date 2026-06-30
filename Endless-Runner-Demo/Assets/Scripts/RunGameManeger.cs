@@ -1,7 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 using static Obstacle;
 using Random = UnityEngine.Random;
 
@@ -18,14 +18,17 @@ public class RunGameManeger : MonoBehaviour
 
     [SerializeField] private Player _Player;
     [SerializeField] private GameObject _PlayerObject;
+    [SerializeField] private Vector2 _playerSpawn;
 
     [Header("Transition")]
     [SerializeField] private GameObject _forestBackground;
     [SerializeField] private GameObject[] _forestTransitionList;
     [SerializeField] private GameObject _desertBackground;
     [SerializeField] private GameObject[] _desertTransitionList;
+    [SerializeField] private GameObject _krakenBackground;
     [SerializeField] private float _transitionTime;
     [SerializeField] private float _transitionSwitch;
+    [SerializeField] private float _krakenRetransitionSpeed;
     private float _transitionClock;
     private bool _transitioning;
     [Header("Obstacles")]
@@ -84,8 +87,36 @@ public class RunGameManeger : MonoBehaviour
     [SerializeField] private GameObject[] _coinList;
     [SerializeField] private Vector2Int _coinGenerationRange;
 
+
+    [Header("kraken")]
+    [SerializeField] private GameObject _kraken;
+    [SerializeField] private Vector2 _krskenSpawn;
+    [SerializeField] private GameObject _tentacleUp;
+    [SerializeField] private Vector2 _tntacleUpSpawn;
+    [SerializeField] private GameObject _tentacleDown;
+    [SerializeField] private Vector2 _tentacleDownSpawn;
+    [SerializeField] private GameObject _bubleUp;
+    [SerializeField] private Vector2 _bubleUpSpawn;
+    [SerializeField] private GameObject _bubleDown;
+    [SerializeField] private Vector2 _bubleDownSpawn;
+    [SerializeField] private GameObject _tripleTentaacle;
+    [SerializeField] private Vector2 _tripleTentaacleSpawn;
+
+    [SerializeField] private Vector2 _playerBossSpawn;
+
+    [SerializeField] private GameObject _krakenTransition;
+    [SerializeField] private Vector2 _krakenTransitionSpawn;
+    [SerializeField] private GameObject _krakenBubleTransition;
+    [SerializeField] private GameObject _krakenBubleTransition2;
+    [SerializeField] private GameObject _krakenTentacleTranzition;
+    [SerializeField] private Vector2 _krakenTentacleTranzitionSpawn;
+    [SerializeField] private GameObject[] _krakenWaves;
+    [SerializeField] private Vector2[] _waveSpawn;
+
     
 
+
+    private bool test;
 
 
     private void Awake()
@@ -117,7 +148,8 @@ public class RunGameManeger : MonoBehaviour
     public enum SCREEN_ENUM
     {
         FOREST,
-        DESERT
+        DESERT,
+        KRAKEN
     }
 
     void Start()
@@ -131,8 +163,7 @@ public class RunGameManeger : MonoBehaviour
         listCount = 0;
         _pregenEmpty = true;
         pregen[pregen.Length - 1] = _curentObstecl[0];
-
-
+        //CangeErea();
     }
 
 
@@ -154,6 +185,7 @@ public class RunGameManeger : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+        ControllOveride();
         AddVelocityObsteclDistant();
         TimeKiper();
     }
@@ -223,6 +255,7 @@ public class RunGameManeger : MonoBehaviour
 
             }
             
+            
             int randomObstacleEvent = Random.Range(0, 10);
             Ob = _curentObstecl[rund];
             pregen[i] = Ob;
@@ -287,7 +320,10 @@ public class RunGameManeger : MonoBehaviour
 
             }
 
-            
+            if(i>0 && genLength[i] == _jumpChaineLength && _jumpChaineLength == genLength[i - 1])
+            {
+                length += _addLength;
+            }
             genLength[i] = length;
             pursegen[i] = pursePlace;
             coinRangeCount++;
@@ -304,15 +340,20 @@ public class RunGameManeger : MonoBehaviour
             {
 
                 case SCREEN_ENUM.FOREST:
-                    ForestTransition();
+                    ForestTransitionAlt();
                     break;
 
                 case SCREEN_ENUM.DESERT:
                     DesertTransition();
                     break;
+                case SCREEN_ENUM.KRAKEN:
+                    _transitioning = false;
+                    StartCoroutine(KrakenTransition());
+                    break;
             }
             
         }
+      
     }
     private bool SpawnCheck()
     {
@@ -625,13 +666,18 @@ public class RunGameManeger : MonoBehaviour
             case SCREEN_ENUM.FOREST:
                 _curentObstecl = _forestObstecl;
                 _curentObsteclCours = _forestObsteclCurse;
-                _curentPlatforms =_forestPlatforms;
+                _curentPlatforms = _forestPlatforms;
                 break;
 
             case SCREEN_ENUM.DESERT:
                 _curentObstecl = _desertObstecl;
                 _curentObsteclCours = _desertObsteclCurse;
                 _curentPlatforms = _desertPlatforms;
+                break;
+            default:
+                _curentObstecl = _forestObstecl;
+                _curentObsteclCours = _forestObsteclCurse;
+                _curentPlatforms = _forestPlatforms;
                 break;
         }
     }
@@ -659,6 +705,9 @@ public class RunGameManeger : MonoBehaviour
             case SCREEN_ENUM.DESERT:
                 _desertBackground.SetActive(false);
                 break;
+            case SCREEN_ENUM.KRAKEN:
+                _krakenBackground.SetActive(false);
+                break;
 
         }
         _curentScreen = _nextScreen;
@@ -671,6 +720,9 @@ public class RunGameManeger : MonoBehaviour
                 break;
             case SCREEN_ENUM.DESERT:
                 _desertBackground.SetActive(true);
+                break;
+            case SCREEN_ENUM.KRAKEN:
+                _krakenBackground.SetActive(true);
                 break;
 
         }
@@ -757,5 +809,124 @@ public class RunGameManeger : MonoBehaviour
     public void InvokeClearOffScreenObstacles()
     {
         ClearOffScreenObstacles?.Invoke();
+    }
+    IEnumerator KrakenTransition()
+    {
+        _forestTransitionList[1].SetActive(true);
+        yield return new WaitForSeconds(_transitionSwitch);
+        _forestTransitionList[2].SetActive(true);
+        yield return new WaitForSeconds(3f);
+        _Player.GetComponentInChildren<SpriteRenderer>().sortingOrder = 102;
+        CollectablesManager.instance.DisableColectables();
+        _krakenWaves[0].SetActive(true);
+        //_krakenWaves[0].transform.localPosition = _waveSpawn[0];
+        _krakenWaves[1].SetActive(true);
+        //_krakenWaves[1].transform.localPosition = _waveSpawn[1];
+        _krakenWaves[2].SetActive(true);
+        //_krakenWaves[2].transform.localPosition = _waveSpawn[2];
+        yield return new WaitForSeconds(3.5f);
+
+        _krakenTentacleTranzition.SetActive(true);
+        _krakenTentacleTranzition.transform.localPosition = _krakenTransitionSpawn;
+
+
+        yield return new WaitForSeconds(8);
+
+        _krakenTransition.SetActive(true);
+        _krakenBubleTransition.SetActive(true);
+        _krakenBubleTransition2.SetActive(true);
+        _Player.transform.position = _playerBossSpawn;
+        _Player._rigidbody.gravityScale = 0;
+        for (int i = 0; i < 3; i++)
+        {
+            _krakenWaves[i].GetComponent<Parallax>()._yMove = true;
+            _krakenWaves[i].GetComponent<Parallax>().depth = 1.5f;
+            _krakenWaves[i].GetComponent<Parallax>().spawn = 4.5f;
+            _krakenWaves[i].GetComponent<Parallax>().destroy = 100;
+        }
+
+        yield return new WaitForSeconds(4);
+        CangeErea();
+        _forestTransitionList[1].SetActive(false);
+        _forestTransitionList[2].SetActive(false);
+        _krakenTransition.GetComponentInParent<krakenBackgroundTransition>()._continu = true;
+        for (int i = 0; i < 3; i++)
+        {
+            _krakenWaves[i].SetActive(false);
+        }
+        yield return new WaitForSeconds(2);
+        _krakenBubleTransition.GetComponent<Parallax>().destroy = 500;
+        _krakenBubleTransition2.GetComponent<Parallax>().destroy = 500;
+        yield return new WaitForSeconds(1);
+        _krakenTransition.SetActive(false);
+       
+
+        _Player.GetComponentInChildren<SpriteRenderer>().sortingOrder = 11;
+        _Player._rigidbody.gravityScale = 10;
+        yield return new WaitForSeconds(3);
+        _krakenBubleTransition.SetActive(false);
+        _krakenBubleTransition2.SetActive(false);
+        _krakenBubleTransition.GetComponent<Parallax>().destroy = 50;
+        _krakenBubleTransition2.GetComponent<Parallax>().destroy = 50;
+        _kraken.transform.position = _krskenSpawn;
+        _kraken.SetActive(true);
+        yield return new WaitForSeconds(2);
+       
+
+
+
+
+
+
+    }
+    int SW_forestTrans=0;
+    private void ForestTransitionAlt()
+    {
+        Vector2 KrTrans = _krakenTransition.transform.position;
+        switch (SW_forestTrans)
+        {
+            case 0:
+
+                _krakenTransition.transform.position = new Vector2(KrTrans.x, 51);
+                _krakenTransition.SetActive(true);
+                _krakenTransition.GetComponent<krakenBackgroundTransition>().enabled = false;
+                _krakenBubleTransition.SetActive(true);
+
+                _krakenBubleTransition2.SetActive(true);
+                SW_forestTrans++;
+                break;
+
+            case 1:
+                KrTrans.y -= _krakenRetransitionSpeed * Time.deltaTime;
+                _krakenTransition.transform.position = KrTrans;
+                if(KrTrans.y <= 18.7 && KrTrans.y >= 18.6)
+                {
+                    _Player.transform.position = new Vector2 (20,3.6f);
+                    CollectablesManager.instance.EnableColectables();
+                    CangeErea();
+                }
+                if (KrTrans.y <= -14) SW_forestTrans++;
+                break;
+            case 2:
+                _krakenTransition.SetActive(false);
+                _krakenTransition.GetComponent<krakenBackgroundTransition>().enabled = true;
+                _krakenBubleTransition.GetComponent<Parallax>()._willDisable = true;
+                _krakenBubleTransition2.GetComponent<Parallax>()._willDisable = true;
+                SW_forestTrans = 0;
+                _transitioning = false;
+                _obstaclePause = false;
+                break;
+        }
+    }
+    private void ControllOveride()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            StartCoroutine(KrakenTransition());
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            InvokeCangeErea();
+        }
     }
 }

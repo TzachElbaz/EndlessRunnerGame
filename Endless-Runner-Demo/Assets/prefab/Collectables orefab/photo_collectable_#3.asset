@@ -15,3 +15,5 @@ MonoBehaviour:
   _colectableId: 3
   _zone: 0
   _sprite: {fileID: 7243816863103722908, guid: be0ce33c084620c419b25bfb16d2e695, type: 3}
+  _animation: {fileID: 7400000, guid: 2c2db96a8855c7841b7c44d56f3ab250, type: 2}
+  _name: photo

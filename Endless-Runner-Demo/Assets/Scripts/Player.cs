@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public static event Action<int> OnPlayerHit;
     public static event Action OnPlayerDied;
 
-    private Rigidbody2D _rigidbody;
+    [SerializeField, HideInInspector] public Rigidbody2D _rigidbody;
     private Animator _animation;
     private BoxCollider2D _boxCollider;
 
@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
     private Vector2 jumpingOffset = new Vector2(-0.02f, 0.57f);
     private Vector2 jumpingSize = new Vector2(0.61f, 0.74f);
 
+    [SerializeField] private float _invincTime;
+
     [Header("Rolling")]
     [SerializeField] private float rollDuration = .6f;
     [SerializeField] private float fastFallVelocity = 40f;
@@ -52,6 +54,7 @@ public class Player : MonoBehaviour
 
     [Header("debug")]
     [SerializeField] private bool _hpOn;
+    private bool _canHit=true;
 
     private void Awake()
     {
@@ -70,6 +73,8 @@ public class Player : MonoBehaviour
     {
         HandleInput();
         PlayerAnimation();
+        if(!_canHit) InvincRutin(_invincTime);
+
     }
 
     private void FixedUpdate()
@@ -166,6 +171,7 @@ public class Player : MonoBehaviour
         _animation.SetBool("isRolling", isRolling);
         _animation.SetBool("isGrounded", isGrounded);
         _animation.SetBool("isDoubleJumping", isDoubleJumping);
+        _animation.SetBool("isHert", !_canHit);
     }
 
     private void Roll()
@@ -233,9 +239,10 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("obstacle"))
         {
-            Debug.Log(collision.gameObject.GetComponentInParent<Obstacle>()._passPoint);
-            RunGameManeger.Instance.InvokeClearOnScreenObstacles();
-            if (health >= 1 && _hpOn)
+            
+            //RunGameManeger.Instance.InvokeClearOnScreenObstacles();
+            Destroy(collision.gameObject);
+            if (health >= 1 && _hpOn && _canHit)
             {
                 health -= 1;
                 OnPlayerHit?.Invoke(health);
@@ -243,6 +250,54 @@ public class Player : MonoBehaviour
                     OnPlayerDied?.Invoke();
             }
         }
+        if (collision.gameObject.CompareTag("boss obstacle"))
+        {
+            collision.gameObject.layer = LayerMask.NameToLayer("ignor colision");
+            if (health >= 1 && _hpOn && _canHit)
+            {
+                health -= 1;
+                OnPlayerHit?.Invoke(health);
+                if (health == 0)
+                    OnPlayerDied?.Invoke();
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("trig obstacle"))
+        {
+            if (health >= 1 && _hpOn && _canHit)
+            {
+                
+                health -= 1;
+                OnPlayerHit?.Invoke(health);
+                _canHit = false;
+                if (health == 0)
+                    OnPlayerDied?.Invoke();
+            }
+        }
+    }
+    public void TentacleGrabAnimation()
+    {
+        Debug.Log("boop");
+        _animation.Play("PlayerTentacleGrab");
+    }
+    public void PlayerFallAnimation()
+    {
+        isRolling = false;
+        isGrounded = false;
+        isDoubleJumping = false;
+    }
+    private float _invincClock;
+    private void InvincRutin(float time)
+    {
+        _invincClock += Time.deltaTime;
+        if (_invincClock >= time)
+        {
+            _canHit = true;
+            _invincClock = 0;
+        }
+         
     }
 
 }

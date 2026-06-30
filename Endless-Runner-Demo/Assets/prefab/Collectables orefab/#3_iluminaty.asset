@@ -15,3 +15,5 @@ MonoBehaviour:
   _colectableId: 3
   _zone: 1
   _sprite: {fileID: 9216303713958627330, guid: fb43328a6b2727f4d81125f65d0c3629, type: 3}
+  _animation: {fileID: 7400000, guid: e3ed0a5d1e9a76448ab6adb4c08e247e, type: 2}
+  _name: iluminati
