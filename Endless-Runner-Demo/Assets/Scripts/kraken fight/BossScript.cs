@@ -511,6 +511,7 @@ public class BossScript : MonoBehaviour
         yield return new WaitForSeconds(4f);
         SubCorFin = false;
         yield return StartCoroutine(AttackPhaze3());
+        yield return new WaitForSeconds(4f);
         while (_curentHp != 0)
         {
             SubCorFin = false;
