@@ -11,6 +11,7 @@ TagManager:
   - counter
   - boss obstacle
   - trig obstacle
+  - Audio
   layers:
   - Default
   - TransparentFX
