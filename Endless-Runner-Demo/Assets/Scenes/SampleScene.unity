@@ -1065,12 +1065,12 @@ MonoBehaviour:
   - {fileID: 1241772735445447058, guid: 34473dd09ea1aa943affe3e6a10880d9, type: 3}
   - {fileID: 4314314486488216035, guid: e82f36c414e2cf24eacd4e961995ac15, type: 3}
   _desertObstecl:
-  - {fileID: 5607722697183440384, guid: e4fe4083e7a70cf42a6b59c68350dfee, type: 3}
-  - {fileID: 7673543996426664008, guid: e79e9ac88b3e74a4096ebe526be827f4, type: 3}
-  - {fileID: 6649315052734820357, guid: 62151012c58657542806a99eab8e333e, type: 3}
-  - {fileID: 1146827080047758200, guid: 7b80c7ead5a532d489a3f8ac61e04a21, type: 3}
-  - {fileID: 4555445112417170446, guid: 23d7ba776979a6d45ae1c7b82212a6c6, type: 3}
-  - {fileID: 518647977935069568, guid: e6c0902745b632f439dcd0f0c9cfb373, type: 3}
+  - {fileID: 5607722697183440384, guid: 7cc190e5319fd6d4a9c9015f2c9fc387, type: 3}
+  - {fileID: 7673543996426664008, guid: fc02d18c65a23ca4f9ec0d9c5c54d3ca, type: 3}
+  - {fileID: 6649315052734820357, guid: c4b8860dcee95464dbe37109a566556c, type: 3}
+  - {fileID: 1146827080047758200, guid: 1089f3baaacb2a44e82cccc82d2b057c, type: 3}
+  - {fileID: 4555445112417170446, guid: 152faac1e324ea14a9af929ed19567f2, type: 3}
+  - {fileID: 518647977935069568, guid: 75069c363ebf7374fba8d3caa3b3bd4f, type: 3}
   _desertObsteclCurse:
   - {fileID: 3711225835351693844, guid: 5bdd7177e7b7373428560161951ae254, type: 3}
   _desertPlatforms:
@@ -1082,15 +1082,15 @@ MonoBehaviour:
   _obstacleCurseCount: 4
   _curentScreen: 0
   _nextScreen: 0
-  _pregenLength: 20
+  _pregenLength: 200
   _minLength: 30
   _addLength: 12
   pursegen: 
   _jumpChaineLength: 11
   _dropChaineLength: 16
-  _obstecalChainChance: 1
+  _obstecalChainChanceScale: 0200000004000000
   _obstecalChainChanceMax: 5
-  _obstecalChainMark: 600
+  _obstecalChainMark: 0000000028000000
   _obsteclBrakeChance: 1
   _obstaclePause: 0
   _generateAlt: 1
@@ -3123,7 +3123,7 @@ MonoBehaviour:
   distance: 0
   _collectableSpawnClock: 0
   health: 3
-  _hpOn: 1
+  _hpOn: 0
 --- !u!4 &335309341
 Transform:
   m_ObjectHideFlags: 0
