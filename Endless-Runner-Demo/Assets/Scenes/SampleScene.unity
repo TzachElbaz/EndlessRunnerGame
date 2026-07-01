@@ -1080,8 +1080,8 @@ MonoBehaviour:
   _Yspon: 1.7
   _platformChance: 1
   _obstacleCurseCount: 4
-  _curentScreen: 2
-  _nextScreen: 2
+  _curentScreen: 0
+  _nextScreen: 0
   _pregenLength: 20
   _minLength: 30
   _addLength: 12
@@ -1090,7 +1090,7 @@ MonoBehaviour:
   _dropChaineLength: 16
   _obstecalChainChance: 3
   _obsteclBrakeChance: 1
-  _obstaclePause: 1
+  _obstaclePause: 0
   _generateAlt: 1
   _velocityLengthAdd: 0
   _velocityLengthAddThreshhold: 40
@@ -1144,6 +1144,7 @@ MonoBehaviour:
   Heart1: {fileID: 770371865}
   Heart2: {fileID: 1940233390}
   Heart3: {fileID: 1735962882}
+  CollectablesUI: {fileID: 437715608}
 --- !u!114 &84267936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3909,7 +3910,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &437715609
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4077,7 +4078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &497650669
 Transform:
   m_ObjectHideFlags: 0
@@ -5053,7 +5054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &712874096
 Transform:
   m_ObjectHideFlags: 0
@@ -7363,7 +7364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1040382535
 Transform:
   m_ObjectHideFlags: 0
@@ -12601,7 +12602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1766636767
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13523,7 +13524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1921133880
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13970,16 +13971,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   musicSource: {fileID: 1186737203}
   SfxSource: {fileID: 1668466129}
-  menu: {fileID: 8300000, guid: 7998f711371dfde4a98c2b33c4806dbe, type: 3}
-  forest: {fileID: 8300000, guid: c9da52147662baf4db51657a94ad31b6, type: 3}
-  desert: {fileID: 8300000, guid: 514f1d95cf6d7404f9512cd45997578d, type: 3}
-  atlantis: {fileID: 8300000, guid: 171f5320863b7b54bbbaae1c6e0f4a09, type: 3}
+  menu: {fileID: 8300000, guid: bf536532cf21d634daaca0a1915fccff, type: 3}
+  forest: {fileID: 8300000, guid: 2129508a4d457b440b48e0aa0295a263, type: 3}
+  desert: {fileID: 8300000, guid: a1cd912a7893c6b43b8f79a5dc3866f3, type: 3}
+  atlantis: {fileID: 8300000, guid: 18b78493f8b86f046a9050c59864475b, type: 3}
   bubbles: {fileID: 8300000, guid: 6b3b5a0180bff0b4cae08ca7fbc06fa4, type: 3}
-  coin: {fileID: 8300000, guid: 316e5e07fea396b43a288e6a272f7e0a, type: 3}
+  coin: {fileID: 8300000, guid: ca6e30e30eaabc9468d4f0d53e55632b, type: 3}
   jump: {fileID: 8300000, guid: f79060c540068f84fa641ef0ffad83bf, type: 3}
   doubleJump: {fileID: 8300000, guid: 1f28e024178fc9b40a3e097775ab7a78, type: 3}
   hit: {fileID: 8300000, guid: 9dd80052b5730b2429ffa0572a662f5b, type: 3}
-  Groundhit: {fileID: 8300000, guid: 35cb535c49c3a5c48a2918e7d0c57174, type: 3}
+  collect: {fileID: 8300000, guid: 940e7386a01eff64fb77b6862c9d2492, type: 3}
 --- !u!4 &1997237593
 Transform:
   m_ObjectHideFlags: 0

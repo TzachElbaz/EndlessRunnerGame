@@ -115,10 +115,6 @@ public class RunGameManeger : MonoBehaviour
 
     
 
-
-    private bool test;
-
-
     private void Awake()
     {
         if (Instance != null && Instance != this)

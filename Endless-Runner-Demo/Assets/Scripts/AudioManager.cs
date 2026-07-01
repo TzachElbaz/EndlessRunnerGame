@@ -1,4 +1,5 @@
 using UnityEngine;
+using static RunGameManeger;
 
 public class AudioManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip jump;
     public AudioClip doubleJump;
     public AudioClip hit;
-    public AudioClip Groundhit;
+    public AudioClip collect;
 
 
     private void Start()
@@ -26,9 +27,49 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
+    private void OnEnable()
+    {
+        RunGameManeger.OnEscapePressed += PouseMusic;
+        Player.OnPlayerDied += PlayMenuMusic;
+        RunGameManeger.OnChangeErea += OnchangeErea;
+    }
+    private void OnDisable()
+    {
+        RunGameManeger.OnEscapePressed -= PouseMusic;
+        Player.OnPlayerDied -= PlayMenuMusic;
+        RunGameManeger.OnChangeErea -= OnchangeErea;
+
+    }
+
     public void PlaySFX(AudioClip clip)
     {
         SfxSource.PlayOneShot(clip);
+    }
+
+    private void PouseMusic()
+    {
+        if (RunGameManeger.isGamePaused) musicSource.Pause();
+        else musicSource.UnPause();
+    }
+
+    private void PlayMenuMusic()
+    {
+        musicSource.clip = menu;
+        musicSource.Play();
+    }
+
+    private void OnchangeErea()
+    {
+        var nextScreen = RunGameManeger.Instance._nextScreen;
+
+        musicSource.clip = nextScreen switch
+        {
+            SCREEN_ENUM.FOREST => forest,
+            SCREEN_ENUM.DESERT => desert,
+            SCREEN_ENUM.KRAKEN => atlantis,
+            _ => forest
+        };
+        musicSource.Play();
     }
 
 }
