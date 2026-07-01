@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        musicSource.clip = atlantis;
+        musicSource.clip = forest;
         musicSource.loop = true;
         musicSource.Play();
     }
