@@ -109,8 +109,10 @@ MonoBehaviour:
   destroy: -30
   spawn: 75
   _yMove: 0
+  _back: 0
   _startPosition: {x: 0, y: 0}
   _willDelet: 1
+  _willDisable: 0
 --- !u!58 &3282925241185933294
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -141,7 +143,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
