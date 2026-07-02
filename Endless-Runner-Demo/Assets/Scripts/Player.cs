@@ -1,7 +1,8 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
+
 using UnityEngine;
+
 
 public class Player : MonoBehaviour
 {
@@ -292,6 +293,11 @@ public class Player : MonoBehaviour
             _invincClock = 0;
         }
          
+    }
+    public void CallPlayerHealth()
+    {
+       health = 3;
+       OnPlayerHit?.Invoke(health);
     }
 
     private void HitPlayer()

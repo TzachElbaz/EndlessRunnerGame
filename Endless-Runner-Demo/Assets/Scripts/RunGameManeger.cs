@@ -57,8 +57,8 @@ public class RunGameManeger : MonoBehaviour
     private Vector2 _spawnPoint;
 
 
-
-
+    
+    
     GameObject[] _curentObstecl;
     GameObject[] _curentObsteclCours;
     GameObject[] _curentPlatforms;
@@ -69,8 +69,8 @@ public class RunGameManeger : MonoBehaviour
     private bool _pregenEmpty;
     [SerializeField] private float _jumpChaineLength;
     [SerializeField] private float _dropChaineLength;
-
-    private int _obstecalChainChance;
+    
+     private int _obstecalChainChance;
     [SerializeField] private int[] _obstecalChainChanceScale;
     [SerializeField] private int _obstecalChainChanceMax;
     [SerializeField] private int[] _obstecalChainMark;
@@ -118,7 +118,7 @@ public class RunGameManeger : MonoBehaviour
     [SerializeField] private GameObject[] _krakenWaves;
     [SerializeField] private Vector2[] _waveSpawn;
 
-
+    
 
 
     private bool test;
@@ -244,22 +244,22 @@ public class RunGameManeger : MonoBehaviour
         int rund;
         int repetCount = 0;
         float length = _minLength;
-        int coinRange = Random.Range(_coinGenerationRange.x, _coinGenerationRange.y + 1);
-        int coinRangeCount = 0;
+        int coinRange= Random.Range(_coinGenerationRange.x,_coinGenerationRange.y+1);
+        int coinRangeCount=0;
         Obstacle now;
         Obstacle prev = pregen[pregen.Length - 1].GetComponent<Obstacle>();
         GameObject Ob;
         _OBcount = _OBgenCount;
+        int CahinRow = 0;
         for (int i = 0; i < pregen.Length; i++)
         {
-            if (_obstecalChainChanceMax > _obstecalChainChance)
-            {
-                for (int j = 1; j < _obstecalChainMark.Length; j++)
+            
+                for (int j = 1; j< _obstecalChainMark.Length; j++) 
                 {
                     if (_OBcount >= _obstecalChainMark[j]) _obstecalChainChance = _obstecalChainChanceScale[j];
-                }
-            }
-
+                }              
+            
+            
             rund = Random.Range(0, _curentObstecl.Length);
             if (i > 0 && _curentObstecl[rund] == pregen[i - 1])
             {
@@ -274,8 +274,8 @@ public class RunGameManeger : MonoBehaviour
                 }
 
             }
-
-
+            
+            
             int randomObstacleEvent = Random.Range(0, 10);
             Ob = _curentObstecl[rund];
             pregen[i] = Ob;
@@ -289,7 +289,7 @@ public class RunGameManeger : MonoBehaviour
             {
                 case OB_TYPE.OBSTECLE:
 
-
+                    
                     if (coinRangeCount == coinRange && _coinList[0] != null)
                     {
                         length = _minLength;
@@ -298,30 +298,38 @@ public class RunGameManeger : MonoBehaviour
                         pregen[i] = Ob;
                         now = Ob.GetComponent<Obstacle>();
 
+                        CahinRow = 0;
 
 
                     }
-                    else if (randomObstacleEvent <= _obstecalChainChance)
+                    else if (randomObstacleEvent <= _obstecalChainChance && CahinRow< _obstecalChainChance)
                     {
                         length = TwoOBDistantCheck(prev, now);
+                        CahinRow++;
+                    }
+                    else if (CahinRow >= _obstecalChainChance)
+                    {
+                        length = _minLength * 1.5f;
+                        CahinRow = 0;
                     }
                     else if (randomObstacleEvent <= _obstecalChainChance + _obsteclBrakeChance)
                     {
                         length = _minLength * Random.Range(2, 5);
+                        CahinRow = 0;
                     }
-                    else if (randomObstacleEvent <= _obstecalChainChance + _obsteclBrakeChance + _platformChance)
+                    else if (randomObstacleEvent <= _obstecalChainChance + _obsteclBrakeChance+ _platformChance)
                     {
                         length = _minLength;
                         coinRangeCount = 0;
                         Ob = _curentPlatforms[Random.Range(0, _curentPlatforms.Length)];
                         pregen[i] = Ob;
                         now = Ob.GetComponent<Obstacle>();
-
+                        CahinRow++;
                     }
                     else
                     {
                         length = prev._GenerateDistance;
-
+                        CahinRow = 0;
                     }
                     break;
                 case OB_TYPE.COURSE:
@@ -333,7 +341,7 @@ public class RunGameManeger : MonoBehaviour
                     length = prev._GenerateDistance;
                     break;
                 case OB_TYPE.PLATFORM:
-                    length = TwoOBDistantCheck(prev, now) + prev._GenerateDistance;
+                    length = TwoOBDistantCheck(prev, now)+ prev._GenerateDistance;
                     if (now._passPoint == PASS_POINT.UP || now._passPoint == PASS_POINT.UP_MIDDLE)
                     {
                         length += _addLength;
@@ -344,11 +352,11 @@ public class RunGameManeger : MonoBehaviour
 
             }
 
-            if (i > 0 && genLength[i] == _jumpChaineLength && _jumpChaineLength == genLength[i - 1])
+            if(i>0 && genLength[i] == _jumpChaineLength && _jumpChaineLength == genLength[i - 1])
             {
                 length += _addLength;
             }
-
+            
             genLength[i] = length;
             pursegen[i] = pursePlace;
             coinRangeCount++;
@@ -377,9 +385,9 @@ public class RunGameManeger : MonoBehaviour
                     StartCoroutine(KrakenTransition());
                     break;
             }
-
+            
         }
-
+      
     }
     private bool SpawnCheck()
     {
@@ -405,7 +413,7 @@ public class RunGameManeger : MonoBehaviour
         {
             float distans = _LastObject.transform.position.x;
             float genDistans = genLength[listCount];
-            return (_spawnPoint.x - distans >= genDistans + _velocityLengthAdd);
+            return (_spawnPoint.x - distans >= genDistans+_velocityLengthAdd);
         }
 
         return true;
@@ -440,32 +448,32 @@ public class RunGameManeger : MonoBehaviour
                 {
                     case Obstacle.PASS_POINT.UP:
                         length = _minLength + _addLength;
-                        pursePlace = 2;
+                        pursePlace =2;
                         break;
 
                     case Obstacle.PASS_POINT.MIDDLE:
                         length = _minLength;
-                        pursePlace = 2;
+                        pursePlace =2;
                         break;
 
                     case Obstacle.PASS_POINT.DOWN:
                         length = _dropChaineLength;
-                        pursePlace = 0;
+                        pursePlace =0;
                         break;
 
                     case Obstacle.PASS_POINT.UP_MIDDLE:
                         length = _minLength;
-                        pursePlace = 2;
+                        pursePlace =2;
                         break;
 
                     case Obstacle.PASS_POINT.UP_DOWN:
                         length = _minLength;
-                        pursePlace = 2;
+                        pursePlace =2;
                         break;
 
                     case Obstacle.PASS_POINT.MIDDLE_DOWN:
                         length = _addLength + _dropChaineLength;
-                        pursePlace = 2;
+                        pursePlace =2;
                         break;
 
 
@@ -477,17 +485,17 @@ public class RunGameManeger : MonoBehaviour
                 {
                     case Obstacle.PASS_POINT.UP:
                         length = _jumpChaineLength;
-                        pursePlace = 1;
+                        pursePlace =1;
                         break;
 
                     case Obstacle.PASS_POINT.MIDDLE:
                         length = _minLength;
-                        pursePlace = 1;
+                        pursePlace =1;
                         break;
 
                     case Obstacle.PASS_POINT.DOWN:
                         length = _dropChaineLength;
-                        pursePlace = 1;
+                        pursePlace =1;
                         break;
 
                     case Obstacle.PASS_POINT.UP_MIDDLE:
@@ -497,7 +505,7 @@ public class RunGameManeger : MonoBehaviour
 
                     case Obstacle.PASS_POINT.UP_DOWN:
                         length = _jumpChaineLength;
-                        pursePlace = 1;
+                        pursePlace =1;
                         break;
 
                     case Obstacle.PASS_POINT.MIDDLE_DOWN:
@@ -533,14 +541,14 @@ public class RunGameManeger : MonoBehaviour
                         pursePlace = 2;
                         break;
 
-                    case Obstacle.PASS_POINT.UP_DOWN:
+                    case Obstacle.PASS_POINT.UP_DOWN:                        
                         length = _minLength;
                         pursePlace = 2;
                         break;
 
                     case Obstacle.PASS_POINT.MIDDLE_DOWN:
                         length = _minLength;
-                        pursePlace = 2;
+                        pursePlace =2;
                         break;
 
 
@@ -568,12 +576,12 @@ public class RunGameManeger : MonoBehaviour
 
                     case Obstacle.PASS_POINT.UP_MIDDLE:
                         if (1 == Random.Range(0, 2)) { length = _minLength; pursePlace = 0; }
-                        else { length = _jumpChaineLength; pursePlace = 1; }
+                        else { length = _jumpChaineLength; pursePlace =1; }
                         break;
 
                     case Obstacle.PASS_POINT.UP_DOWN:
                         if (1 == Random.Range(0, 2)) { length = _dropChaineLength; pursePlace = 0; }
-                        else { length = _jumpChaineLength; pursePlace = 1; }
+                        else { length = _jumpChaineLength; pursePlace =1; }
 
                         break;
 
@@ -627,7 +635,7 @@ public class RunGameManeger : MonoBehaviour
                 {
                     case Obstacle.PASS_POINT.UP:
                         if (1 == Random.Range(0, 2)) { length = _jumpChaineLength; pursePlace = 1; }
-                        else { length = _minLength; pursePlace = 2; }
+                        else { length = _minLength; pursePlace =2; }
                         break;
 
                     case Obstacle.PASS_POINT.MIDDLE:
@@ -637,7 +645,7 @@ public class RunGameManeger : MonoBehaviour
 
                     case Obstacle.PASS_POINT.DOWN:
                         length = _dropChaineLength;
-                        pursePlace = 1;
+                        pursePlace =1;
                         break;
 
                     case Obstacle.PASS_POINT.UP_MIDDLE:
@@ -716,8 +724,8 @@ public class RunGameManeger : MonoBehaviour
         ClearAllObstacles?.Invoke();
         _transitioning = true;
         OnChangeErea?.Invoke();
-
-
+        
+        
 
     }
     private void CangeErea()
@@ -790,7 +798,7 @@ public class RunGameManeger : MonoBehaviour
     {
 
         if (_transitionClock == 0)
-        {
+        { 
 
             _desertTransitionList[1].SetActive(true);
             _desertTransitionList[1].transform.position = _desertTransitionList[1].GetComponent<ereaBackgroundTransition>()._startLocation;
@@ -813,7 +821,7 @@ public class RunGameManeger : MonoBehaviour
             _desertTransitionList[3].transform.position = _desertTransitionList[3].GetComponent<ereaBackgroundTransition>()._startLocation;
             _desertTransitionList[2].SetActive(false);
             //_desertTransition_3.SetActive(true);
-
+            
             _transitioning = false;
             _obstaclePause = false;
             _transitionClock = 0;
@@ -824,7 +832,7 @@ public class RunGameManeger : MonoBehaviour
     {
         if (_Player.velocity.x > _velocityLengthAddThreshhold)
         {
-            _velocityLengthAdd = (_Player.velocity.x) / 10;
+            _velocityLengthAdd = (_Player.velocity.x)/10;
         }
     }
     public void InvokeClearOnScreenObstacles()
@@ -884,7 +892,7 @@ public class RunGameManeger : MonoBehaviour
         _krakenBubleTransition2.GetComponent<Parallax>().destroy = 500;
         yield return new WaitForSeconds(1);
         _krakenTransition.SetActive(false);
-
+       
 
         _Player.GetComponentInChildren<SpriteRenderer>().sortingOrder = 11;
         _Player._rigidbody.gravityScale = 10;
@@ -895,8 +903,10 @@ public class RunGameManeger : MonoBehaviour
         _krakenBubleTransition2.GetComponent<Parallax>().destroy = 50;
         _kraken.transform.position = _krskenSpawn;
         _kraken.SetActive(true);
+        _Player.CallPlayerHealth();
+       
         yield return new WaitForSeconds(2);
-
+       
 
 
 
@@ -904,7 +914,7 @@ public class RunGameManeger : MonoBehaviour
 
 
     }
-    int SW_forestTrans = 0;
+    int SW_forestTrans=0;
     private void ForestTransitionAlt()
     {
         Vector2 KrTrans = _krakenTransition.transform.position;
@@ -924,9 +934,9 @@ public class RunGameManeger : MonoBehaviour
             case 1:
                 KrTrans.y -= _krakenRetransitionSpeed * Time.deltaTime;
                 _krakenTransition.transform.position = KrTrans;
-                if (KrTrans.y <= 18.7 && KrTrans.y >= 18.6)
+                if(KrTrans.y <= 18.7 && KrTrans.y >= 18.6)
                 {
-                    _Player.transform.position = new Vector2(20, 3.6f);
+                    _Player.transform.position = new Vector2 (20,3.6f);
                     CollectablesManager.instance.EnableColectables();
                     CangeErea();
                 }
@@ -960,7 +970,8 @@ public class RunGameManeger : MonoBehaviour
         ClearAllObstacles?.Invoke();
         _nextScreen = SCREEN_ENUM.KRAKEN;
         OnChangeErea?.Invoke();
-
+        
+        
         StartCoroutine(KrakenTransition());
     }
 }
