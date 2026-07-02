@@ -1,0 +1,560 @@
+fileFormatVersion: 2
+guid: 714fd27dfeec96e43912ae5f0bd4e4e2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7572561707931333215
+    second: Logo_ The Open University_0
+  - first:
+      213: 1459874081455866996
+    second: Logo_ The Open University_1
+  - first:
+      213: -5813821375221738177
+    second: Logo_ The Open University_2
+  - first:
+      213: 7219538593770696925
+    second: Logo_ The Open University_3
+  - first:
+      213: -5968073973482096589
+    second: Logo_ The Open University_4
+  - first:
+      213: -1675665678968589221
+    second: Logo_ The Open University_5
+  - first:
+      213: 2936739275562813783
+    second: Logo_ The Open University_6
+  - first:
+      213: 5480559570394908049
+    second: Logo_ The Open University_7
+  - first:
+      213: -5234286447462205110
+    second: Logo_ The Open University_8
+  - first:
+      213: -1117012121346246909
+    second: Logo_ The Open University_9
+  - first:
+      213: 2145333614497885444
+    second: Logo_ The Open University_10
+  - first:
+      213: 7373595006793007078
+    second: Logo_ The Open University_11
+  - first:
+      213: 6360581865453560219
+    second: Logo_ The Open University_12
+  - first:
+      213: 8847185027549835576
+    second: Logo_ The Open University_13
+  - first:
+      213: -1542603552772979549
+    second: Logo_ The Open University_14
+  - first:
+      213: 6158869723659973086
+    second: Logo_ The Open University_15
+  - first:
+      213: 4550694451168831043
+    second: Logo_ The Open University_16
+  - first:
+      213: 5246044397504467151
+    second: Logo_ The Open University_17
+  - first:
+      213: -6470338520824305883
+    second: Logo_ The Open University_18
+  - first:
+      213: 6642332526229798453
+    second: Logo_ The Open University_19
+  - first:
+      213: -8035597534670305571
+    second: Logo_ The Open University_20
+  - first:
+      213: -6487392535690713688
+    second: Logo_ The Open University_21
+  - first:
+      213: -1969578861576505876
+    second: Logo_ The Open University_22
+  - first:
+      213: -6422992241806505525
+    second: Logo_ The Open University_23
+  - first:
+      213: 976739773618001084
+    second: Logo_ The Open University_24
+  - first:
+      213: 7260694661505089999
+    second: Logo_ The Open University_25
+  - first:
+      213: 4150818247480008668
+    second: Logo_ The Open University_26
+  - first:
+      213: -4311902221052447311
+    second: Logo_ The Open University_27
+  - first:
+      213: 6372228008571805519
+    second: Logo_ The Open University_28
+  - first:
+      213: 3161061908662882365
+    second: Logo_ The Open University_29
+  - first:
+      213: -3866399343529832742
+    second: Logo_ The Open University_30
+  - first:
+      213: 7602314720819814115
+    second: Logo_ The Open University_31
+  - first:
+      213: 19223935996936513
+    second: Logo_ The Open University_32
+  - first:
+      213: -4478694444846980385
+    second: Logo_ The Open University_33
+  - first:
+      213: -4309492644746402029
+    second: Logo_ The Open University_34
+  - first:
+      213: -8886360227847096908
+    second: Logo_ The Open University_35
+  - first:
+      213: 1830876911923618104
+    second: Logo_ The Open University_36
+  - first:
+      213: -2891090979672298302
+    second: Logo_ The Open University_37
+  - first:
+      213: -7807009549166496324
+    second: Logo_ The Open University_38
+  - first:
+      213: -2316139793990147394
+    second: Logo_ The Open University_39
+  - first:
+      213: -3072330582545349235
+    second: Logo_ The Open University_40
+  - first:
+      213: -554142403201674553
+    second: Logo_ The Open University_41
+  - first:
+      213: -511507777734494875
+    second: Logo_ The Open University_42
+  - first:
+      213: 4363332575120265905
+    second: Logo_ The Open University_43
+  - first:
+      213: 6813515296295419187
+    second: Logo_ The Open University_44
+  - first:
+      213: -6082710320347052713
+    second: Logo_ The Open University_45
+  - first:
+      213: 3191314577289708470
+    second: Logo_ The Open University_46
+  - first:
+      213: -8645408609755150949
+    second: Logo_ The Open University_47
+  - first:
+      213: -2296488123687265120
+    second: Logo_ The Open University_48
+  - first:
+      213: 9088711851922850220
+    second: Logo_ The Open University_49
+  - first:
+      213: -3820423392684908625
+    second: Logo_ The Open University_50
+  - first:
+      213: -6013721401931142581
+    second: Logo_ The Open University_51
+  - first:
+      213: -7533533056169915488
+    second: Logo_ The Open University_52
+  - first:
+      213: -5987006856894790555
+    second: Logo_ The Open University_53
+  - first:
+      213: -8299658167193167006
+    second: Logo_ The Open University_54
+  - first:
+      213: 1557276839907975620
+    second: Logo_ The Open University_55
+  - first:
+      213: -470281002417887442
+    second: Logo_ The Open University_56
+  - first:
+      213: 4920362908231813794
+    second: Logo_ The Open University_57
+  - first:
+      213: -4328480354200753460
+    second: Logo_ The Open University_58
+  - first:
+      213: -7995355111581731697
+    second: Logo_ The Open University_59
+  - first:
+      213: -6941602157562868490
+    second: Logo_ The Open University_60
+  - first:
+      213: 5020316564156432880
+    second: Logo_ The Open University_61
+  - first:
+      213: 3197700473269685999
+    second: Logo_ The Open University_62
+  - first:
+      213: 1500782552240236864
+    second: Logo_ The Open University_63
+  - first:
+      213: 3866826273323273879
+    second: Logo_ The Open University_64
+  - first:
+      213: -6771938395659983110
+    second: Logo_ The Open University_65
+  - first:
+      213: -7451431935561271684
+    second: Logo_ The Open University_66
+  - first:
+      213: -9109726423424862841
+    second: Logo_ The Open University_67
+  - first:
+      213: -3806102686117350126
+    second: Logo_ The Open University_68
+  - first:
+      213: 1876492395468288940
+    second: Logo_ The Open University_69
+  - first:
+      213: -8553632616227702896
+    second: Logo_ The Open University_70
+  - first:
+      213: -9121372947452518444
+    second: Logo_ The Open University_71
+  - first:
+      213: 917523973873667048
+    second: Logo_ The Open University_72
+  - first:
+      213: -4745448950806071835
+    second: Logo_ The Open University_73
+  - first:
+      213: 4151029882500279630
+    second: Logo_ The Open University_74
+  - first:
+      213: -6257925116540474975
+    second: Logo_ The Open University_75
+  - first:
+      213: -460782521970614678
+    second: Logo_ The Open University_76
+  - first:
+      213: -8167558863237492776
+    second: Logo_ The Open University_77
+  - first:
+      213: -5772377920262491804
+    second: Logo_ The Open University_78
+  - first:
+      213: -7717347718985924802
+    second: Logo_ The Open University_79
+  - first:
+      213: 884853135979343741
+    second: Logo_ The Open University_80
+  - first:
+      213: 7827597953861049841
+    second: Logo_ The Open University_81
+  - first:
+      213: 3902284054109415197
+    second: Logo_ The Open University_82
+  - first:
+      213: 7154163387308095077
+    second: Logo_ The Open University_83
+  - first:
+      213: -3673495639041754441
+    second: Logo_ The Open University_84
+  - first:
+      213: -5698983872436126846
+    second: Logo_ The Open University_85
+  - first:
+      213: 5917312626177219980
+    second: Logo_ The Open University_86
+  - first:
+      213: 7509736107634135459
+    second: Logo_ The Open University_87
+  - first:
+      213: -3898813816537981831
+    second: Logo_ The Open University_88
+  - first:
+      213: 5119307490828146230
+    second: Logo_ The Open University_89
+  - first:
+      213: 1597112596262167953
+    second: Logo_ The Open University_90
+  - first:
+      213: -8642294568816926643
+    second: Logo_ The Open University_91
+  - first:
+      213: -817920216253455359
+    second: Logo_ The Open University_92
+  - first:
+      213: 6915441258736698919
+    second: Logo_ The Open University_93
+  - first:
+      213: 2854035771905657351
+    second: Logo_ The Open University_94
+  - first:
+      213: -3771729132207394056
+    second: Logo_ The Open University_95
+  - first:
+      213: -7723802889775466196
+    second: Logo_ The Open University_96
+  - first:
+      213: -9203285107343855320
+    second: Logo_ The Open University_97
+  - first:
+      213: 4101636581751409476
+    second: Logo_ The Open University_98
+  - first:
+      213: -1076033415882170328
+    second: Logo_ The Open University_99
+  - first:
+      213: 8012415227062757857
+    second: Logo_ The Open University_100
+  - first:
+      213: -4153135036525213415
+    second: Logo_ The Open University_101
+  - first:
+      213: -4579214947045020133
+    second: Logo_ The Open University_102
+  - first:
+      213: -6960506008642058962
+    second: Logo_ The Open University_103
+  - first:
+      213: 5004155560728634901
+    second: Logo_ The Open University_104
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Logo_ The Open University_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 756
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ad070f6f3bd8e690800000000000000
+      internalID: -7572561707931333215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9a66d1de1928af941891f670ef45572f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Logo_ The Open University_0: -7572561707931333215
+      Logo_ The Open University_1: 1459874081455866996
+      Logo_ The Open University_10: 2145333614497885444
+      Logo_ The Open University_100: 8012415227062757857
+      Logo_ The Open University_101: -4153135036525213415
+      Logo_ The Open University_102: -4579214947045020133
+      Logo_ The Open University_103: -6960506008642058962
+      Logo_ The Open University_104: 5004155560728634901
+      Logo_ The Open University_105: 854521246
+      Logo_ The Open University_11: 7373595006793007078
+      Logo_ The Open University_12: 6360581865453560219
+      Logo_ The Open University_13: 8847185027549835576
+      Logo_ The Open University_14: -1542603552772979549
+      Logo_ The Open University_15: 6158869723659973086
+      Logo_ The Open University_16: 4550694451168831043
+      Logo_ The Open University_17: 5246044397504467151
+      Logo_ The Open University_18: -6470338520824305883
+      Logo_ The Open University_19: 6642332526229798453
+      Logo_ The Open University_2: -5813821375221738177
+      Logo_ The Open University_20: -8035597534670305571
+      Logo_ The Open University_21: -6487392535690713688
+      Logo_ The Open University_22: -1969578861576505876
+      Logo_ The Open University_23: -6422992241806505525
+      Logo_ The Open University_24: 976739773618001084
+      Logo_ The Open University_25: 7260694661505089999
+      Logo_ The Open University_26: 4150818247480008668
+      Logo_ The Open University_27: -4311902221052447311
+      Logo_ The Open University_28: 6372228008571805519
+      Logo_ The Open University_29: 3161061908662882365
+      Logo_ The Open University_3: 7219538593770696925
+      Logo_ The Open University_30: -3866399343529832742
+      Logo_ The Open University_31: 7602314720819814115
+      Logo_ The Open University_32: 19223935996936513
+      Logo_ The Open University_33: -4478694444846980385
+      Logo_ The Open University_34: -4309492644746402029
+      Logo_ The Open University_35: -8886360227847096908
+      Logo_ The Open University_36: 1830876911923618104
+      Logo_ The Open University_37: -2891090979672298302
+      Logo_ The Open University_38: -7807009549166496324
+      Logo_ The Open University_39: -2316139793990147394
+      Logo_ The Open University_4: -5968073973482096589
+      Logo_ The Open University_40: -3072330582545349235
+      Logo_ The Open University_41: -554142403201674553
+      Logo_ The Open University_42: -511507777734494875
+      Logo_ The Open University_43: 4363332575120265905
+      Logo_ The Open University_44: 6813515296295419187
+      Logo_ The Open University_45: -6082710320347052713
+      Logo_ The Open University_46: 3191314577289708470
+      Logo_ The Open University_47: -8645408609755150949
+      Logo_ The Open University_48: -2296488123687265120
+      Logo_ The Open University_49: 9088711851922850220
+      Logo_ The Open University_5: -1675665678968589221
+      Logo_ The Open University_50: -3820423392684908625
+      Logo_ The Open University_51: -6013721401931142581
+      Logo_ The Open University_52: -7533533056169915488
+      Logo_ The Open University_53: -5987006856894790555
+      Logo_ The Open University_54: -8299658167193167006
+      Logo_ The Open University_55: 1557276839907975620
+      Logo_ The Open University_56: -470281002417887442
+      Logo_ The Open University_57: 4920362908231813794
+      Logo_ The Open University_58: -4328480354200753460
+      Logo_ The Open University_59: -7995355111581731697
+      Logo_ The Open University_6: 2936739275562813783
+      Logo_ The Open University_60: -6941602157562868490
+      Logo_ The Open University_61: 5020316564156432880
+      Logo_ The Open University_62: 3197700473269685999
+      Logo_ The Open University_63: 1500782552240236864
+      Logo_ The Open University_64: 3866826273323273879
+      Logo_ The Open University_65: -6771938395659983110
+      Logo_ The Open University_66: -7451431935561271684
+      Logo_ The Open University_67: -9109726423424862841
+      Logo_ The Open University_68: -3806102686117350126
+      Logo_ The Open University_69: 1876492395468288940
+      Logo_ The Open University_7: 5480559570394908049
+      Logo_ The Open University_70: -8553632616227702896
+      Logo_ The Open University_71: -9121372947452518444
+      Logo_ The Open University_72: 917523973873667048
+      Logo_ The Open University_73: -4745448950806071835
+      Logo_ The Open University_74: 4151029882500279630
+      Logo_ The Open University_75: -6257925116540474975
+      Logo_ The Open University_76: -460782521970614678
+      Logo_ The Open University_77: -8167558863237492776
+      Logo_ The Open University_78: -5772377920262491804
+      Logo_ The Open University_79: -7717347718985924802
+      Logo_ The Open University_8: -5234286447462205110
+      Logo_ The Open University_80: 884853135979343741
+      Logo_ The Open University_81: 7827597953861049841
+      Logo_ The Open University_82: 3902284054109415197
+      Logo_ The Open University_83: 7154163387308095077
+      Logo_ The Open University_84: -3673495639041754441
+      Logo_ The Open University_85: -5698983872436126846
+      Logo_ The Open University_86: 5917312626177219980
+      Logo_ The Open University_87: 7509736107634135459
+      Logo_ The Open University_88: -3898813816537981831
+      Logo_ The Open University_89: 5119307490828146230
+      Logo_ The Open University_9: -1117012121346246909
+      Logo_ The Open University_90: 1597112596262167953
+      Logo_ The Open University_91: -8642294568816926643
+      Logo_ The Open University_92: -817920216253455359
+      Logo_ The Open University_93: 6915441258736698919
+      Logo_ The Open University_94: 2854035771905657351
+      Logo_ The Open University_95: -3771729132207394056
+      Logo_ The Open University_96: -7723802889775466196
+      Logo_ The Open University_97: -9203285107343855320
+      Logo_ The Open University_98: 4101636581751409476
+      Logo_ The Open University_99: -1076033415882170328
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
