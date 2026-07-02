@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static Obstacle;
@@ -55,9 +54,6 @@ public class RunGameManeger : MonoBehaviour
     private GameObject _LastObject;
     private int _obstacleCounter;
     private Vector2 _spawnPoint;
-
-
-    
     
     GameObject[] _curentObstecl;
     GameObject[] _curentObsteclCours;
