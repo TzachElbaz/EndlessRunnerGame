@@ -1065,12 +1065,12 @@ MonoBehaviour:
   - {fileID: 1241772735445447058, guid: 34473dd09ea1aa943affe3e6a10880d9, type: 3}
   - {fileID: 4314314486488216035, guid: e82f36c414e2cf24eacd4e961995ac15, type: 3}
   _desertObstecl:
-  - {fileID: 5607722697183440384, guid: e4fe4083e7a70cf42a6b59c68350dfee, type: 3}
-  - {fileID: 7673543996426664008, guid: e79e9ac88b3e74a4096ebe526be827f4, type: 3}
-  - {fileID: 6649315052734820357, guid: 62151012c58657542806a99eab8e333e, type: 3}
-  - {fileID: 1146827080047758200, guid: 7b80c7ead5a532d489a3f8ac61e04a21, type: 3}
-  - {fileID: 4555445112417170446, guid: 23d7ba776979a6d45ae1c7b82212a6c6, type: 3}
-  - {fileID: 518647977935069568, guid: e6c0902745b632f439dcd0f0c9cfb373, type: 3}
+  - {fileID: 5607722697183440384, guid: 7cc190e5319fd6d4a9c9015f2c9fc387, type: 3}
+  - {fileID: 7673543996426664008, guid: fc02d18c65a23ca4f9ec0d9c5c54d3ca, type: 3}
+  - {fileID: 6649315052734820357, guid: c4b8860dcee95464dbe37109a566556c, type: 3}
+  - {fileID: 1146827080047758200, guid: 1089f3baaacb2a44e82cccc82d2b057c, type: 3}
+  - {fileID: 4555445112417170446, guid: 152faac1e324ea14a9af929ed19567f2, type: 3}
+  - {fileID: 518647977935069568, guid: 75069c363ebf7374fba8d3caa3b3bd4f, type: 3}
   _desertObsteclCurse:
   - {fileID: 3711225835351693844, guid: 5bdd7177e7b7373428560161951ae254, type: 3}
   _desertPlatforms:
@@ -1088,7 +1088,9 @@ MonoBehaviour:
   pursegen: 
   _jumpChaineLength: 11
   _dropChaineLength: 16
-  _obstecalChainChance: 3
+  _obstecalChainChanceScale: 0200000004000000
+  _obstecalChainChanceMax: 0
+  _obstecalChainMark: 000000001e000000
   _obsteclBrakeChance: 1
   _obstaclePause: 0
   _generateAlt: 1
@@ -1144,7 +1146,6 @@ MonoBehaviour:
   Heart1: {fileID: 770371865}
   Heart2: {fileID: 1940233390}
   Heart3: {fileID: 1735962882}
-  CollectablesUI: {fileID: 437715608}
 --- !u!114 &84267936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8885,7 +8886,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10655,7 +10656,7 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 9193576375019428956, guid: 087776607db38674cb1179a4dac185d8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3056603, g: 0.3056603, b: 0.3056603, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13290,7 +13291,7 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 9193576375019428956, guid: 087776607db38674cb1179a4dac185d8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13949,7 +13950,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1997237593}
-  - component: {fileID: 1997237592}
+  - component: {fileID: 1997237594}
   m_Layer: 12
   m_Name: AudioManager2
   m_TagString: Audio
@@ -13957,30 +13958,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1997237592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997237591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dfcc911874367c4caa5771cf8ad1cc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  musicSource: {fileID: 1186737203}
-  SfxSource: {fileID: 1668466129}
-  menu: {fileID: 8300000, guid: bf536532cf21d634daaca0a1915fccff, type: 3}
-  forest: {fileID: 8300000, guid: 2129508a4d457b440b48e0aa0295a263, type: 3}
-  desert: {fileID: 8300000, guid: a1cd912a7893c6b43b8f79a5dc3866f3, type: 3}
-  atlantis: {fileID: 8300000, guid: 18b78493f8b86f046a9050c59864475b, type: 3}
-  bubbles: {fileID: 8300000, guid: 6b3b5a0180bff0b4cae08ca7fbc06fa4, type: 3}
-  coin: {fileID: 8300000, guid: ca6e30e30eaabc9468d4f0d53e55632b, type: 3}
-  jump: {fileID: 8300000, guid: f79060c540068f84fa641ef0ffad83bf, type: 3}
-  doubleJump: {fileID: 8300000, guid: 1f28e024178fc9b40a3e097775ab7a78, type: 3}
-  hit: {fileID: 8300000, guid: 9dd80052b5730b2429ffa0572a662f5b, type: 3}
-  collect: {fileID: 8300000, guid: 940e7386a01eff64fb77b6862c9d2492, type: 3}
 --- !u!4 &1997237593
 Transform:
   m_ObjectHideFlags: 0
@@ -13998,6 +13975,30 @@ Transform:
   - {fileID: 1668466130}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1997237594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997237591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c6d878101960642a0205312f0c4fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  musicSource: {fileID: 1186737203}
+  SfxSource: {fileID: 1668466129}
+  menu: {fileID: 8300000, guid: 09e3d63350c851c4b90426a91129b291, type: 3}
+  forest: {fileID: 8300000, guid: 8ce67e785ab2983439c689986188ed0e, type: 3}
+  desert: {fileID: 8300000, guid: 0b151af6ddbc6024f8808ff12e04f49a, type: 3}
+  atlantis: {fileID: 8300000, guid: 96cecec84ee29894589b44cfe97b50a1, type: 3}
+  bubbles: {fileID: 8300000, guid: bfa5696265a7365499257d76947ef0d1, type: 3}
+  coin: {fileID: 8300000, guid: 2c9d91a1e101dde46b5eb42ca7e8dc35, type: 3}
+  jump: {fileID: 8300000, guid: 68085122423b3eb4699856a0920a6e98, type: 3}
+  doubleJump: {fileID: 8300000, guid: 644d8071317f55d4f8e5033da295a2a9, type: 3}
+  hit: {fileID: 8300000, guid: 93eb5d0aec62cc24bb274e4d34935462, type: 3}
+  collect: {fileID: 8300000, guid: 09fa101482ad3ec4f8ca1731ec9f89c9, type: 3}
 --- !u!1 &2023918781
 GameObject:
   m_ObjectHideFlags: 0
@@ -14480,7 +14481,7 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 9193576375019428956, guid: 087776607db38674cb1179a4dac185d8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
