@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField, HideInInspector] public Rigidbody2D _rigidbody;
     private Animator _animation;
     private BoxCollider2D _boxCollider;
+    private AudioManager _audioManager;
+
 
     [Header("Jumping")]
     [SerializeField] public float firstJumpForce = 25f;
@@ -61,6 +63,7 @@ public class Player : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _animation = GetComponentInChildren<Animator>();
         _boxCollider = GetComponent<BoxCollider2D>();
+        _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         velocity.x = 5f;
     }
 
@@ -121,6 +124,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
+        _audioManager.PlaySFX(_audioManager.jump);
         jumpRemaining -= 1;
         if (jumpRemaining == 0)
             isDoubleJumping = true;
@@ -244,10 +248,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             if (health >= 1 && _hpOn && _canHit)
             {
-                health -= 1;
-                OnPlayerHit?.Invoke(health);
-                if (health == 0)
-                    OnPlayerDied?.Invoke();
+                HitPlayer();
             }
         }
         if (collision.gameObject.CompareTag("boss obstacle"))
@@ -255,10 +256,7 @@ public class Player : MonoBehaviour
             collision.gameObject.layer = LayerMask.NameToLayer("ignor colision");
             if (health >= 1 && _hpOn && _canHit)
             {
-                health -= 1;
-                OnPlayerHit?.Invoke(health);
-                if (health == 0)
-                    OnPlayerDied?.Invoke();
+                HitPlayer();
             }
         }
     }
@@ -268,12 +266,8 @@ public class Player : MonoBehaviour
         {
             if (health >= 1 && _hpOn && _canHit)
             {
-                
-                health -= 1;
-                OnPlayerHit?.Invoke(health);
+                HitPlayer();
                 _canHit = false;
-                if (health == 0)
-                    OnPlayerDied?.Invoke();
             }
         }
     }
@@ -298,6 +292,15 @@ public class Player : MonoBehaviour
             _invincClock = 0;
         }
          
+    }
+
+    private void HitPlayer()
+    {
+        _audioManager.PlaySFX(_audioManager.hit);
+        health -= 1;
+        OnPlayerHit?.Invoke(health);
+        if (health == 0)
+            OnPlayerDied?.Invoke();
     }
 
 }
