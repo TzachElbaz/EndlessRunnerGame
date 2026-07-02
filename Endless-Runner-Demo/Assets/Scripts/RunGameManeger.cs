@@ -947,11 +947,19 @@ public class RunGameManeger : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            StartCoroutine(KrakenTransition());
+            AnlishTheKraken();
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
             InvokeCangeErea();
         }
+    }
+    public void AnlishTheKraken()
+    {
+        _obstaclePause = true;
+        ClearAllObstacles?.Invoke();
+        _transitioning = true;
+        OnChangeErea?.Invoke();
+        StartCoroutine(KrakenTransition());
     }
 }

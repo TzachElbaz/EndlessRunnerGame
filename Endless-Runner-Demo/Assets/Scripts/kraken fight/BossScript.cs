@@ -695,7 +695,7 @@ public class BossScript : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         
         TentacleSend(0, true); //hit
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.4f);
         _tentacleSmashDownOn = true;
         yield return new WaitForSeconds(5f);
         _TOn[3] = !_TOn[3];
@@ -710,11 +710,11 @@ public class BossScript : MonoBehaviour
         _tentacleSmashOn = true;
         yield return new WaitForSeconds(0.8f);
         TentacleSend(0, false);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.8f);
         _tentacleSmashOn = true;
         yield return new WaitForSeconds(1.5f);
         TentacleSend(0, true); //hit
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(4.8f);
         _tentacleSmashDownOn = true;
         yield return new WaitForSeconds(1.5f);
         _tentacleSmashDownOn = true;
@@ -910,7 +910,7 @@ public class BossScript : MonoBehaviour
         _tentacleSmashOn = true;
         yield return new WaitForSeconds(1.2f);
         TentacleSend(0, false);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.8f);
         _tentacleSmashOn = true;
         TrhowBulshit(5, 8);
         yield return new WaitForSeconds(2.5f);
