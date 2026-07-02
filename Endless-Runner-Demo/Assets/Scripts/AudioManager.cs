@@ -1,6 +1,5 @@
 using UnityEngine;
 using static RunGameManeger;
-//comment
 
 public class AudioManager : MonoBehaviour
 {
@@ -16,7 +15,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip bubbles;
     public AudioClip coin;
     public AudioClip jump;
-    public AudioClip doubleJump;
+    //public AudioClip doubleJump;
     public AudioClip hit;
     public AudioClip collect;
 
