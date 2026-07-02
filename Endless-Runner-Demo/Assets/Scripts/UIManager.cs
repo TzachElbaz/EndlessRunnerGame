@@ -91,11 +91,11 @@ public class UIManager : MonoBehaviour
 
     private void ShowGameOverScreen()
     {
-        isGameOver = true; // Set the flag so FixedUpdate stops running
+        isGameOver = true; 
 
         if (CollectablesUI != null)
         {
-            CollectablesUI.SetActive(false); // Safely hide the UI object
+            CollectablesUI.SetActive(false); 
         }
 
         gameOverScreen.enabled = true;
