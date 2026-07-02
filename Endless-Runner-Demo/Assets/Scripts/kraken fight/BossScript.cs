@@ -604,6 +604,7 @@ public class BossScript : MonoBehaviour
             IsStartPositioning = false;
             _animator.SetBool("is5", true);
             _heartParent.SetActive(true);
+            _uperTentacleSmash.GetComponent<CapsuleCollider2D>().enabled = true;
         }
     }
     public void ChooseBulshit()
@@ -673,6 +674,7 @@ public class BossScript : MonoBehaviour
                 break;
 
             case 1:
+                _uperTentacleSmash.GetComponent<CapsuleCollider2D>().enabled = false;
                 defetHandeler = 0;
                 _heartParent.SetActive(false);
                 RunGameManeger.Instance.InvokeCangeErea();

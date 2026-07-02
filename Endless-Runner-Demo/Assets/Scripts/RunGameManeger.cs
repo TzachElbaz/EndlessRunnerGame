@@ -958,8 +958,9 @@ public class RunGameManeger : MonoBehaviour
     {
         _obstaclePause = true;
         ClearAllObstacles?.Invoke();
-        OnChangeErea?.Invoke();
         _nextScreen = SCREEN_ENUM.KRAKEN;
+        OnChangeErea?.Invoke();
+        
         
         StartCoroutine(KrakenTransition());
     }

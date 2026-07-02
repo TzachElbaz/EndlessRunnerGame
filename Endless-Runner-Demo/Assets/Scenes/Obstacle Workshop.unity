@@ -8495,6 +8495,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: platform 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6554953578118885015, guid: e82f36c414e2cf24eacd4e961995ac15, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6554953578118885015, guid: e82f36c414e2cf24eacd4e961995ac15, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9616685
+      objectReference: {fileID: 0}
+    - target: {fileID: 6554953578118885015, guid: e82f36c414e2cf24eacd4e961995ac15, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6554953578118885015, guid: e82f36c414e2cf24eacd4e961995ac15, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.038
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

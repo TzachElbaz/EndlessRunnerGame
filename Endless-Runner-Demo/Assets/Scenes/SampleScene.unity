@@ -1074,7 +1074,7 @@ MonoBehaviour:
   _desertObsteclCurse:
   - {fileID: 3711225835351693844, guid: 5bdd7177e7b7373428560161951ae254, type: 3}
   _desertPlatforms:
-  - {fileID: 1241772735445447058, guid: 34473dd09ea1aa943affe3e6a10880d9, type: 3}
+  - {fileID: 1241772735445447058, guid: c02dd09111bf81f44ac909264807516f, type: 3}
   - {fileID: 4314314486488216035, guid: e82f36c414e2cf24eacd4e961995ac15, type: 3}
   _Xspon: 120
   _Yspon: 1.7
@@ -9589,7 +9589,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274103348}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
