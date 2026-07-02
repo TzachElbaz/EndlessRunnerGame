@@ -1104,7 +1104,7 @@ MonoBehaviour:
   - {fileID: 1672266272119882872, guid: 70da2e0b54cc1db47aae7275fe49b79f, type: 3}
   _coinGenerationRange: {x: 0, y: 0}
   _kraken: {fileID: 743920552}
-  _krskenSpawn: {x: 87, y: 16.08}
+  _krskenSpawn: {x: 60, y: 16.08}
   _tentacleUp: {fileID: 1274103348}
   _tntacleUpSpawn: {x: 10, y: 54}
   _tentacleDown: {fileID: 1254479917}
@@ -5568,7 +5568,7 @@ MonoBehaviour:
   _tripleTentacleTime: 200
   _tripTentacleSpeed: 100
   _tripleWarningSpeed: 30
-  _tripleWarningTime: 0.7
+  _tripleWarningTime: 1
   _TOn: 0000000000
   _rockCrashOB: {fileID: 5418319228021348034, guid: 7894e250b19ab014d8c5c52ef3c772a7, type: 3}
   _rokSmashForce: 20

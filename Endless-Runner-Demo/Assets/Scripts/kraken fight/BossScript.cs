@@ -685,7 +685,7 @@ public class BossScript : MonoBehaviour
     }
     IEnumerator AttackPhaze1()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         _tripTentaclePerent.transform.position = new Vector2(77, 5.7f);
         _tentacleSmashOn = true;
         yield return new WaitForSeconds(2.2f);
