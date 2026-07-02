@@ -1090,7 +1090,7 @@ MonoBehaviour:
   _dropChaineLength: 16
   _obstecalChainChanceScale: 0100000002000000030000000400000005000000060000000700000008000000
   _obstecalChainChanceMax: 0
-  _obstecalChainMark: 00000000140000001e000000280000003c00000078000000c8000000fa000000
+  _obstecalChainMark: 000000001400000023000000320000004600000078000000c8000000fa000000
   _obsteclBrakeChance: 1
   _obstaclePause: 0
   _generateAlt: 1
@@ -1102,7 +1102,7 @@ MonoBehaviour:
   - {fileID: 2803904376587287898, guid: 8385609412f56f8418638d06f92ec138, type: 3}
   - {fileID: 7536886399388741415, guid: f9b1188b04c66334ab52939a7865241c, type: 3}
   - {fileID: 1672266272119882872, guid: 70da2e0b54cc1db47aae7275fe49b79f, type: 3}
-  _coinGenerationRange: {x: 0, y: 0}
+  _coinGenerationRange: {x: 15, y: 20}
   _kraken: {fileID: 743920552}
   _krskenSpawn: {x: 60, y: 16.08}
   _tentacleUp: {fileID: 1274103348}

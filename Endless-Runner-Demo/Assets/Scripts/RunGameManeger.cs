@@ -302,10 +302,15 @@ public class RunGameManeger : MonoBehaviour
 
 
                     }
-                    else if (randomObstacleEvent <= _obstecalChainChance && (CahinRow+1)< _obstecalChainChance)
+                    else if (randomObstacleEvent <= _obstecalChainChance && CahinRow< _obstecalChainChance)
                     {
                         length = TwoOBDistantCheck(prev, now);
                         CahinRow++;
+                    }
+                    else if (CahinRow >= _obstecalChainChance)
+                    {
+                        length = _minLength * 1.5f;
+                        CahinRow = 0;
                     }
                     else if (randomObstacleEvent <= _obstecalChainChance + _obsteclBrakeChance)
                     {

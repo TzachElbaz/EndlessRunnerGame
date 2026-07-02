@@ -247,6 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2857284217905593129}
   - component: {fileID: 7143759443375148905}
+  - component: {fileID: 7031280115120230419}
   m_Layer: 0
   m_Name: forest obstecle 5_0
   m_TagString: Untagged
@@ -328,6 +329,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &7031280115120230419
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062148278165225488}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69a2f8a96fef26c48bcf84a32661978d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2828196883259844078
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +397,7 @@ GameObject:
   - component: {fileID: 3478469118916438996}
   - component: {fileID: 2206274527693347785}
   - component: {fileID: 6658579401221535357}
+  - component: {fileID: 404663093395243918}
   m_Layer: 0
   m_Name: Square (7)
   m_TagString: obstacle
@@ -501,6 +525,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.30867094, y: 0.27793813}
   m_EdgeRadius: 0
+--- !u!95 &404663093395243918
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3299450739112352085}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69a2f8a96fef26c48bcf84a32661978d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5304648861548297609
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +558,7 @@ GameObject:
   - component: {fileID: 5976945932012562729}
   - component: {fileID: 5321055107655891882}
   - component: {fileID: 7146570912970690380}
+  - component: {fileID: 3293950552015597890}
   m_Layer: 0
   m_Name: Square (6)
   m_TagString: obstacle
@@ -639,6 +686,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.30867094, y: 0.27793813}
   m_EdgeRadius: 0
+--- !u!95 &3293950552015597890
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304648861548297609}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69a2f8a96fef26c48bcf84a32661978d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5794236683005523015
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2131137397275925111}
   - component: {fileID: 8521146538363409890}
+  - component: {fileID: 162342364565595888}
   m_Layer: 0
   m_Name: forest obstecle 5_1
   m_TagString: Untagged
@@ -730,6 +800,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &162342364565595888
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5794236683005523015}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69a2f8a96fef26c48bcf84a32661978d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6016157069382819857
 GameObject:
   m_ObjectHideFlags: 0
