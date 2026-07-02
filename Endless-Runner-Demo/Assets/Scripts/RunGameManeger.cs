@@ -895,6 +895,8 @@ public class RunGameManeger : MonoBehaviour
         _krakenBubleTransition2.GetComponent<Parallax>().destroy = 50;
         _kraken.transform.position = _krskenSpawn;
         _kraken.SetActive(true);
+        _Player.CallPlayerHealth();
+       
         yield return new WaitForSeconds(2);
        
 

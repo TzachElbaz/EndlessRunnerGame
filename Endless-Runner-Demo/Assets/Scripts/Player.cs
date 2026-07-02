@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour
 {
@@ -298,6 +299,11 @@ public class Player : MonoBehaviour
             _invincClock = 0;
         }
          
+    }
+    public void CallPlayerHealth()
+    {
+       health = 3;
+       OnPlayerHit?.Invoke(health);
     }
 
 }
