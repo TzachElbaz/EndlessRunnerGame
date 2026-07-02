@@ -1,9 +1,9 @@
 using UnityEngine;
 using TMPro;
 using System;
-
 public class UIManager : MonoBehaviour
 {
+
     [SerializeField] TextMeshProUGUI distanceText;
     [SerializeField] TextMeshProUGUI moneyText;
     [SerializeField] Canvas pauseMenu;
@@ -11,13 +11,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject Heart1;
     [SerializeField] GameObject Heart2;
     [SerializeField] GameObject Heart3;
-    [SerializeField] GameObject CollectablesUI;
-
     Player player;
     CollectablesManager collectables;
-
-    // Track whether the game is actively running
-    private bool isGameOver = false;
 
     private void Awake()
     {
@@ -43,19 +38,17 @@ public class UIManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Stop updating the UI if the game is over or if references are missing
-        if (isGameOver || player == null || collectables == null) return;
-
         distanceText.text = Mathf.FloorToInt(player.distance) + " m";
         moneyText.text = collectables._coinCount + " e$";
     }
 
     private void UpdateHearts(int health)
     {
+
         var heart1 = Heart1.GetComponentInChildren<Animator>();
         var heart2 = Heart2.GetComponentInChildren<Animator>();
         var heart3 = Heart3.GetComponentInChildren<Animator>();
-
+        
         switch (health)
         {
             case 3:
@@ -85,19 +78,12 @@ public class UIManager : MonoBehaviour
 
     private void ShowPauseMenu()
     {
-        if (isGameOver) return; // Don't allow pausing on the game over screen
         pauseMenu.enabled = RunGameManeger.isGamePaused;
     }
 
     private void ShowGameOverScreen()
     {
-        isGameOver = true; // Set the flag so FixedUpdate stops running
-
-        if (CollectablesUI != null)
-        {
-            CollectablesUI.SetActive(false); // Safely hide the UI object
-        }
-
         gameOverScreen.enabled = true;
     }
+
 }

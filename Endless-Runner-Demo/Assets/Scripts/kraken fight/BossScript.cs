@@ -493,7 +493,7 @@ public class BossScript : MonoBehaviour
                     break;
             }
             
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(3f);
         }
         yield return new WaitUntil(() => _curentHp <= 6); //phaze 2
         _tripTentaclePerent.transform.position = new Vector2(100, 5.7f);
@@ -514,7 +514,7 @@ public class BossScript : MonoBehaviour
                     yield return StartCoroutine(AttackPhaze2loop2());
                     break;
             }
-            yield return new WaitForSeconds(4f);
+            
         }
         yield return new WaitUntil(() => _curentHp <= 3);//phaze 3
         yield return new WaitForSeconds(4f);
@@ -525,8 +525,7 @@ public class BossScript : MonoBehaviour
         {
             SubCorFin = false;
             yield return StartCoroutine(AttackPhaze3loop1());
-            yield return new WaitForSeconds(4f);
-
+            
         }
         yield return new WaitUntil(() => _curentHp <= 0);
         _IsDefet = true;
@@ -721,7 +720,6 @@ public class BossScript : MonoBehaviour
         _tentacleSmashDownOn = true;
         yield return new WaitForSeconds(1.5f);
         _tentacleSmashDownOn = true;
-        yield return new WaitForSeconds(0.3f);
         TentacleSend(1, false);
         yield return new WaitForSeconds(4f);
         _TOn[1] = !_TOn[1];
@@ -755,9 +753,9 @@ public class BossScript : MonoBehaviour
         _TOn[2] = !_TOn[2];
         _TOn[3] = !_TOn[3];
         _TOn[4] = !_TOn[4];
-        yield return new WaitForSeconds(1.8f);
-        TentacleSend(0, true);
         yield return new WaitForSeconds(1.5f);
+        TentacleSend(0, true);
+        yield return new WaitForSeconds(1.1f);
         _TOn[0] = !_TOn[0];
         SubCorFin = true;
     }
@@ -776,10 +774,9 @@ public class BossScript : MonoBehaviour
         _tentacleSmashDownOn = true;
         yield return new WaitForSeconds(0.8f);
         _tentacleSmashOn = true;
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSeconds(1.5f);
         TentacleSend(1, true);
         SubCorFin = true;
-        yield return new WaitForSeconds(2f);
 
 
     }
@@ -908,7 +905,7 @@ public class BossScript : MonoBehaviour
         RockThrowLow(_rokThrowHighSpawn);
         yield return new WaitForSeconds(1.5f);
         RockThrowLow(_rokThrowLowSpawn);
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(6f);
 
         _tentacleSmashOn = true;
         yield return new WaitForSeconds(1.2f);
@@ -938,29 +935,26 @@ public class BossScript : MonoBehaviour
         PlatformSend(6, 80, 1, false);
         yield return new WaitForSeconds(1.5f);
         PlatformSend(12, 80, 2, false);
-        
+        TentacleSend(Random.Range(0,2), false);
         yield return new WaitForSeconds(1.5f);
+        PlatformSend(6, 80, 1, false);
+        yield return new WaitForSeconds(1.5f);
+        PlatformSend(12, 80, 2, false);
+        yield return new WaitForSeconds(1.5f);
+        PlatformSend(6, 80, 1, false);
+        yield return new WaitForSeconds(1.5f);
+        PlatformSend(12, 80, 2, false);
+        yield return new WaitForSeconds(1.5f);
+        PlatformSend(6, 80, 1, false);
         TentacleSend(Random.Range(0, 2), false);
-        PlatformSend(6, 80, 1, false);
         yield return new WaitForSeconds(1.5f);
         PlatformSend(12, 80, 2, false);
         yield return new WaitForSeconds(1.5f);
         PlatformSend(6, 80, 1, false);
-        yield return new WaitForSeconds(1.5f);
-        PlatformSend(12, 80, 2, false);
-        yield return new WaitForSeconds(1.5f);
-        PlatformSend(6, 80, 1, false);
-        
-        yield return new WaitForSeconds(1.5f);
-        TentacleSend(Random.Range(0, 2), false);
-        PlatformSend(12, 80, 2, false);
-        yield return new WaitForSeconds(1.5f);
-        PlatformSend(6, 80, 1, false);
-       
-        yield return new WaitForSeconds(1.5f);
-        PlatformSend(12, 80, 2, false);
-        yield return new WaitForSeconds(1.5f);
         TentacleSend(Random.Range(0, 2), true);
+        yield return new WaitForSeconds(1.5f);
+        PlatformSend(12, 80, 2, false);
+        yield return new WaitForSeconds(1.5f);
         PlatformSend(6, 80, 1, false);
         SubCorFin = true;
     }
