@@ -14,6 +14,10 @@ public class OpeningScreen : MonoBehaviour
     {
         SceneManager.LoadScene("Tutorial");
     }
+    public void SecretBoss()
+    {
+        SceneManager.LoadScene("KrakenScene");
+    }
 
     // Connect this to the QUIT button's OnClick event
     public void QuitGame()

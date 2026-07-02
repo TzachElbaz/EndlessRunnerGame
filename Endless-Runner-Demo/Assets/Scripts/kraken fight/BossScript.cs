@@ -561,50 +561,51 @@ public class BossScript : MonoBehaviour
         tent._isDebri = counter;
         tent._debrySpawn = new Vector2(spawn, 1);
     }
-    IEnumerator AttackPatern1()
-    {
-        TentacleSend(1, false); //f
-        yield return new WaitForSeconds(1.5f);
-        TentacleSend(0, true);
-        yield return new WaitForSeconds(4f);
-        _tentacleSmashOn = true;
-        yield return new WaitForSeconds(3f);
-        _tentacleSmashOn = true;
-        yield return new WaitForSeconds(2f);
-        _TOn[2] = true;
-        yield return new WaitForSeconds(2f);
-        _TOn[3] = true;
-        yield return new WaitForSeconds(2f);
-        _TOn[3] = true;
-        _TOn[4] = true;
-        yield return new WaitForSeconds(2f);
-        _TOn[1] = true;
-        _TOn[4] = true;
-        _TOn[3] = true;
-        yield return new WaitForSeconds(2f);
-        _TOn[0] = true;
-        _TOn[3] = true;
-        _TOn[4] = true;
-        yield return new WaitForSeconds(2f);
-        _TOn[0] = true;
-        _TOn[1] = true;
-        _TOn[2] = true;
-        _TOn[3] = true;
-        yield return new WaitForSeconds(2f);
-        _tentacleSmashDownOn = true;
-        yield return new WaitForSeconds(3f);
-        _tentacleSmashDownOn = true;
-        yield return new WaitForSeconds(0.7f);
-        _tentacleSmashOn = true;
+    //IEnumerator AttackPatern1()
+    //{
+    //    TentacleSend(1, false); //f
+    //    yield return new WaitForSeconds(1.5f);
+    //    TentacleSend(0, true);
+    //    yield return new WaitForSeconds(4f);
+    //    _tentacleSmashOn = true;
+    //    yield return new WaitForSeconds(3f);
+    //    _tentacleSmashOn = true;
+    //    yield return new WaitForSeconds(2f);
+    //    _TOn[2] = true;
+    //    yield return new WaitForSeconds(2f);
+    //    _TOn[3] = true;
+    //    yield return new WaitForSeconds(2f);
+    //    _TOn[3] = true;
+    //    _TOn[4] = true;
+    //    yield return new WaitForSeconds(2f);
+    //    _TOn[1] = true;
+    //    _TOn[4] = true;
+    //    _TOn[3] = true;
+    //    yield return new WaitForSeconds(2f);
+    //    _TOn[0] = true;
+    //    _TOn[3] = true;
+    //    _TOn[4] = true;
+    //    yield return new WaitForSeconds(2f);
+    //    _TOn[0] = true;
+    //    _TOn[1] = true;
+    //    _TOn[2] = true;
+    //    _TOn[3] = true;
+    //    yield return new WaitForSeconds(2f);
+    //    _tentacleSmashDownOn = true;
+    //    yield return new WaitForSeconds(3f);
+    //    _tentacleSmashDownOn = true;
+    //    yield return new WaitForSeconds(0.7f);
+    //    _tentacleSmashOn = true;
 
-    }
+    //}
     private void StartPositioning()
     {
         float move = transform.position.x - _revelSpeed * Time.deltaTime;
         transform.position = new Vector2(move, transform.position.y);
         if (transform.position.x < 48.5f)
         {
-            _audioManager.PlaySFX(_audioManager.kraken);
+            _audioManager.musicSource.clip = _audioManager.kraken;
+            _audioManager.musicSource.Play();
             IsStartPositioning = false;
             _animator.SetBool("is5", true);
             _heartParent.SetActive(true);

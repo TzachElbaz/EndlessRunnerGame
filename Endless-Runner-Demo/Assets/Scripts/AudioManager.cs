@@ -4,7 +4,7 @@ using static RunGameManeger;
 public class AudioManager : MonoBehaviour
 {
     [Header("Audio Source")]
-    [SerializeField] AudioSource musicSource;
+    [SerializeField] public AudioSource musicSource;
     [SerializeField] AudioSource SfxSource;
 
     [Header("Audio Clip")]
@@ -67,7 +67,7 @@ public class AudioManager : MonoBehaviour
             SCREEN_ENUM.FOREST => forest,
             SCREEN_ENUM.DESERT => desert,
             //SCREEN_ENUM.KRAKEN => kraken,
-            _ => forest
+            _ => menu
         };
         musicSource.Play();
     }

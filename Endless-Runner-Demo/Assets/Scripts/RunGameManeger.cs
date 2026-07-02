@@ -974,4 +974,9 @@ public class RunGameManeger : MonoBehaviour
         
         StartCoroutine(KrakenTransition());
     }
+
+    public void LoadNewGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 }
