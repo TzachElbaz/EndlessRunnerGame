@@ -1088,9 +1088,9 @@ MonoBehaviour:
   pursegen: 
   _jumpChaineLength: 11
   _dropChaineLength: 16
-  _obstecalChainChanceScale: 0200000004000000
+  _obstecalChainChanceScale: 0100000002000000030000000400000005000000060000000700000008000000
   _obstecalChainChanceMax: 0
-  _obstecalChainMark: 000000001e000000
+  _obstecalChainMark: 000000001e0000003c0000005a00000078000000c8000000fa0000002c010000
   _obsteclBrakeChance: 1
   _obstaclePause: 0
   _generateAlt: 1
