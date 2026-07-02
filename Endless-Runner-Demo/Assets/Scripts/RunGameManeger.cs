@@ -250,15 +250,15 @@ public class RunGameManeger : MonoBehaviour
         Obstacle prev = pregen[pregen.Length - 1].GetComponent<Obstacle>();
         GameObject Ob;
         _OBcount = _OBgenCount;
+        int CahinRow = 0;
         for (int i = 0; i < pregen.Length; i++)
         {
-            if (_obstecalChainChanceMax > _obstecalChainChance)
-            {
+            
                 for (int j = 1; j< _obstecalChainMark.Length; j++) 
                 {
                     if (_OBcount >= _obstecalChainMark[j]) _obstecalChainChance = _obstecalChainChanceScale[j];
                 }              
-            }
+            
             
             rund = Random.Range(0, _curentObstecl.Length);
             if (i > 0 && _curentObstecl[rund] == pregen[i - 1])
@@ -297,17 +297,20 @@ public class RunGameManeger : MonoBehaviour
                         Ob = _coinList[Random.Range(0, _coinList.Length)];
                         pregen[i] = Ob;
                         now = Ob.GetComponent<Obstacle>();
-                        
 
-                        
+                        CahinRow = 0;
+
+
                     }
-                    else if (randomObstacleEvent <= _obstecalChainChance)
+                    else if (randomObstacleEvent <= _obstecalChainChance && (CahinRow+1)< _obstecalChainChance)
                     {
                         length = TwoOBDistantCheck(prev, now);
+                        CahinRow++;
                     }
                     else if (randomObstacleEvent <= _obstecalChainChance + _obsteclBrakeChance)
                     {
                         length = _minLength * Random.Range(2, 5);
+                        CahinRow = 0;
                     }
                     else if (randomObstacleEvent <= _obstecalChainChance + _obsteclBrakeChance+ _platformChance)
                     {
@@ -316,12 +319,12 @@ public class RunGameManeger : MonoBehaviour
                         Ob = _curentPlatforms[Random.Range(0, _curentPlatforms.Length)];
                         pregen[i] = Ob;
                         now = Ob.GetComponent<Obstacle>();
-                        
+                        CahinRow++;
                     }
                     else
                     {
                         length = prev._GenerateDistance;
-
+                        CahinRow = 0;
                     }
                     break;
                 case OB_TYPE.COURSE:

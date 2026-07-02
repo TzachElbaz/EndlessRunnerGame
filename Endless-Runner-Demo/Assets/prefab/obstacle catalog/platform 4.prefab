@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstecl
   _type: 3
-  _GenerateDistance: 57.2
+  _GenerateDistance: 59.8
   destroy: -60
   depth: 1
   _passPoint: 5

@@ -1075,22 +1075,22 @@ MonoBehaviour:
   - {fileID: 3711225835351693844, guid: 5bdd7177e7b7373428560161951ae254, type: 3}
   _desertPlatforms:
   - {fileID: 1241772735445447058, guid: c02dd09111bf81f44ac909264807516f, type: 3}
-  - {fileID: 4314314486488216035, guid: e82f36c414e2cf24eacd4e961995ac15, type: 3}
+  - {fileID: 4314314486488216035, guid: b54aeb872eeb9c948b177f91e0c2a9e7, type: 3}
   _Xspon: 120
   _Yspon: 1.7
   _platformChance: 1
   _obstacleCurseCount: 4
   _curentScreen: 0
   _nextScreen: 0
-  _pregenLength: 20
-  _minLength: 30
+  _pregenLength: 200
+  _minLength: 25
   _addLength: 12
   pursegen: 
   _jumpChaineLength: 11
   _dropChaineLength: 16
   _obstecalChainChanceScale: 0100000002000000030000000400000005000000060000000700000008000000
   _obstecalChainChanceMax: 0
-  _obstecalChainMark: 000000001e0000003c0000005a00000078000000c8000000fa0000002c010000
+  _obstecalChainMark: 00000000140000001e000000280000003c00000078000000c8000000fa000000
   _obsteclBrakeChance: 1
   _obstaclePause: 0
   _generateAlt: 1
@@ -3123,7 +3123,7 @@ MonoBehaviour:
   distance: 0
   _collectableSpawnClock: 0
   health: 3
-  _hpOn: 1
+  _hpOn: 0
 --- !u!4 &335309341
 Transform:
   m_ObjectHideFlags: 0
