@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip menu;
     public AudioClip forest;
     public AudioClip desert;
-    public AudioClip atlantis;
+    public AudioClip kraken;
     public AudioClip bubbles;
     public AudioClip coin;
     public AudioClip jump;
@@ -66,7 +66,7 @@ public class AudioManager : MonoBehaviour
         {
             SCREEN_ENUM.FOREST => forest,
             SCREEN_ENUM.DESERT => desert,
-            SCREEN_ENUM.KRAKEN => atlantis,
+            //SCREEN_ENUM.KRAKEN => kraken,
             _ => forest
         };
         musicSource.Play();

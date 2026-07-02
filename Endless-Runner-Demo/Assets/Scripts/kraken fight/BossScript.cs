@@ -106,6 +106,9 @@ public class BossScript : MonoBehaviour
     [SerializeField] public float _PlatformAttackHight;
     [SerializeField] private float _PlatformSendSpawn;
 
+    private AudioManager _audioManager;
+
+
     public int _faze;
 
     [Header("defet")]
@@ -118,6 +121,7 @@ public class BossScript : MonoBehaviour
         _animator.SetBool("is5", false);
         _animator.SetBool("is3", false);
         IsStartPositioning = true;
+        _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
     void Start()
     {
@@ -600,7 +604,7 @@ public class BossScript : MonoBehaviour
         transform.position = new Vector2(move, transform.position.y);
         if (transform.position.x < 48.5f)
         {
-
+            _audioManager.PlaySFX(_audioManager.kraken);
             IsStartPositioning = false;
             _animator.SetBool("is5", true);
             _heartParent.SetActive(true);

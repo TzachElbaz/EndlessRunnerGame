@@ -1147,6 +1147,7 @@ MonoBehaviour:
   Heart2: {fileID: 1940233390}
   Heart3: {fileID: 1735962882}
   CollectablesUI: {fileID: 437715608}
+  TryAgainButotn: {fileID: 284160178}
 --- !u!114 &84267936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1450,8 +1451,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
+    m_PressedColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2641,7 +2642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &284160179
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2685,8 +2686,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
+    m_PressedColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -5341,7 +5342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &712874096
 Transform:
   m_ObjectHideFlags: 0
@@ -5721,7 +5722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &743920553
 SpriteRenderer:
   serializedVersion: 2
@@ -11711,8 +11712,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
+    m_PressedColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -14570,7 +14571,7 @@ MonoBehaviour:
   menu: {fileID: 8300000, guid: 09e3d63350c851c4b90426a91129b291, type: 3}
   forest: {fileID: 8300000, guid: 8ce67e785ab2983439c689986188ed0e, type: 3}
   desert: {fileID: 8300000, guid: 0b151af6ddbc6024f8808ff12e04f49a, type: 3}
-  atlantis: {fileID: 8300000, guid: b6ae5d01ef8920d478345f28c505987d, type: 3}
+  kraken: {fileID: 8300000, guid: b6ae5d01ef8920d478345f28c505987d, type: 3}
   bubbles: {fileID: 8300000, guid: bfa5696265a7365499257d76947ef0d1, type: 3}
   coin: {fileID: 8300000, guid: 2c9d91a1e101dde46b5eb42ca7e8dc35, type: 3}
   jump: {fileID: 8300000, guid: 68085122423b3eb4699856a0920a6e98, type: 3}

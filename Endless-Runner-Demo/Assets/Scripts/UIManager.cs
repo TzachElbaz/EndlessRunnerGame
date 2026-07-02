@@ -12,11 +12,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject Heart2;
     [SerializeField] GameObject Heart3;
     [SerializeField] GameObject CollectablesUI;
+    [SerializeField] GameObject TryAgainButotn;
 
     Player player;
     CollectablesManager collectables;
 
-    // Track whether the game is actively running
     private bool isGameOver = false;
 
     private void Awake()
@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
         collectables = GameObject.FindAnyObjectByType<CollectablesManager>();
         pauseMenu.enabled = false;
         gameOverScreen.enabled = false;
+        TryAgainButotn.gameObject.SetActive(false);
     }
 
     private void OnEnable()
@@ -85,7 +86,7 @@ public class UIManager : MonoBehaviour
 
     private void ShowPauseMenu()
     {
-        if (isGameOver) return; // Don't allow pausing on the game over screen
+        if (isGameOver) return; 
         pauseMenu.enabled = RunGameManeger.isGamePaused;
     }
 
@@ -97,7 +98,9 @@ public class UIManager : MonoBehaviour
         {
             CollectablesUI.SetActive(false); 
         }
-
         gameOverScreen.enabled = true;
+        if(RunGameManeger.Instance._curentScreen == RunGameManeger.SCREEN_ENUM.KRAKEN)
+            TryAgainButotn.gameObject.SetActive(true);
+
     }
 }
