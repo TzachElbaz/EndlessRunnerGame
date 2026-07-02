@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -11,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField, HideInInspector] public Rigidbody2D _rigidbody;
     private Animator _animation;
     private BoxCollider2D _boxCollider;
+    private AudioManager _audioManager;
 
     [Header("Jumping")]
     [SerializeField] public float firstJumpForce = 25f;
@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
     private bool isDoubleJumping = false;
     private bool rollOnLand = false;
 
+
     //[HideInInspector]
     public Vector2 velocity;
     [HideInInspector]
@@ -54,13 +55,14 @@ public class Player : MonoBehaviour
 
     [Header("debug")]
     [SerializeField] private bool _hpOn;
-    private bool _canHit=true;
+    private bool _canHit = true;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animation = GetComponentInChildren<Animator>();
         _boxCollider = GetComponent<BoxCollider2D>();
+        _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         velocity.x = 5f;
     }
 
@@ -73,7 +75,7 @@ public class Player : MonoBehaviour
     {
         HandleInput();
         PlayerAnimation();
-        if(!_canHit) InvincRutin(_invincTime);
+        if (!_canHit) InvincRutin(_invincTime);
 
     }
 
@@ -121,6 +123,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
+        _audioManager.PlaySFX(_audioManager.jump);
         jumpRemaining -= 1;
         if (jumpRemaining == 0)
             isDoubleJumping = true;
@@ -132,21 +135,6 @@ public class Player : MonoBehaviour
         _boxCollider.size = jumpingSize;
     }
 
-
-    //private bool GroundCheck()
-    //{
-    //    Vector2 origin = new Vector2(transform.position.x, transform.position.y - _groundCheckDistance);
-
-    //    RaycastHit2D hit = Physics2D.BoxCast(origin, _groundCheckSize, 0f, Vector2.down, _groundCheckDistance, _groundLayers);
-    //    return hit.collider != null;
-    //}
-
-    //private void OnDrawGizmosSelected()
-    //{
-    //    Gizmos.color = _groundCheckColor;
-    //    Vector2 origin = new Vector2(transform.position.x, transform.position.y - _groundCheckDistance);
-    //    Gizmos.DrawWireCube(origin, _groundCheckSize);
-    //}
 
     private bool GroundCheck()
     {
@@ -239,15 +227,13 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("obstacle"))
         {
-            
+
             //RunGameManeger.Instance.InvokeClearOnScreenObstacles();
             Destroy(collision.gameObject);
             if (health >= 1 && _hpOn && _canHit)
             {
-                health -= 1;
-                OnPlayerHit?.Invoke(health);
-                if (health == 0)
-                    OnPlayerDied?.Invoke();
+
+                HitPlayer();
             }
         }
         if (collision.gameObject.CompareTag("boss obstacle"))
@@ -255,10 +241,7 @@ public class Player : MonoBehaviour
             collision.gameObject.layer = LayerMask.NameToLayer("ignor colision");
             if (health >= 1 && _hpOn && _canHit)
             {
-                health -= 1;
-                OnPlayerHit?.Invoke(health);
-                if (health == 0)
-                    OnPlayerDied?.Invoke();
+                HitPlayer();
             }
         }
     }
@@ -268,12 +251,9 @@ public class Player : MonoBehaviour
         {
             if (health >= 1 && _hpOn && _canHit)
             {
-                
-                health -= 1;
-                OnPlayerHit?.Invoke(health);
+
+                HitPlayer();
                 _canHit = false;
-                if (health == 0)
-                    OnPlayerDied?.Invoke();
             }
         }
     }
@@ -297,7 +277,16 @@ public class Player : MonoBehaviour
             _canHit = true;
             _invincClock = 0;
         }
-         
+
+    }
+
+    private void HitPlayer()
+    {
+        _audioManager.PlaySFX(_audioManager.hit);
+        health -= 1;
+        OnPlayerHit?.Invoke(health);
+        if (health == 0)
+            OnPlayerDied?.Invoke();
     }
 
 }
