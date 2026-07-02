@@ -1146,6 +1146,7 @@ MonoBehaviour:
   Heart1: {fileID: 770371865}
   Heart2: {fileID: 1940233390}
   Heart3: {fileID: 1735962882}
+  CollectablesUI: {fileID: 437715608}
 --- !u!114 &84267936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8886,7 +8887,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11449,7 +11450,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.75
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -13952,7 +13953,7 @@ GameObject:
   - component: {fileID: 1997237593}
   - component: {fileID: 1997237594}
   m_Layer: 12
-  m_Name: AudioManager2
+  m_Name: AudioManager
   m_TagString: Audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13996,7 +13997,6 @@ MonoBehaviour:
   bubbles: {fileID: 8300000, guid: bfa5696265a7365499257d76947ef0d1, type: 3}
   coin: {fileID: 8300000, guid: 2c9d91a1e101dde46b5eb42ca7e8dc35, type: 3}
   jump: {fileID: 8300000, guid: 68085122423b3eb4699856a0920a6e98, type: 3}
-  doubleJump: {fileID: 8300000, guid: 644d8071317f55d4f8e5033da295a2a9, type: 3}
   hit: {fileID: 8300000, guid: 93eb5d0aec62cc24bb274e4d34935462, type: 3}
   collect: {fileID: 8300000, guid: 09fa101482ad3ec4f8ca1731ec9f89c9, type: 3}
 --- !u!1 &2023918781
