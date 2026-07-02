@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static Obstacle;
@@ -69,7 +70,10 @@ public class RunGameManeger : MonoBehaviour
     [SerializeField] private float _jumpChaineLength;
     [SerializeField] private float _dropChaineLength;
     
-    [SerializeField] private int _obstecalChainChance;
+     private int _obstecalChainChance;
+    [SerializeField] private int[] _obstecalChainChanceScale;
+    [SerializeField] private int _obstecalChainChanceMax;
+    [SerializeField] private int[] _obstecalChainMark;
     [SerializeField] private int _obsteclBrakeChance;
 
     public bool _obstaclePause;
@@ -77,6 +81,7 @@ public class RunGameManeger : MonoBehaviour
 
     private bool isGameOver = false;
     private int pursePlace;
+    private float _chineCounter;
 
     [Header("obstacle distant change")]
     [SerializeField] private float _velocityLengthAdd = 0f;
@@ -133,7 +138,6 @@ public class RunGameManeger : MonoBehaviour
         // Subscribe
         Player.OnPlayerDied += ShowGameOver;
     }
-
     private void OnDisable()
     {
         // Unsubscribe
@@ -144,7 +148,6 @@ public class RunGameManeger : MonoBehaviour
         Time.timeScale = 0f;
         isGameOver = true;
     }
-
     public enum SCREEN_ENUM
     {
         FOREST,
@@ -163,9 +166,10 @@ public class RunGameManeger : MonoBehaviour
         listCount = 0;
         _pregenEmpty = true;
         pregen[pregen.Length - 1] = _curentObstecl[0];
+        _obstecalChainChance = _obstecalChainChanceScale[0];
+        ;
         //CangeErea();
     }
-
 
     void Update()
     {
@@ -200,6 +204,12 @@ public class RunGameManeger : MonoBehaviour
         {
             SpawnOB();
         }
+        //_chineCounter += _Player.velocity.x * Time.fixedDeltaTime;
+        //if (_chineCounter >= _obstecalChainMark && _obstecalChainChance< _obstecalChainChanceMax) 
+        //{
+        //    _obstecalChainChance++;
+        //    _chineCounter = 0;
+        //}
 
     }
 
@@ -226,7 +236,8 @@ public class RunGameManeger : MonoBehaviour
 
 
     }
-
+    private int _OBcount;
+    private int _OBgenCount;
     private void GenerateObAlt()
     {
         //int prevLast =1;
@@ -238,8 +249,17 @@ public class RunGameManeger : MonoBehaviour
         Obstacle now;
         Obstacle prev = pregen[pregen.Length - 1].GetComponent<Obstacle>();
         GameObject Ob;
+        _OBcount = _OBgenCount;
         for (int i = 0; i < pregen.Length; i++)
         {
+            if (_obstecalChainChanceMax > _obstecalChainChance)
+            {
+                for (int j = 1; j< _obstecalChainMark.Length; j++) 
+                {
+                    if (_OBcount >= _obstecalChainMark[j]) _obstecalChainChance = _obstecalChainChanceScale[j];
+                }              
+            }
+            
             rund = Random.Range(0, _curentObstecl.Length);
             if (i > 0 && _curentObstecl[rund] == pregen[i - 1])
             {
@@ -314,6 +334,10 @@ public class RunGameManeger : MonoBehaviour
                     break;
                 case OB_TYPE.PLATFORM:
                     length = TwoOBDistantCheck(prev, now)+ prev._GenerateDistance;
+                    if (now._passPoint == PASS_POINT.UP || now._passPoint == PASS_POINT.UP_MIDDLE)
+                    {
+                        length += _addLength;
+                    }
                     break;
 
 
@@ -324,9 +348,11 @@ public class RunGameManeger : MonoBehaviour
             {
                 length += _addLength;
             }
+            
             genLength[i] = length;
             pursegen[i] = pursePlace;
             coinRangeCount++;
+            _OBcount++;
         }
         _pregenEmpty = false;
 
@@ -391,6 +417,7 @@ public class RunGameManeger : MonoBehaviour
         GameObject Ob;
         Ob = Instantiate(pregen[listCount]);
         Ob.transform.position = new Vector2(_spawnPoint.x, _spawnPoint.y);
+        _OBgenCount++;
         if (_coinChens <= Random.Range(1, 11) && Ob.GetComponent<Obstacle>() != null)
         {
             Ob.GetComponent<Obstacle>().ActivatePurse(pursegen[listCount]);
@@ -506,15 +533,13 @@ public class RunGameManeger : MonoBehaviour
                         pursePlace = 2;
                         break;
 
-                    case Obstacle.PASS_POINT.UP_DOWN:
-                        if (1 == Random.Range(0, 2)) length = _addLength;
-                        else length = _minLength;
+                    case Obstacle.PASS_POINT.UP_DOWN:                        
+                        length = _minLength;
                         pursePlace = 2;
                         break;
 
                     case Obstacle.PASS_POINT.MIDDLE_DOWN:
-                        if (1 == Random.Range(0, 2)) length = _addLength;
-                        else length = _minLength;
+                        length = _minLength;
                         pursePlace =2;
                         break;
 

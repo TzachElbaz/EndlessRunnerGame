@@ -260,7 +260,7 @@ public class BossScript : MonoBehaviour
             _lowerTentacleSmash.transform.position = new Vector2(10f, -23f);
 
             _lowerTentacleSmashUp = true;
-            _lowerBableSmash.transform.position = new Vector2(10f, -10f);
+            _lowerBableSmash.transform.position = new Vector2(10f, -11f);
         }
         else if (_loweTentacleSmashClock >= _tentacleSmashTime)
         {
@@ -493,7 +493,7 @@ public class BossScript : MonoBehaviour
                     break;
             }
             
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(3f);
         }
         yield return new WaitUntil(() => _curentHp <= 6); //phaze 2
         _tripTentaclePerent.transform.position = new Vector2(100, 5.7f);
@@ -504,13 +504,23 @@ public class BossScript : MonoBehaviour
         while (_curentHp > 3)
         {
             SubCorFin = false;
-             yield return StartCoroutine(AttackPhaze2loop1());
+            int rund = Random.Range(1, 4);
+            switch (rund)
+            {
+                case 1:
+                    yield return StartCoroutine(AttackPhaze2loop1());
+                    break;
+                case 2:
+                    yield return StartCoroutine(AttackPhaze2loop2());
+                    break;
+            }
             
         }
         yield return new WaitUntil(() => _curentHp <= 3);//phaze 3
         yield return new WaitForSeconds(4f);
         SubCorFin = false;
         yield return StartCoroutine(AttackPhaze3());
+        yield return new WaitForSeconds(4f);
         while (_curentHp != 0)
         {
             SubCorFin = false;
@@ -683,8 +693,10 @@ public class BossScript : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         _tentacleSmashDownOn = true;
         yield return new WaitForSeconds(1.5f);
-        _tentacleSmashDownOn = true;
+        
         TentacleSend(0, true); //hit
+        yield return new WaitForSeconds(0.1f);
+        _tentacleSmashDownOn = true;
         yield return new WaitForSeconds(5f);
         _TOn[3] = !_TOn[3];
         yield return new WaitForSeconds(1f);
@@ -702,7 +714,7 @@ public class BossScript : MonoBehaviour
         _tentacleSmashOn = true;
         yield return new WaitForSeconds(1.5f);
         TentacleSend(0, true); //hit
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4.5f);
         _tentacleSmashDownOn = true;
         yield return new WaitForSeconds(1.5f);
         _tentacleSmashDownOn = true;
