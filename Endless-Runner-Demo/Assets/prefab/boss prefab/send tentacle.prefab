@@ -112,7 +112,8 @@ MonoBehaviour:
   _isActive: 0
   _debri: {fileID: 5115236219779926100, guid: 509e188fd812b834e87876542a262c09, type: 3}
   _isDebri: 1
-  _force: {x: -20, y: 37}
+  _force: {x: -20, y: 32}
+  _debrySpawn: {x: 40, y: 1}
 --- !u!70 &706249234449608000
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

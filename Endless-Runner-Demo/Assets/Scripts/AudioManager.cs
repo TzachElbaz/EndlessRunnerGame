@@ -1,22 +1,21 @@
 using UnityEngine;
 using static RunGameManeger;
-//comment
 
 public class AudioManager : MonoBehaviour
 {
     [Header("Audio Source")]
-    [SerializeField] AudioSource musicSource;
+    [SerializeField] public AudioSource musicSource;
     [SerializeField] AudioSource SfxSource;
 
     [Header("Audio Clip")]
     public AudioClip menu;
     public AudioClip forest;
     public AudioClip desert;
-    public AudioClip atlantis;
+    public AudioClip kraken;
     public AudioClip bubbles;
     public AudioClip coin;
     public AudioClip jump;
-    public AudioClip doubleJump;
+    //public AudioClip doubleJump;
     public AudioClip hit;
     public AudioClip collect;
 
@@ -67,8 +66,8 @@ public class AudioManager : MonoBehaviour
         {
             SCREEN_ENUM.FOREST => forest,
             SCREEN_ENUM.DESERT => desert,
-            SCREEN_ENUM.KRAKEN => atlantis,
-            _ => forest
+            //SCREEN_ENUM.KRAKEN => kraken,
+            _ => menu
         };
         musicSource.Play();
     }

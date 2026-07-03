@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Collectables : MonoBehaviour
 {
+    private AudioManager _audioManager;
     CollectablesManager collectables;
     RunGameManeger _runGameManager;
     [SerializeField, HideInInspector] private int _colectableId;   
@@ -18,16 +19,9 @@ public class Collectables : MonoBehaviour
         _animation = GetComponentInChildren<Animator>();
         _runGameManager = GameObject.FindAnyObjectByType<RunGameManeger>();
         collectables = GameObject.FindAnyObjectByType<CollectablesManager>();
-        if(!collectables._isCollectableAvalable) Destroy(gameObject);
-        //int random = Random.Range(0,4);
-        //while (collectables._colectableList[random])
-        //{
-        //    random++;
-        //    if(random >= collectables._colectableList.Length)
-        //    {
-        //        random = 0;
-        //    }
-        //}
+        _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        if (!collectables._isCollectableAvalable) Destroy(gameObject);
+
         int random = 0;
         while (collectables._colectableList[random] && random < collectables._colectableList.Length) random++;
         switch (_runGameManager._curentScreen)
@@ -53,6 +47,7 @@ public class Collectables : MonoBehaviour
     {
 
         collectables.SetCollectable(_colectableId);
+        _audioManager.PlaySFX(_audioManager.collect);
         Destroy(gameObject);
     }
     

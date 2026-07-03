@@ -164,16 +164,18 @@ public class TutorialManager : MonoBehaviour
 
     public void OnStartGameClicked()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
+        SceneManager.LoadScene("SampleScene");
 
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            SceneManager.LoadScene(nextSceneIndex);
-        }
-        else
-        {
-            Debug.LogWarning("No more scenes in the Build Settings!");
-        }
+        //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        //int nextSceneIndex = currentSceneIndex + 1;
+
+        //if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        //{
+        //    SceneManager.LoadScene(nextSceneIndex);
+        //}
+        //else
+        //{
+        //    Debug.LogWarning("No more scenes in the Build Settings!");
+        //}
     }
 }
