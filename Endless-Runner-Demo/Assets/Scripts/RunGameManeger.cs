@@ -979,4 +979,8 @@ public class RunGameManeger : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+    public void SecretBoss()
+    {
+        SceneManager.LoadScene("KrakenScene");
+    }
 }
